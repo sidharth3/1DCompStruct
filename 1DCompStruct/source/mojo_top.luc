@@ -1,3 +1,13 @@
+global Color {
+    // BGR
+    const RED = h00DD00;
+    const GREEN = h0000DD;
+    const BLUE = hDD0000;
+    const YELLOW = h008888;
+    const WHITE = h888888;
+    const BLACK = h000000;
+}
+
 module mojo_top (
     input clk,              // 50MHz clock
     input rst_n,            // reset button (active low)
@@ -23,6 +33,7 @@ module mojo_top (
     input player2right,
     input player1left,
     input player1right
+    //output leddata[11]
   ) {
   
   sig rst;                  // reset signal
@@ -35,12 +46,16 @@ module mojo_top (
     // clock. This ensures the entire FPGA comes out of reset at the same time.
     reset_conditioner reset_cond;
     //button_conditioner button_cond;
+    //edge_detector edge_detector (#RISE(1), #FALL(0));
     fsm states = {IDLE, GENERATE, DISPLAY, CHECK, SHIFT, BUFFER, FAIL, RESET};
+    forled temp;
     dff reset;
     dff start;
-    dff ledMatrix[ROWS][COLUMNS];
+    dff led_matrix_temp[ROWS][COLUMNS];
+    
+    
     .rst(rst){
-      ledmatrix led_matrix(#COLUMNS(COLUMNS), #ROWS(ROWS)); 
+        //ledmatrix led_matrix(#COLUMNS(COLUMNS), #ROWS(ROWS))
       }
     
   }
@@ -60,6 +75,12 @@ module mojo_top (
     a = 1;
     b = 1;
     c = 1;
+    //tempmat.d[0] = b10;
+    //tempmat.d[1] = tempmat.q[0];
+    temp.color = Color.RED;
+    temp.update = 1;
+    c = temp.led;
+    temp.rst = io_dip[0][0];
     
     
   }

@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Nov 22 14:41:58 2019
+// Written by: Map P.20131013 on Wed Nov 27 19:26:04 2019
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -10,8 +10,8 @@ COMP "io_dip(19)" LOCATE = SITE "P74" LEVEL 1;
 COMP "io_seg[0]" LOCATE = SITE "P5" LEVEL 1;
 COMP "spi_sck" LOCATE = SITE "P43" LEVEL 1;
 COMP "io_seg[1]" LOCATE = SITE "P8" LEVEL 1;
-COMP "clk" LOCATE = SITE "P56" LEVEL 1;
 COMP "io_seg[2]" LOCATE = SITE "P144" LEVEL 1;
+COMP "clk" LOCATE = SITE "P56" LEVEL 1;
 COMP "io_seg[3]" LOCATE = SITE "P143" LEVEL 1;
 COMP "avr_rx_busy" LOCATE = SITE "P39" LEVEL 1;
 COMP "io_dip(1)" LOCATE = SITE "P121" LEVEL 1;
@@ -85,5 +85,18 @@ COMP "a" LOCATE = SITE "P116" LEVEL 1;
 COMP "b" LOCATE = SITE "P118" LEVEL 1;
 COMP "io_dip(16)" LOCATE = SITE "P79" LEVEL 1;
 COMP "c" LOCATE = SITE "P120" LEVEL 1;
+TIMEGRP clk = BEL "temp/M_state_q" BEL "temp/M_pixel_ctr_q_2" BEL
+        "temp/M_pixel_ctr_q_0" BEL "temp/M_pixel_ctr_q_1" BEL
+        "temp/M_pixel_ctr_q_3" BEL "temp/M_ctr_q_0" BEL "temp/M_ctr_q_1" BEL
+        "temp/M_bit_ctr_q_2" BEL "temp/M_bit_ctr_q_1" BEL "temp/M_bit_ctr_q_0"
+        BEL "temp/M_bit_ctr_q_3" BEL "temp/M_bit_ctr_q_4" BEL
+        "temp/M_rst_ctr_q_11" BEL "temp/M_rst_ctr_q_10" BEL
+        "temp/M_rst_ctr_q_9" BEL "temp/M_rst_ctr_q_8" BEL "temp/M_rst_ctr_q_7"
+        BEL "temp/M_rst_ctr_q_6" BEL "temp/M_rst_ctr_q_4" BEL
+        "temp/M_rst_ctr_q_3" BEL "temp/M_rst_ctr_q_5" BEL "temp/M_rst_ctr_q_2"
+        BEL "temp/M_rst_ctr_q_1" BEL "temp/M_rst_ctr_q_0" BEL "temp/M_ctr_q_4"
+        BEL "temp/M_ctr_q_3" BEL "temp/M_ctr_q_5" BEL "temp/M_ctr_q_2" BEL
+        "temp/M_state_q_1" BEL "clk_BUFGP/BUFG";
+TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 SCHEMATIC END;
 

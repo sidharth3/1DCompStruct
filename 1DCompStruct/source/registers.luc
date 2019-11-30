@@ -1,0 +1,16 @@
+module registers (
+    input clk,  // clock
+    input rst,  // reset
+    output out
+  ) {
+  dff lane1(.clk(clk));
+  dff lane2(.clk(clk));
+  dff lane3(.clk(clk));
+  dff lane4(.clk(clk));
+  
+  
+  
+  always {
+    out = 0;
+  }
+}

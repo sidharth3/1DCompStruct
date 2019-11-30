@@ -1,0 +1,18 @@
+module car (
+    input clk,  // clock
+    input rst,  // reset
+    input left,
+    input right,
+    output out
+  ) {
+
+  always {
+  out = 0;
+    if(left){
+    out = 0;
+      }
+    if(right){
+    out = 1;
+      }
+  }
+}

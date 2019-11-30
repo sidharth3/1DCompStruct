@@ -1,0 +1,11 @@
+module map (
+    input clk,  // clock
+    input rst,  // reset
+    output out
+  ) {
+
+  always {
+    out = 0;
+    //should output a sequence that can be initialized to the first register
+  }
+}

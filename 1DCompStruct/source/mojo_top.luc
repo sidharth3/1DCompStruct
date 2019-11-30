@@ -35,7 +35,8 @@ module mojo_top (
     input player1right
     //output leddata[11]
   ) {
-  
+ 
+  sig mySig;
   sig rst;                  // reset signal
   sig button;
   const COLUMNS = 4;
@@ -44,6 +45,9 @@ module mojo_top (
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
     // clock. This ensures the entire FPGA comes out of reset at the same time.
+     car car1;
+     car car2;;
+    car car2;
     reset_conditioner reset_cond;
     //button_conditioner button_cond;
     //edge_detector edge_detector (#RISE(1), #FALL(0));
@@ -81,6 +85,10 @@ module mojo_top (
     temp.update = 1;
     c = temp.led;
     temp.rst = io_dip[0][0];
+    
+    //case(state)
+    //state.idle:
+      //if(rise == 1
     
     
   }

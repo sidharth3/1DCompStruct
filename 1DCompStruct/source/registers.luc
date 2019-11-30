@@ -1,16 +1,40 @@
 module registers (
     input clk,  // clock
     input rst,  // reset
-    output out
+    input shift,
+    output valid,
+    output lane1val[2],
+    output lane2val[2],
+    output lane3val[2],
+    output lane4val[2]
   ) {
-  dff lane1(.clk(clk));
-  dff lane2(.clk(clk));
-  dff lane3(.clk(clk));
-  dff lane4(.clk(clk));
-  
-  
-  
+  customCounter ctr;
+  .clk(clk){
+   dff lane1[10](#INIT(0000000000));
+   dff lane2[10](#INIT(0000000000));
+   dff lane3[10](#INIT(0000000000));
+   dff lane4[10](#INIT(0000000000));
+   }
   always {
-    out = 0;
+    lane1val = lane1.q[9:8];
+    lane2val = lane2.q[9:8];
+    lane3val = lane3.q[9:8];
+    lane4val = lane4.q[9:8];
+    
+    if(ctr.clockrise){
+      if(shift)
+      
+        //alu.shift(lane1);
+        //alu.shift(lane2);
+        //alu.shift(lane3);
+        //alu.shift(lane4);
+        
+        
+        }
+      }
+      
+  check.d = lane1.q[1:0];
+  //alu.shift(all alnes)
+    lane1.d[] = 
   }
 }

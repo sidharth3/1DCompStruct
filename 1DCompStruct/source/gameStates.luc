@@ -1,0 +1,57 @@
+module gameStates (
+    input clk,  // clock
+    input rst,  // reset
+    input car1left,
+    input car1right,
+    input car2left,
+    input car2right,
+    output out
+  ) {
+  sig random;
+.clk(clk) {
+  fsm gamestates = {IDLE,SHIFT, USER};
+  car car1;
+  car car2;
+  registers register(.rst(rst));
+  customCounter ctr;
+    .rst(rst) {
+    
+      }
+    
+    }     
+  
+  
+  always {
+    register.shift = 0;
+    case(gamestates.q){
+        gamestates.IDLE:
+          if(ctr.clockrise==1){
+            gamestates.d = gamestates.SHIFT;
+            }
+          if(car1left||car1right||car2left||car2right){
+            gamestates.d = gamestates.USER;
+            }
+          
+        
+          //else{ }
+        gamestates.SHIFT:
+            //if((alu.xor(car1.currentPosition[3:2], register.lane1val[9:8]))==10){
+              //then go to fail
+          //if((alu.xor(car1.currentPosition[1:0], register.lane2val[9:8]))==10){
+          //if((alu.xor(car2.currentPosition[3:2], register.lane3val[9:8]))==10){
+          //if((alu.xor(car2.currentPosition[1:0], register.lane4val[9:8]))==10){
+          
+          register.shift = 1;
+          gamestates.d = gamestates.IDLE;
+        
+        gamestates.USER:
+          car1.left = car1left;
+          car1.right = car1right;
+          car2.left = car2left;
+          car2.right = car2right;
+          
+          
+        
+          
+  }
+}

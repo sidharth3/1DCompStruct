@@ -1,0 +1,31 @@
+module customCounter (
+    input clk,       // clock
+    input rst,       // reset
+    input amount[26],
+    input resetCd,    // button input
+    output ans  // press counter
+  ) {
+  
+  .clk(clk) {
+    //edge_detector edge_detector(#RISE(1), #FALL(0)); // detect rising edges
+    
+    //button_conditioner button_cond;     // button input conditioner
+    
+    .rst(rst) {
+       dff ctr[26]; // our lovely counter
+    }
+  }
+
+  always {
+    //button_cond.in = button;            // raw button input
+    //edge_detector.in = button_cond.out; // input to the edge_detector
+    
+    if (resetCd == 1){
+      ctr.d = 0;
+    }
+    if(ctr.q < amount){
+      ctr.d = ctr.q + 1;
+    }
+    ans = (ctr.q==amount) ? 1 : 0;
+  }
+}

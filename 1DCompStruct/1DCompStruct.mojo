@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="1DCompStruct" board="Mojo V3" language="Lucid">
   <files>
-    <src>car.luc</src>
-    <src>forled.luc</src>
     <src>ledmatrix.luc</src>
+    <src>forled.luc</src>
+    <src>car.luc</src>
     <src>alu.luc</src>
     <src>gameStates.luc</src>
+    <src>bitshifter.luc</src>
     <src>map.luc</src>
-    <src>customCounter.luc</src>
     <src>ledws2812b.luc</src>
-    <src>registers.luc</src>
+    <src>customCounter.luc</src>
+    <src>adder.luc</src>
     <src top="true">mojo_top.luc</src>
+    <src>registers.luc</src>
     <ucf lib="true">io_shield.ucf</ucf>
-    <ucf>custom.ucf</ucf>
     <ucf lib="true">mojo.ucf</ucf>
+    <ucf>custom.ucf</ucf>
     <component>pn_gen.luc</component>
     <component>reset_conditioner.luc</component>
     <component>pipeline.luc</component>

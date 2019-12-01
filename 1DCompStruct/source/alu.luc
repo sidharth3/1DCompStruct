@@ -1,10 +1,33 @@
 module alu (
-    input clk,  // clock
-    input rst,  // reset
-    output out
+    input alufn[6],
+    input a[16],
+    input b[16],
+    output c[16]
   ) {
-
+  adder adder;
+  bitshifter bitshifter;
   always {
-    out = 0;
+    adder.alufn = alufn;
+    adder.a = a;
+    adder.b = b;
+    
+    bitshifter.alufn = alufn;
+    bitshifter.a = a;
+    bitshifter.b = b;
+    
+    case(alufn[5:4]){
+      b00:
+        // add: alufn = b000000
+        // sub: alufn = b000001
+        // mult: alufn = b000010
+        c = adder.c;
+      b10:
+        // SHL: alufn = b100000
+        // SHR: alufn = b100001
+        // SRA: alufn = b100011
+        c = bitshifter.c;
+      default:
+        c = 16b0;
+      }
   }
 }

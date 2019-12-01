@@ -1,0 +1,23 @@
+module adder (
+    input alufn[6],
+    input a[16],
+    input b[16],
+    output c[16]
+  ) {
+sig result[17];
+  always {
+    case (alufn[1:0]){
+      b00:
+        result = a+b;
+      b01:
+        result = a-b;
+      b10:
+        result = a*b;
+      b11:
+        result = a-((a/b)*b);
+      default:
+        result = 16b0;
+      }
+      c = result[15:0];
+  }
+}

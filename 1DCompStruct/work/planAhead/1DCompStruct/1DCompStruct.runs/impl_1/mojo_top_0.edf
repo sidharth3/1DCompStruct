@@ -4,7 +4,7 @@
   (keywordmap (keywordlevel 0))
 (status
  (written
-  (timeStamp 2019 12 03 18 58 33)
+  (timeStamp 2019 12 03 19 35 20)
   (program "PlanAhead" (version "14.7"))
   (comment "Built on 'Fri Sep 27 19:31:35 MDT 2013'")
   (comment "Built by 'xbuild'")
@@ -87,7 +87,7 @@
        (contents
          (instance XST_VCC (viewref netlist (cellref VCC (libraryref hdi_primitives)))
            (property XSTLIB (boolean (true)))
-           (property BUS_INFO (string "4:OUTPUT:out<1:4>"))
+           (property BUS_INFO (string "10:OUTPUT:out<1:10>"))
          )
          (instance XST_GND (viewref netlist (cellref GND (libraryref hdi_primitives)))
            (property XSTLIB (boolean (true)))
@@ -304,12 +304,14 @@
            (property XSTLIB (boolean (true)))
            (property CAPACITANCE (string "DONT_CARE"))
          )
-         (net a_OBUF (joined
+         (net (rename M_clrm_cc1_0_ "M_clrm_cc1[0]") (joined
           (portref P (instanceref XST_VCC))
           (portref T (instanceref spi_channel_3_OBUFT))
           (portref T (instanceref spi_channel_2_OBUFT))
           (portref T (instanceref spi_channel_1_OBUFT))
           (portref T (instanceref spi_channel_0_OBUFT))
+          (portref I (instanceref io_led_1_OBUF))
+          (portref I (instanceref io_led_0_OBUF))
           (portref I (instanceref io_seg_7_OBUF))
           (portref I (instanceref io_seg_6_OBUF))
           (portref I (instanceref io_seg_5_OBUF))
@@ -327,7 +329,7 @@
           (portref I (instanceref a_OBUF))
           )
          )
-         (net (rename M_clrm_cc1_0_ "M_clrm_cc1[0]") (joined
+         (net (rename M_clrm_cc2_2_ "M_clrm_cc2[2]") (joined
           (portref G (instanceref XST_GND))
           (portref I (instanceref led_7_OBUF))
           (portref I (instanceref led_6_OBUF))
@@ -363,8 +365,6 @@
           (portref I (instanceref io_led_4_OBUF))
           (portref I (instanceref io_led_3_OBUF))
           (portref I (instanceref io_led_2_OBUF))
-          (portref I (instanceref io_led_1_OBUF))
-          (portref I (instanceref io_led_0_OBUF))
           (portref I (instanceref spi_miso_OBUFT))
           (portref I (instanceref avr_rx_OBUFT))
           (portref I (instanceref b_OBUF))

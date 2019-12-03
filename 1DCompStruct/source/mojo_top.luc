@@ -42,6 +42,10 @@ module mojo_top (
   const COLUMNS = 4;
   const ROWS = 6;
   
+  const T1 = 10b1000000011;
+  const T2 = 10b1000000011;
+  const T3 = 10b1000000001;
+  const T4 = 10b1000000000;
   
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
@@ -51,16 +55,16 @@ module mojo_top (
     //car car2;
     color_map clrm;
 
-      //.rst(rst){forled tmp;}
+   // .rst(rst){forled tmp;}
     reset_conditioner reset_cond;
     //button_conditioner button_cond;
     //edge_detector edge_detector (#RISE(1), #FALL(0));
     fsm states = {IDLE, SHIFT, CHECKINPUT, CHECKCOLLISION, GENERATE, FAIL};
     //forled temp;
-    dff t1(#INIT(1000000010));
-    dff t2(#INIT(0000000001));
-    dff t3(#INIT(0000000000));
-    dff t4(#INIT(0000000010));
+ ////   dff t1(#INIT(1000000010));
+   // dff t2(#INIT(0000000001));
+   // dff t3(#INIT(0000000000));
+   // dff t4(#INIT(0000000010));
     dff start;
     //dff led_matrix_temp[ROWS][COLUMNS];
     
@@ -88,16 +92,16 @@ module mojo_top (
     c = 0;
     //tempmat.d[0] = b10;
     //tempmat.d[1] = tempmat.q[0];
-    clrm.lane4 = t4.q;
-    clrm.lane3 = t3.q;
-    clrm.lane2 = t2.q;
-    clrm.lane1 = t1.q;
+    clrm.lane4 = T4;
+    clrm.lane3 = T3;
+    clrm.lane2 = T2;
+    clrm.lane1 = T1;
     //  tmp.update = 1;
-    
+    clrm.rst = rst;
     //tmp.color = {24b111111110000000000000000, 24b0000000011111111100000000, 24b000000000000000011111111, 24x{b1}};
-     //tmp.color = clrm.color_row;
+  //  tmp.color = clrm.color_row;
     io_led[0] = clrm.cc1;
-    //io_led[1] = clrm.cc2;
+    io_led[1] = clrm.cc2;
     //tmp.color = c{16b0,8b1};
 //c = tmp.led;
   //  io_led[0][0] = io_dip[0][0];

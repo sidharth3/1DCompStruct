@@ -43,18 +43,30 @@ module mojo_top_0 (
   
   localparam ROWS = 3'h6;
   
+  localparam T1 = 10'h203;
+  
+  localparam T2 = 10'h203;
+  
+  localparam T3 = 10'h201;
+  
+  localparam T4 = 10'h200;
+  
   wire [8-1:0] M_clrm_cc1;
+  wire [8-1:0] M_clrm_cc2;
+  reg [1-1:0] M_clrm_rst;
   reg [10-1:0] M_clrm_lane1;
   reg [10-1:0] M_clrm_lane2;
   reg [10-1:0] M_clrm_lane3;
   reg [10-1:0] M_clrm_lane4;
   color_map_1 clrm (
     .clk(clk),
+    .rst(M_clrm_rst),
     .lane1(M_clrm_lane1),
     .lane2(M_clrm_lane2),
     .lane3(M_clrm_lane3),
     .lane4(M_clrm_lane4),
-    .cc1(M_clrm_cc1)
+    .cc1(M_clrm_cc1),
+    .cc2(M_clrm_cc2)
   );
   wire [1-1:0] M_reset_cond_out;
   reg [1-1:0] M_reset_cond_in;
@@ -71,10 +83,6 @@ module mojo_top_0 (
   localparam FAIL_states = 3'd5;
   
   reg [2:0] M_states_d, M_states_q = IDLE_states;
-  reg M_t1_d, M_t1_q = 30'h3b9aca0a;
-  reg M_t2_d, M_t2_q = 1'h1;
-  reg M_t3_d, M_t3_q = 1'h0;
-  reg M_t4_d, M_t4_q = 4'ha;
   reg M_start_d, M_start_q = 1'h0;
   
   always @* begin
@@ -90,18 +98,16 @@ module mojo_top_0 (
     a = 1'h1;
     b = 1'h0;
     c = 1'h0;
-    M_clrm_lane4 = M_t4_q;
-    M_clrm_lane3 = M_t3_q;
-    M_clrm_lane2 = M_t2_q;
-    M_clrm_lane1 = M_t1_q;
+    M_clrm_lane4 = 10'h200;
+    M_clrm_lane3 = 10'h201;
+    M_clrm_lane2 = 10'h203;
+    M_clrm_lane1 = 10'h203;
+    M_clrm_rst = rst;
     io_led[0+7-:8] = M_clrm_cc1;
+    io_led[8+7-:8] = M_clrm_cc2;
   end
   
   always @(posedge clk) begin
-    M_t1_q <= M_t1_d;
-    M_t2_q <= M_t2_d;
-    M_t3_q <= M_t3_d;
-    M_t4_q <= M_t4_d;
     M_start_q <= M_start_d;
     M_states_q <= M_states_d;
   end

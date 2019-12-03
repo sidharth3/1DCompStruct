@@ -6,66 +6,55 @@
 
 module color_map_1 (
     input clk,
+    input rst,
     input [9:0] lane1,
     input [9:0] lane2,
     input [9:0] lane3,
     input [9:0] lane4,
-    output reg [7:0] cc1
+    output reg [7:0] cc1,
+    output reg [7:0] cc2
   );
   
   
   
-  reg [1:0] M_temp_r0_d, M_temp_r0_q = 1'h0;
-  reg [1:0] M_temp_r1_d, M_temp_r1_q = 1'h0;
-  reg [1:0] M_temp_r2_d, M_temp_r2_q = 1'h0;
-  reg [1:0] M_temp_r3_d, M_temp_r3_q = 1'h0;
-  reg [23:0] M_color_cell0_d, M_color_cell0_q = 1'h0;
-  reg [23:0] M_color_cell1_d, M_color_cell1_q = 1'h0;
-  reg [23:0] M_color_cell2_d, M_color_cell2_q = 1'h0;
-  reg [23:0] M_color_cell3_d, M_color_cell3_q = 1'h0;
+  reg [1:0] temp_r0;
+  
+  reg [1:0] temp_r1;
+  
+  reg [1:0] temp_r2;
+  
+  reg [1:0] temp_r3;
+  
+  reg [23:0] color_cell0;
+  
+  reg [23:0] color_cell1;
+  
+  reg [23:0] color_cell2;
+  
+  reg [23:0] color_cell3;
   
   always @* begin
-    M_temp_r3_d = M_temp_r3_q;
-    M_temp_r2_d = M_temp_r2_q;
-    M_temp_r1_d = M_temp_r1_q;
-    M_temp_r0_d = M_temp_r0_q;
-    M_color_cell1_d = M_color_cell1_q;
-    M_color_cell0_d = M_color_cell0_q;
-    M_color_cell3_d = M_color_cell3_q;
-    M_color_cell2_d = M_color_cell2_q;
-    
-    M_color_cell0_d = 24'h000000;
-    M_color_cell1_d = 24'h000000;
-    M_color_cell2_d = 24'h000000;
-    M_color_cell3_d = 24'h000000;
-    M_temp_r0_d = lane1[0+1-:2];
-    M_temp_r1_d = lane2[0+1-:2];
-    M_temp_r2_d = lane3[0+1-:2];
-    M_temp_r3_d = lane4[0+1-:2];
-    cc1 = 8'hff;
-    if (M_temp_r0_q == 2'h0) begin
-      M_color_cell0_d = 24'h000000;
-      cc1 = M_color_cell0_q[0+7-:8];
+    color_cell0 = 24'h000000;
+    color_cell1 = 24'h000000;
+    color_cell2 = 24'h000000;
+    color_cell3 = 24'h000000;
+    temp_r0 = lane1[0+1-:2];
+    temp_r1 = lane2[0+1-:2];
+    temp_r2 = lane3[0+1-:2];
+    temp_r3 = lane4[0+1-:2];
+    if (temp_r0 == 2'h0) begin
+      color_cell0 = 24'h000000;
+      cc1 = color_cell0[0+7-:8];
     end
-    if (M_temp_r0_q == 2'h1) begin
-      M_color_cell0_d = 24'h010000;
-      cc1 = M_color_cell0_q[0+7-:8];
+    if (temp_r0 == 2'h1) begin
+      color_cell0 = 24'h010000;
+      cc1 = color_cell0[0+7-:8];
     end
-    if (M_temp_r0_q == 2'h2) begin
-      M_color_cell0_d = 24'h000001;
-      cc1 = M_color_cell0_q[0+7-:8];
+    if (temp_r0 == 2'h2) begin
+      color_cell0 = 24'h000001;
+      cc1 = color_cell0[0+7-:8];
     end
+    cc1 = lane1;
+    cc2 = color_cell0[0+7-:8];
   end
-  
-  always @(posedge clk) begin
-    M_temp_r0_q <= M_temp_r0_d;
-    M_temp_r1_q <= M_temp_r1_d;
-    M_temp_r2_q <= M_temp_r2_d;
-    M_temp_r3_q <= M_temp_r3_d;
-    M_color_cell0_q <= M_color_cell0_d;
-    M_color_cell1_q <= M_color_cell1_d;
-    M_color_cell2_q <= M_color_cell2_d;
-    M_color_cell3_q <= M_color_cell3_d;
-  end
-  
 endmodule

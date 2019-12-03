@@ -50,8 +50,8 @@ module color_map_1 (
       color_cell0 = 24'h010000;
       cc1 = color_cell0[0+7-:8];
     end
-    if (temp_r0 == 2'h2) begin
-      color_cell0 = 24'h000001;
+    if (temp_r0 == 2'h3) begin
+      color_cell0 = 24'h0000ff;
       cc1 = color_cell0[0+7-:8];
     end
     cc1 = lane1;

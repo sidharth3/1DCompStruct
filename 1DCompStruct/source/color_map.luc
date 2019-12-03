@@ -37,13 +37,14 @@ module color_map (
       cc1 = color_cell0[7:0];
       }
     if (temp_r0== 2b01){
-      color_cell0 = c{8b1, 16b0};
+      color_cell0 = c{8x{b1}, 16b0};
       cc1 = color_cell0[7:0]; 
        } //assuming rgb pattern
-    if (temp_r0 == 2b10){
-      color_cell0  = c{16b0, 8b1};
+    if (temp_r0 == 2b11){
+      color_cell0  = c{16b0, 8x{b1}};
       cc1 = color_cell0[7:0];  
       }
+    
     
       
     cc1 = lane1;

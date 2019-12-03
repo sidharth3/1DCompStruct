@@ -1,4 +1,4 @@
-Release 14.7 Map P.20131013 (nt)
+Release 14.7 Map P.20131013 (nt64)
 Xilinx Mapping Report File for Design 'mojo_top_0'
 
 Design Information
@@ -8,7 +8,7 @@ Target Device  : xc6slx9
 Target Package : tqg144
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Tue Dec 03 19:35:27 2019
+Mapped Date    : Tue Dec 03 19:42:20 2019
 
 Design Summary
 --------------
@@ -52,9 +52,9 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                0.00
 
-Peak Memory Usage:  278 MB
-Total REAL time to MAP completion:  5 secs 
-Total CPU time to MAP completion (all processors):   4 secs 
+Peak Memory Usage:  4485 MB
+Total REAL time to MAP completion:  3 secs 
+Total CPU time to MAP completion (all processors):   3 secs 
 
 Table of Contents
 -----------------

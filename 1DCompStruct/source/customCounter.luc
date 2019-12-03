@@ -3,7 +3,8 @@ module customCounter (
     input rst,       // reset
     input amount[26],
     input resetCd,    // button input
-    output ans  // press counter
+    output ans,  // press counter
+    output clockrise
   ) {
   
   .clk(clk) {
@@ -19,7 +20,7 @@ module customCounter (
   always {
     //button_cond.in = button;            // raw button input
     //edge_detector.in = button_cond.out; // input to the edge_detector
-    
+    clockrise = ctr.q[25];
     if (resetCd == 1){
       ctr.d = 0;
     }

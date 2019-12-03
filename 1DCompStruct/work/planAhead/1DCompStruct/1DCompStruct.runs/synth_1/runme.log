@@ -7,10 +7,10 @@ Reading design: mojo_top_0.prj
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
-Parsing module <reset_conditioner_1>.
-Analyzing Verilog file "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/forled_2.v" into library work
-Parsing module <forled_2>.
+Analyzing Verilog file "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/reset_conditioner_2.v" into library work
+Parsing module <reset_conditioner_2>.
+Analyzing Verilog file "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/color_map_1.v" into library work
+Parsing module <color_map_1>.
 Analyzing Verilog file "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
 Parsing module <mojo_top_0>.
 
@@ -20,13 +20,16 @@ Parsing module <mojo_top_0>.
 
 Elaborating module <mojo_top_0>.
 
-Elaborating module <reset_conditioner_1>.
+Elaborating module <color_map_1>.
 
-Elaborating module <forled_2>.
-WARNING:HDLCompiler:1127 - "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 71: Assignment to M_temp_pixel ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 78: Assignment to rst ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 97: Assignment to M_reset_q ignored, since the identifier is never used
-WARNING:Xst:2972 - "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 46. All outputs of instance <reset_cond> of block <reset_conditioner_1> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
+Elaborating module <reset_conditioner_2>.
+WARNING:HDLCompiler:1127 - "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 80: Assignment to rst ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 100: Assignment to M_start_q ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 74: Net <M_t1_d> does not have a driver.
+WARNING:HDLCompiler:634 - "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 75: Net <M_t2_d> does not have a driver.
+WARNING:HDLCompiler:634 - "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 76: Net <M_t3_d> does not have a driver.
+WARNING:HDLCompiler:634 - "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 77: Net <M_t4_d> does not have a driver.
+WARNING:Xst:2972 - "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 61. All outputs of instance <reset_cond> of block <reset_conditioner_2> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -35,7 +38,7 @@ WARNING:Xst:2972 - "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/wo
 Synthesizing Unit <mojo_top_0>.
     Related source file is "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v".
 WARNING:Xst:647 - Input <io_button> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <io_dip<23:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <io_dip> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_ss> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -46,61 +49,53 @@ WARNING:Xst:647 - Input <player2left> is never used. This port will be preserved
 WARNING:Xst:647 - Input <player2right> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <player1left> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <player1right> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 46: Output port <out> of the instance <reset_cond> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 66: Output port <pixel> of the instance <temp> is unconnected or connected to loadless signal.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 78
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 78
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 78
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 78
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 78
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 78
+INFO:Xst:3210 - "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 61: Output port <out> of the instance <reset_cond> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <M_t1_d> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <M_t2_d> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <M_t3_d> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <M_t4_d> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 1-bit register for signal <M_t2_q>.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 80
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 80
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 80
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 80
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 80
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 80
+    WARNING:Xst:2404 -  FFs/Latches <M_t3_q<0:0>> (without init value) have a constant value of 0 in block <mojo_top_0>.
+    WARNING:Xst:2404 -  FFs/Latches <M_t4_q<0:0>> (without init value) have a constant value of 0 in block <mojo_top_0>.
+    WARNING:Xst:2404 -  FFs/Latches <M_t1_q<0:0>> (without init value) have a constant value of 0 in block <mojo_top_0>.
     Summary:
+	inferred   1 D-type flip-flop(s).
 	inferred   6 Tristate(s).
 Unit <mojo_top_0> synthesized.
 
-Synthesizing Unit <forled_2>.
-    Related source file is "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/forled_2.v".
-    Found 5-bit register for signal <M_bit_ctr_q>.
-    Found 6-bit register for signal <M_ctr_q>.
-    Found 12-bit register for signal <M_rst_ctr_q>.
-    Found 1-bit register for signal <M_state_q>.
-    Found 4-bit register for signal <M_pixel_ctr_q>.
-    Found 6-bit adder for signal <M_ctr_q[5]_GND_3_o_add_3_OUT> created at line 52.
-    Found 5-bit adder for signal <M_bit_ctr_q[4]_GND_3_o_add_5_OUT> created at line 55.
-    Found 4-bit adder for signal <M_pixel_ctr_q[3]_GND_3_o_add_7_OUT> created at line 58.
-    Found 12-bit adder for signal <M_rst_ctr_q[11]_GND_3_o_add_17_OUT> created at line 73.
-    Found 47-bit shifter logical right for signal <n0053> created at line 47
-    Found 6-bit comparator greater for signal <M_ctr_q[5]_PWR_3_o_LessThan_2_o> created at line 48
-    Found 6-bit comparator greater for signal <M_ctr_q[5]_GND_3_o_LessThan_3_o> created at line 50
+Synthesizing Unit <color_map_1>.
+    Related source file is "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/color_map_1.v".
+WARNING:Xst:647 - Input <lane1<9:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <lane2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <lane3> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <lane4> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit register for signal <M_color_cell0_q<7:0>>.
+    Found 2-bit register for signal <M_temp_r0_q>.
+    Found 4x24-bit Read Only RAM for signal <M_color_cell0_d>
     Summary:
-	inferred   4 Adder/Subtractor(s).
-	inferred  28 D-type flip-flop(s).
-	inferred   2 Comparator(s).
-	inferred   3 Multiplexer(s).
-	inferred   1 Combinational logic shifter(s).
-Unit <forled_2> synthesized.
+	inferred   1 RAM(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <color_map_1> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 4
- 12-bit adder                                          : 1
- 4-bit adder                                           : 1
- 5-bit adder                                           : 1
- 6-bit adder                                           : 1
-# Registers                                            : 5
+# RAMs                                                 : 1
+ 4x24-bit single-port Read Only RAM                    : 1
+# Registers                                            : 3
  1-bit register                                        : 1
- 12-bit register                                       : 1
- 4-bit register                                        : 1
- 5-bit register                                        : 1
- 6-bit register                                        : 1
-# Comparators                                          : 2
- 6-bit comparator greater                              : 2
-# Multiplexers                                         : 3
- 1-bit 2-to-1 multiplexer                              : 3
-# Logic shifters                                       : 1
- 47-bit shifter logical right                          : 1
+ 2-bit register                                        : 1
+ 8-bit register                                        : 1
+# Multiplexers                                         : 1
+ 8-bit 2-to-1 multiplexer                              : 1
 # Tristates                                            : 6
  1-bit tristate buffer                                 : 6
 
@@ -111,55 +106,62 @@ Macro Statistics
 =========================================================================
 
 
-Synthesizing (advanced) Unit <forled_2>.
-The following registers are absorbed into counter <M_bit_ctr_q>: 1 register on signal <M_bit_ctr_q>.
-The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
-The following registers are absorbed into counter <M_pixel_ctr_q>: 1 register on signal <M_pixel_ctr_q>.
-The following registers are absorbed into counter <M_rst_ctr_q>: 1 register on signal <M_rst_ctr_q>.
-Unit <forled_2> synthesized (advanced).
+Synthesizing (advanced) Unit <color_map_1>.
+INFO:Xst:3231 - The small RAM <Mram_M_color_cell0_d> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 24-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_temp_r0_q>   |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <M_color_cell0_d> |          |
+    -----------------------------------------------------------------------
+Unit <color_map_1> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 4
- 12-bit up counter                                     : 1
- 4-bit up counter                                      : 1
- 5-bit up counter                                      : 1
- 6-bit up counter                                      : 1
-# Registers                                            : 1
- Flip-Flops                                            : 1
-# Comparators                                          : 2
- 6-bit comparator greater                              : 2
-# Multiplexers                                         : 3
- 1-bit 2-to-1 multiplexer                              : 3
-# Logic shifters                                       : 1
- 47-bit shifter logical right                          : 1
+# RAMs                                                 : 1
+ 4x24-bit single-port distributed Read Only RAM        : 1
+# Registers                                            : 11
+ Flip-Flops                                            : 11
+# Multiplexers                                         : 1
+ 8-bit 2-to-1 multiplexer                              : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch M_t2_q hinder the constant cleaning in the block mojo_top_0.
+   You should achieve better results by setting this init to 0.
+INFO:Xst:2261 - The FF/Latch <M_temp_r0_q_0> in Unit <color_map_1> is equivalent to the following FF/Latch, which will be removed : <M_temp_r0_q_1> 
+WARNING:Xst:1293 - FF/Latch <M_temp_r0_q_0> has a constant value of 0 in block <color_map_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M_color_cell0_q_0> has a constant value of 0 in block <color_map_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_color_cell0_q_1> has a constant value of 0 in block <color_map_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_color_cell0_q_2> has a constant value of 0 in block <color_map_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_color_cell0_q_3> has a constant value of 0 in block <color_map_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_color_cell0_q_4> has a constant value of 0 in block <color_map_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_color_cell0_q_5> has a constant value of 0 in block <color_map_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_color_cell0_q_6> has a constant value of 0 in block <color_map_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_color_cell0_q_7> has a constant value of 0 in block <color_map_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <M_t2_q> of sequential type is unconnected in block <mojo_top_0>.
 
 Optimizing unit <mojo_top_0> ...
 
-Optimizing unit <forled_2> ...
-
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 1.
-FlipFlop temp/M_state_q has been replicated 1 time(s)
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 0.
 
 Final Macro Processing ...
 
 =========================================================================
 Final Register Report
 
-Macro Statistics
-# Registers                                            : 29
- Flip-Flops                                            : 29
-
+Found no macro
 =========================================================================
 
 =========================================================================
@@ -179,11 +181,7 @@ Partition Implementation Status
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 29    |
------------------------------------+------------------------+-------+
+No clock signals found in this design
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -193,9 +191,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 4.623ns (Maximum Frequency: 216.310MHz)
-   Minimum input arrival time before clock: 4.632ns
-   Maximum output required time after clock: 7.045ns
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
    Maximum combinational path delay: No path found
 
 =========================================================================

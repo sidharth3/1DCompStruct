@@ -1,11 +1,15 @@
 module map (
-    input clk,  // clock
-    input rst,  // reset
-    output out
+    //input clk,  // clock
+    //input rst,  // reset
+    input address[5],
+    output next_row[1][8]
   ) {
-
+  
+  //var rows= {8b0, 8b10sss};
+  const SAMPLE_LEVEL= {{8b10001000},{8b00000001},{8b00001000},{8b01000000},{8b01100110},{8b00000000},{8b00010001},{8b10001000},{8b00000010},{8b00010100},{8b00010000},{8b00100001},{8b00001000},{8b01000000},
+  {8b00010100},{8b00000100},{8b00100000},{8b00101000},{8b00010000},{8b01000010}};
   always {
-    out = 0;
+            next_row = SAMPLE_LEVEL[address];
     //should output a sequence that can be initialized to the first register
-  }
+}
 }

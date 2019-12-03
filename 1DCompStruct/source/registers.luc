@@ -2,39 +2,69 @@ module registers (
     input clk,  // clock
     input rst,  // reset
     input shift,
-    output valid,
     output lane1val[2],
     output lane2val[2],
     output lane3val[2],
     output lane4val[2]
   ) {
-  customCounter ctr;
+   alu alu;
+  map map;
+  //sig templane1[2];
+  //sig templane2[2];
+  //sig templane3[2];
+  //sig templane4[2];
   .clk(clk){
+ .rst(rst){
+  //customCounter ctr;  
+      }
+ 
    dff lane1[10](#INIT(0000000000));
    dff lane2[10](#INIT(0000000000));
    dff lane3[10](#INIT(0000000000));
    dff lane4[10](#INIT(0000000000));
+   dff mapadress(#INIT(0));
+  
    }
   always {
+    //templane1 = lane1.q[1:0];
+    //templane2 = lane2.q[1:0];
+    //templane3 = lane3.q[1:0];
+    //templane4 = lane4.q[1:0];  
+    map.address = 0;
+    alu.a = 0;
+    alu.b = 0;
+    alu.alufn = 6b0000000;
     lane1val = lane1.q[9:8];
     lane2val = lane2.q[9:8];
     lane3val = lane3.q[9:8];
     lane4val = lane4.q[9:8];
-    
-    if(ctr.clockrise){
-      if(shift)
-      
-        //alu.shift(lane1);
-        //alu.shift(lane2);
-        //alu.shift(lane3);
-        //alu.shift(lane4);
-        
+  
+      if(shift){
+        map.address = mapadress.q;
+        alu.alufn = 6b100000;
+        alu.a = lane1.q;
+        alu.b = 2;
+        lane1.d = alu.c[9:0];
+        lane1.d[1:0] = map.next_row[0][1:0];
+        alu.a = lane2.q;
+        alu.b = 2;
+        lane2.d = alu.c[9:0];
+        lane2.d[1:0] = map.next_row[0][3:2];
+        alu.a = lane3.q;
+        alu.b = 2;
+        lane3.d = alu.c[9:0];
+        lane3.d = map.next_row[0][5:4];
+        alu.a = lane4.q;
+        alu.b = 2;
+        lane4.d = alu.c[9:0]; 
+        lane4.d = map.next_row[0][7:6];   
+        mapadress.d = mapadress.q+1;
         
         }
+    
+    
+    
       }
       
-  check.d = lane1.q[1:0];
-  //alu.shift(all alnes)
-    lane1.d[] = 
   }
-}
+

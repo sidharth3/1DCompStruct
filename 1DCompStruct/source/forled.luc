@@ -1,9 +1,9 @@
 module forled #(
-    PIXEL_COUNT = 10 : PIXEL_COUNT > 0
+   PIXEL_COUNT = 10 : PIXEL_COUNT > 0
   )(
     input clk,  // clock
     input rst,  // reset
-    input color[24],
+    input color[4][24],
     output pixel[$clog2(PIXEL_COUNT)],
     output led,
     input update
@@ -24,9 +24,7 @@ module forled #(
   always {
     led = 0;
     
-    bits = c{color[0], color[1],color[2], color[3], color[4], color[5], color[6], color[7],
-      color[16], color[17], color[18], color[19], color[20], color[21], color[22], color[23],
-      color[8], color[9], color[10], color[11], color[12], color[13], color[14], color[15]};
+    bits = color[pixel_ctr.q];
     
     
     pixel = pixel_ctr.q;

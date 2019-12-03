@@ -1,0 +1,68 @@
+module ledrow4map (
+    input lane1[10],
+    input lane2[10],
+    input lane3[10],
+    input lane4[10],
+    output color_row4[4][24]
+  ) {
+ 
+  sig temp_r0[2];
+  sig temp_r1[2];
+  sig temp_r2[2];
+  sig temp_r3[2];
+  sig color_cell0[24];
+  sig color_cell1[24];
+  sig color_cell2[24];
+  sig color_cell3[24];   
+ 
+
+  always {
+    color_cell0 = 24b0;
+    color_cell1 = 24b0;
+    color_cell2 = 24b0;
+    color_cell3 = 24b0;
+    temp_r0 = lane1[7:6];
+    temp_r1 = lane2[7:6];
+    temp_r2 = lane3[7:6];
+    temp_r3 = lane4[7:6];
+
+    
+    //pixel 1 row 4
+    if (temp_r0 == 2b00){
+      color_cell0 = 24b0;
+      }
+    if (temp_r0== 2b01){
+      color_cell0 = c{8x{b1}, 16b0};
+      } //assuming rgb pattern
+    if (temp_r0 == 2b10){
+      color_cell0  = c{16b0, 8x{b1}};
+      }
+    
+        //pixel 2 row4
+    if (temp_r1== 2b00){
+      color_cell1 = 24b0;}
+    if(temp_r1 == 2b01){
+      color_cell1 = c{8x{b1}, 16b0};}
+    if (temp_r1== 2b10){
+      color_cell1 = c{16b0, 8x{b1}};}
+      
+    //pixel 3 row 4
+   if (temp_r2== 2b00){
+      color_cell2 = 24b0;}
+    if(temp_r2 == 2b01){
+      color_cell2 = c{8x{b1}, 16b0};}
+    if (temp_r2== 2b10){
+      color_cell2 = c{16b0, 8x{b1}};}
+   
+    //pixel 4 row 4
+     if (temp_r3== 2b00){
+      color_cell3 = 24b0;}
+    if(temp_r3 == 2b01){
+      color_cell3 = c{8x{b1}, 16b0};}
+    if (temp_r3== 2b10){
+      color_cell3 = c{16b0, 8x{b1}};}
+      
+    color_row4 = { color_cell0, color_cell1, color_cell2, color_cell3};
+
+}
+}

@@ -5,7 +5,7 @@ set device xc6slx9-2tqg144
 if {[file exists "$projDir/$projName"]} { file delete -force "$projDir/$projName" }
 create_project $projName "$projDir/$projName" -part $device
 set_property design_mode RTL [get_filesets sources_1]
-set verilogSources [list "C:/Gauri/SUTD term 4/computational structures/1DCompStruct/1DCompStruct/work/verilog/mojo_top_0.v" "C:/Gauri/SUTD term 4/computational structures/1DCompStruct/1DCompStruct/work/verilog/color_map_1.v" "C:/Gauri/SUTD term 4/computational structures/1DCompStruct/1DCompStruct/work/verilog/reset_conditioner_2.v"]
+set verilogSources [list "C:/Gauri/SUTD term 4/computational structures/1DCompStruct/1DCompStruct/work/verilog/mojo_top_0.v" "C:/Gauri/SUTD term 4/computational structures/1DCompStruct/1DCompStruct/work/verilog/reset_conditioner_1.v" "C:/Gauri/SUTD term 4/computational structures/1DCompStruct/1DCompStruct/work/verilog/smallgc_2.v" "C:/Gauri/SUTD term 4/computational structures/1DCompStruct/1DCompStruct/work/verilog/map_3.v" "C:/Gauri/SUTD term 4/computational structures/1DCompStruct/1DCompStruct/work/verilog/mariocounter_4.v"]
 import_files -fileset [get_filesets sources_1] -force -norecurse $verilogSources
 set ucfSources [list "C:/Gauri/SUTD\ term\ 4/computational\ structures/1DCompStruct/1DCompStruct/constraint/custom.ucf" "C:/Program\ Files/Mojo\ IDE/library/components/io_shield.ucf" "C:/Program\ Files/Mojo\ IDE/library/components/mojo.ucf"]
 import_files -fileset [get_filesets constrs_1] -force -norecurse $ucfSources

@@ -12,14 +12,16 @@
     <src>bitshifter.luc</src>
     <src>ledrow4map.luc</src>
     <src>ledrow2map.luc</src>
-    <src>ledrow5map.luc</src>
     <src>map.luc</src>
+    <src>ledrow5map.luc</src>
+    <src>mariocounter.luc</src>
     <src>adder.luc</src>
-    <src>ledrow3map.luc</src>
+    <src>smallgc.luc</src>
     <src>registers.luc</src>
+    <src>ledrow3map.luc</src>
     <ucf lib="true">io_shield.ucf</ucf>
-    <ucf lib="true">mojo.ucf</ucf>
     <ucf>custom.ucf</ucf>
+    <ucf lib="true">mojo.ucf</ucf>
     <component>pn_gen.luc</component>
     <component>reset_conditioner.luc</component>
     <component>pipeline.luc</component>

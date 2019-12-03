@@ -1,0 +1,16 @@
+module mariocounter (
+    input clk,  // clock
+    input rst_sig,  // reset
+    input rst,
+    output out[5]
+  ) {
+dff counter[5](.clk(clk),.rst(rst));
+
+  always {
+    out = counter.q;
+    counter.d = counter.q + 1;
+    if (rst_sig == 1){
+      counter.d = 0;
+    }
+  }
+}

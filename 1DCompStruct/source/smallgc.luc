@@ -1,0 +1,16 @@
+module smallgc (
+    input reset,
+    input clk,  // clock
+    input rst,  // reset
+    output out[5]
+  ) {
+dff counter[25](.clk(clk), .rst(rst));
+ 
+mariocounter ctr(.rst(rst));
+ 
+  always {
+    ctr.clk = counter.q[24];
+    ctr.rst_sig = reset;
+    counter.d = counter.q + 1;
+    out = ctr.out;
+}}

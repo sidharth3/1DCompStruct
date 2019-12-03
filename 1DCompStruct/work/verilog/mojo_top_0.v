@@ -39,6 +39,8 @@ module mojo_top_0 (
   
   reg button;
   
+  reg [1:0] level;
+  
   localparam COLUMNS = 3'h4;
   
   localparam ROWS = 3'h6;
@@ -51,26 +53,9 @@ module mojo_top_0 (
   
   localparam T4 = 10'h200;
   
-  wire [8-1:0] M_clrm_cc1;
-  wire [8-1:0] M_clrm_cc2;
-  reg [1-1:0] M_clrm_rst;
-  reg [10-1:0] M_clrm_lane1;
-  reg [10-1:0] M_clrm_lane2;
-  reg [10-1:0] M_clrm_lane3;
-  reg [10-1:0] M_clrm_lane4;
-  color_map_1 clrm (
-    .clk(clk),
-    .rst(M_clrm_rst),
-    .lane1(M_clrm_lane1),
-    .lane2(M_clrm_lane2),
-    .lane3(M_clrm_lane3),
-    .lane4(M_clrm_lane4),
-    .cc1(M_clrm_cc1),
-    .cc2(M_clrm_cc2)
-  );
   wire [1-1:0] M_reset_cond_out;
   reg [1-1:0] M_reset_cond_in;
-  reset_conditioner_2 reset_cond (
+  reset_conditioner_1 reset_cond (
     .clk(clk),
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
@@ -84,6 +69,29 @@ module mojo_top_0 (
   
   reg [2:0] M_states_d, M_states_q = IDLE_states;
   reg M_start_d, M_start_q = 1'h0;
+  localparam LEVEL1_levels = 2'd0;
+  localparam LEVEL2_levels = 2'd1;
+  localparam LEVEL3_levels = 2'd2;
+  localparam IDLE_levels = 2'd3;
+  
+  reg [1:0] M_levels_d, M_levels_q = LEVEL1_levels;
+  wire [5-1:0] M_count_out;
+  reg [1-1:0] M_count_reset;
+  smallgc_2 count (
+    .clk(clk),
+    .rst(rst),
+    .reset(M_count_reset),
+    .out(M_count_out)
+  );
+  
+  wire [8-1:0] M_map_next_row;
+  reg [5-1:0] M_map_address;
+  reg [2-1:0] M_map_level;
+  map_3 map (
+    .address(M_map_address),
+    .level(M_map_level),
+    .next_row(M_map_next_row)
+  );
   
   always @* begin
     M_reset_cond_in = ~rst_n;
@@ -98,18 +106,21 @@ module mojo_top_0 (
     a = 1'h1;
     b = 1'h0;
     c = 1'h0;
-    M_clrm_lane4 = 10'h200;
-    M_clrm_lane3 = 10'h201;
-    M_clrm_lane2 = 10'h203;
-    M_clrm_lane1 = 10'h203;
-    M_clrm_rst = rst;
-    io_led[0+7-:8] = M_clrm_cc1;
-    io_led[8+7-:8] = M_clrm_cc2;
+    M_count_reset = 1'h0;
+    M_map_level = 2'h3;
+    M_map_address = M_count_out;
+    io_led[8+7-:8] = 2'h3;
+    io_led[0+7-:8] = M_map_next_row;
+    io_led[16+7-:8] = M_count_out;
+    if (M_map_next_row == 8'hff) begin
+      M_count_reset = 1'h1;
+    end
   end
   
   always @(posedge clk) begin
     M_start_q <= M_start_d;
     M_states_q <= M_states_d;
+    M_levels_q <= M_levels_d;
   end
   
 endmodule

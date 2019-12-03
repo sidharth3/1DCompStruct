@@ -39,8 +39,10 @@ module mojo_top (
   sig mySig;
   sig rst;                  // reset signal
   sig button;
+  sig level[2];
   const COLUMNS = 4;
   const ROWS = 6;
+  
   
   const T1 = 10b1000000011;
   const T2 = 10b1000000011;
@@ -53,7 +55,7 @@ module mojo_top (
      //car car1;
      //car car2;;
     //car car2;
-    color_map clrm;
+    //color_map clrm;
 
    // .rst(rst){forled tmp;}
     reset_conditioner reset_cond;
@@ -68,13 +70,15 @@ module mojo_top (
     dff start;
     //dff led_matrix_temp[ROWS][COLUMNS];
     
-    
+    fsm levels = {LEVEL1, LEVEL2, LEVEL3,IDLE};    
     .rst(rst){
         //ledmatrix led_matrix(#COLUMNS(COLUMNS), #ROWS(ROWS))
+        smallgc count;
       }
     
   }
-  
+
+map map;
   always {
     reset_cond.in = ~rst_n; // input raw inverted reset signal
     rst = reset_cond.out;   // conditioned reset
@@ -92,23 +96,31 @@ module mojo_top (
     c = 0;
     //tempmat.d[0] = b10;
     //tempmat.d[1] = tempmat.q[0];
-    clrm.lane4 = T4;
-    clrm.lane3 = T3;
-    clrm.lane2 = T2;
-    clrm.lane1 = T1;
+    // clrm.lane4 = T4;
+    // clrm.lane3 = T3;
+    // clrm.lane2 = T2;
+    // clrm.lane1 = T1;
     //  tmp.update = 1;
-    clrm.rst = rst;
+    // clrm.rst = rst;
     //tmp.color = {24b111111110000000000000000, 24b0000000011111111100000000, 24b000000000000000011111111, 24x{b1}};
   //  tmp.color = clrm.color_row;
-    io_led[0] = clrm.cc1;
-    io_led[1] = clrm.cc2;
+    // io_led[0] = clrm.cc1;
+    // io_led[1] = clrm.cc2;
     //tmp.color = c{16b0,8b1};
 //c = tmp.led;
   //  io_led[0][0] = io_dip[0][0];
     //case(state)
     //state.idle:
-      //if(rise == 1
-    
-    
+      //if(rise == 1  
+    count.reset = 0;
+ 
+    map.level = b11;
+    map.address = count.out;
+    io_led[1] = b11;
+    io_led[0] = map.next_row;
+    io_led[2] = count.out;
+    if (map.next_row == 8x{b1}){
+    count.reset = 1;
+    }
   }
 }

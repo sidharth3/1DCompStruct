@@ -38,26 +38,28 @@ module registers (
     lane2val = lane2.q[9:8];
     lane3val = lane3.q[9:8];
     lane4val = lane4.q[9:8];
-  
+    
+    // testing signal
+    map.level = b01;
       if(shift){
         map.address = mapadress.q;
         alu.alufn = 6b100000;
         alu.a = lane1.q;
         alu.b = 2;
         lane1.d = alu.c[9:0];
-        lane1.d[1:0] = map.next_row[0][1:0];
+        lane1.d[1:0] = map.next_row[1:0];
         alu.a = lane2.q;
         alu.b = 2;
         lane2.d = alu.c[9:0];
-        lane2.d[1:0] = map.next_row[0][3:2];
+        lane2.d[1:0] = map.next_row[3:2];
         alu.a = lane3.q;
         alu.b = 2;
         lane3.d = alu.c[9:0];
-        lane3.d = map.next_row[0][5:4];
+        lane3.d = map.next_row[5:4];
         alu.a = lane4.q;
         alu.b = 2;
         lane4.d = alu.c[9:0]; 
-        lane4.d = map.next_row[0][7:6];   
+        lane4.d = map.next_row[7:6];   
         mapadress.d = mapadress.q+1;
         
         }

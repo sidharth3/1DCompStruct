@@ -4,6 +4,10 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
+/*
+   Parameters:
+     SIZE = 24
+*/
 module smallgc_2 (
     input reset,
     input clk,
@@ -11,28 +15,36 @@ module smallgc_2 (
     output reg [4:0] out
   );
   
+  localparam SIZE = 5'h18;
   
   
-  reg [24:0] M_counter_d, M_counter_q = 1'h0;
+  reg [23:0] M_counter_d, M_counter_q = 1'h0;
   
-  wire [5-1:0] M_ctr_out;
-  reg [1-1:0] M_ctr_clk;
-  reg [1-1:0] M_ctr_rst_sig;
-  mariocounter_4 ctr (
-    .rst(rst),
-    .clk(M_ctr_clk),
-    .rst_sig(M_ctr_rst_sig),
-    .out(M_ctr_out)
-  );
+  reg [4:0] M_slow_d, M_slow_q = 1'h0;
   
   always @* begin
     M_counter_d = M_counter_q;
+    M_slow_d = M_slow_q;
     
-    M_ctr_clk = M_counter_q[24+0-:1];
-    M_ctr_rst_sig = reset;
     M_counter_d = M_counter_q + 1'h1;
-    out = M_ctr_out;
+    out = M_slow_q;
+    if (M_counter_q == 24'hffffff) begin
+      M_slow_d = M_slow_q + 1'h1;
+    end
+    if (reset) begin
+      M_counter_d = 1'h0;
+      M_slow_d = 1'h0;
+    end
   end
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_slow_q <= 1'h0;
+    end else begin
+      M_slow_q <= M_slow_d;
+    end
+  end
+  
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin

@@ -60,6 +60,13 @@ module mojo_top_0 (
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
+  reg M_start_d, M_start_q = 1'h0;
+  localparam LEVEL1_levels = 2'd0;
+  localparam LEVEL2_levels = 2'd1;
+  localparam LEVEL3_levels = 2'd2;
+  localparam IDLE_levels = 2'd3;
+  
+  reg [1:0] M_levels_d, M_levels_q = LEVEL1_levels;
   localparam IDLE_states = 3'd0;
   localparam SHIFT_states = 3'd1;
   localparam CHECKINPUT_states = 3'd2;
@@ -68,13 +75,6 @@ module mojo_top_0 (
   localparam FAIL_states = 3'd5;
   
   reg [2:0] M_states_d, M_states_q = IDLE_states;
-  reg M_start_d, M_start_q = 1'h0;
-  localparam LEVEL1_levels = 2'd0;
-  localparam LEVEL2_levels = 2'd1;
-  localparam LEVEL3_levels = 2'd2;
-  localparam IDLE_levels = 2'd3;
-  
-  reg [1:0] M_levels_d, M_levels_q = LEVEL1_levels;
   wire [5-1:0] M_count_out;
   reg [1-1:0] M_count_reset;
   smallgc_2 count (
@@ -94,9 +94,11 @@ module mojo_top_0 (
   );
   
   always @* begin
+    M_levels_d = M_levels_q;
+    
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
-    led = 8'h00;
+    led = rst;
     spi_miso = 1'bz;
     spi_channel = 4'bzzzz;
     avr_rx = 1'bz;
@@ -106,21 +108,50 @@ module mojo_top_0 (
     a = 1'h1;
     b = 1'h0;
     c = 1'h0;
+    if (rst) begin
+      M_levels_d = LEVEL1_levels;
+    end
     M_count_reset = 1'h0;
-    M_map_level = 2'h3;
     M_map_address = M_count_out;
-    io_led[8+7-:8] = 2'h3;
     io_led[0+7-:8] = M_map_next_row;
     io_led[16+7-:8] = M_count_out;
-    if (M_map_next_row == 8'hff) begin
-      M_count_reset = 1'h1;
-    end
+    
+    case (M_levels_q)
+      LEVEL1_levels: begin
+        M_map_level = 2'h1;
+        io_led[8+7-:8] = 2'h1;
+        if (M_map_next_row == 8'hff) begin
+          M_count_reset = 1'h1;
+          M_levels_d = LEVEL2_levels;
+        end
+      end
+      LEVEL2_levels: begin
+        M_map_level = 2'h2;
+        io_led[8+7-:8] = 2'h2;
+        if (M_map_next_row == 8'hff) begin
+          M_count_reset = 1'h1;
+          M_levels_d = LEVEL3_levels;
+        end
+      end
+      LEVEL3_levels: begin
+        M_map_level = 2'h3;
+        io_led[8+7-:8] = 2'h3;
+        if (M_map_next_row == 8'hff) begin
+          M_count_reset = 1'h1;
+          M_levels_d = IDLE_levels;
+        end
+      end
+      default: begin
+        M_map_level = 2'h0;
+        io_led[8+7-:8] = 8'hff;
+      end
+    endcase
   end
   
   always @(posedge clk) begin
     M_start_q <= M_start_d;
-    M_states_q <= M_states_d;
     M_levels_q <= M_levels_d;
+    M_states_q <= M_states_d;
   end
   
 endmodule

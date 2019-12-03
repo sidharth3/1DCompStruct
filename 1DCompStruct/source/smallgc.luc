@@ -1,16 +1,25 @@
-module smallgc (
+module smallgc #(
+    SIZE = 25 : SIZE > 0 // Width of the output
+  )(
     input reset,
     input clk,  // clock
     input rst,  // reset
     output out[5]
   ) {
-dff counter[25](.clk(clk), .rst(rst));
- 
-mariocounter ctr(.rst(rst));
+dff counter[SIZE](.clk(clk), .rst(rst));
+dff slow[5](.clk(clk), .rst(rst));
  
   always {
-    ctr.clk = counter.q[24];
-    ctr.rst_sig = reset;
     counter.d = counter.q + 1;
-    out = ctr.out;
+    out = slow.q;
+    
+    if (counter.q == SIZEx{b1}){
+      slow.d = slow.q + 1;
+    }
+    
+    if (reset){
+      counter.d = 0;
+      slow.d = 0;
+    }
+    
 }}

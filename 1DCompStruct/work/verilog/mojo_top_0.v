@@ -22,9 +22,6 @@ module mojo_top_0 (
     output reg [3:0] io_sel,
     input [4:0] io_button,
     input [23:0] io_dip,
-    output reg a,
-    output reg b,
-    output reg c,
     input player2left,
     input player2right,
     input player1left,
@@ -33,25 +30,7 @@ module mojo_top_0 (
   
   
   
-  reg mySig;
-  
   reg rst;
-  
-  reg button;
-  
-  reg [1:0] level;
-  
-  localparam COLUMNS = 3'h4;
-  
-  localparam ROWS = 3'h6;
-  
-  localparam T1 = 10'h203;
-  
-  localparam T2 = 10'h203;
-  
-  localparam T3 = 10'h201;
-  
-  localparam T4 = 10'h200;
   
   wire [1-1:0] M_reset_cond_out;
   reg [1-1:0] M_reset_cond_in;
@@ -60,42 +39,20 @@ module mojo_top_0 (
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
-  reg M_start_d, M_start_q = 1'h0;
-  localparam LEVEL1_levels = 2'd0;
-  localparam LEVEL2_levels = 2'd1;
-  localparam LEVEL3_levels = 2'd2;
-  localparam IDLE_levels = 2'd3;
-  
-  reg [1:0] M_levels_d, M_levels_q = LEVEL1_levels;
-  localparam IDLE_states = 3'd0;
-  localparam SHIFT_states = 3'd1;
-  localparam CHECKINPUT_states = 3'd2;
-  localparam CHECKCOLLISION_states = 3'd3;
-  localparam GENERATE_states = 3'd4;
-  localparam FAIL_states = 3'd5;
-  
-  reg [2:0] M_states_d, M_states_q = IDLE_states;
-  wire [5-1:0] M_count_out;
-  reg [1-1:0] M_count_reset;
-  smallgc_2 count (
+  wire [4-1:0] M_car1_currentPosition;
+  reg [1-1:0] M_car1_left;
+  reg [1-1:0] M_car1_right;
+  reg [4-1:0] M_car1_position;
+  car_2 car1 (
     .clk(clk),
     .rst(rst),
-    .reset(M_count_reset),
-    .out(M_count_out)
-  );
-  
-  wire [8-1:0] M_map_next_row;
-  reg [5-1:0] M_map_address;
-  reg [2-1:0] M_map_level;
-  map_3 map (
-    .address(M_map_address),
-    .level(M_map_level),
-    .next_row(M_map_next_row)
+    .left(M_car1_left),
+    .right(M_car1_right),
+    .position(M_car1_position),
+    .currentPosition(M_car1_currentPosition)
   );
   
   always @* begin
-    M_levels_d = M_levels_q;
-    
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
     led = rst;
@@ -105,53 +62,12 @@ module mojo_top_0 (
     io_led = 24'h000000;
     io_seg = 8'hff;
     io_sel = 4'hf;
-    a = 1'h1;
-    b = 1'h0;
-    c = 1'h0;
-    if (rst) begin
-      M_levels_d = LEVEL1_levels;
-    end
-    M_count_reset = 1'h0;
-    M_map_address = M_count_out;
-    io_led[0+7-:8] = M_map_next_row;
-    io_led[16+7-:8] = M_count_out;
-    
-    case (M_levels_q)
-      LEVEL1_levels: begin
-        M_map_level = 2'h1;
-        io_led[8+7-:8] = 2'h1;
-        if (M_map_next_row == 8'hff) begin
-          M_count_reset = 1'h1;
-          M_levels_d = LEVEL2_levels;
-        end
-      end
-      LEVEL2_levels: begin
-        M_map_level = 2'h2;
-        io_led[8+7-:8] = 2'h2;
-        if (M_map_next_row == 8'hff) begin
-          M_count_reset = 1'h1;
-          M_levels_d = LEVEL3_levels;
-        end
-      end
-      LEVEL3_levels: begin
-        M_map_level = 2'h3;
-        io_led[8+7-:8] = 2'h3;
-        if (M_map_next_row == 8'hff) begin
-          M_count_reset = 1'h1;
-          M_levels_d = IDLE_levels;
-        end
-      end
-      default: begin
-        M_map_level = 2'h0;
-        io_led[8+7-:8] = 8'hff;
-      end
-    endcase
+    io_led[8+7-:8] = 4'h2;
+    M_car1_position = 4'h2;
+    M_car1_left = io_button[0+0-:1];
+    M_car1_right = io_button[1+0-:1];
+    io_led[16+0+0-:1] = io_button[0+0-:1];
+    io_led[16+1+0-:1] = io_button[1+0-:1];
+    io_led[0+7-:8] = M_car1_currentPosition;
   end
-  
-  always @(posedge clk) begin
-    M_start_q <= M_start_d;
-    M_levels_q <= M_levels_d;
-    M_states_q <= M_states_d;
-  end
-  
 endmodule

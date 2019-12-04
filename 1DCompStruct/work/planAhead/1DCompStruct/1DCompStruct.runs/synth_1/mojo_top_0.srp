@@ -1,9 +1,9 @@
-Release 14.7 - xst P.20131013 (nt64)
+Release 14.7 - xst P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: mojo_top_0.prj
 
@@ -53,13 +53,11 @@ Netlist Hierarchy                  : rebuilt
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/smallgc_2.v" into library work
-Parsing module <smallgc_2>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
+Analyzing Verilog file "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
 Parsing module <reset_conditioner_1>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/map_3.v" into library work
-Parsing module <map_3>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
+Analyzing Verilog file "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/car_2.v" into library work
+Parsing module <car_2>.
+Analyzing Verilog file "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
 Parsing module <mojo_top_0>.
 
 =========================================================================
@@ -70,18 +68,16 @@ Elaborating module <mojo_top_0>.
 
 Elaborating module <reset_conditioner_1>.
 
-Elaborating module <smallgc_2>.
-
-Elaborating module <map_3>.
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 151: Assignment to M_start_q ignored, since the identifier is never used
+Elaborating module <car_2>.
+WARNING:HDLCompiler:413 - "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/car_2.v" Line 30: Result of 7-bit expression is truncated to fit in 4-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <mojo_top_0>.
-    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v".
-WARNING:Xst:647 - Input <io_button> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Related source file is "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v".
+WARNING:Xst:647 - Input <io_button<4:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <io_dip> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_ss> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -93,85 +89,38 @@ WARNING:Xst:647 - Input <player2left> is never used. This port will be preserved
 WARNING:Xst:647 - Input <player2right> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <player1left> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <player1right> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 2-bit register for signal <M_levels_q>.
-    Found finite state machine <FSM_0> for signal <M_levels_q>.
-    -----------------------------------------------------------------------
-    | States             | 4                                              |
-    | Transitions        | 10                                             |
-    | Inputs             | 2                                              |
-    | Outputs            | 7                                              |
-    | Clock              | clk (rising_edge)                              |
-    | Power Up State     | 00                                             |
-    | Encoding           | auto                                           |
-    | Implementation     | LUT                                            |
-    -----------------------------------------------------------------------
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 96
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 96
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 96
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 96
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 96
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 96
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 55
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 55
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 55
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 55
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 55
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 55
     Summary:
-	inferred   1 Multiplexer(s).
 	inferred   6 Tristate(s).
-	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
 
 Synthesizing Unit <reset_conditioner_1>.
-    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/reset_conditioner_1.v".
+    Related source file is "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/reset_conditioner_1.v".
     Found 4-bit register for signal <M_stage_q>.
     Summary:
 	inferred   4 D-type flip-flop(s).
 Unit <reset_conditioner_1> synthesized.
 
-Synthesizing Unit <smallgc_2>.
-    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/smallgc_2.v".
-    Found 24-bit register for signal <M_counter_q>.
-    Found 5-bit register for signal <M_slow_q>.
-    Found 24-bit adder for signal <M_counter_q[23]_GND_3_o_add_0_OUT> created at line 29.
-    Found 5-bit adder for signal <M_slow_q[4]_GND_3_o_add_2_OUT> created at line 32.
+Synthesizing Unit <car_2>.
+    Related source file is "C:/Users/sidha/Documents/GitHub/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/car_2.v".
+    Found 4-bit register for signal <M_carposition_q>.
     Summary:
-	inferred   2 Adder/Subtractor(s).
-	inferred  29 D-type flip-flop(s).
-	inferred   2 Multiplexer(s).
-Unit <smallgc_2> synthesized.
-
-Synthesizing Unit <map_3>.
-    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/map_3.v".
-    Found 8-bit adder for signal <address[4]_GND_4_o_add_4_OUT> created at line 31.
-    Found 351-bit shifter logical right for signal <n0008> created at line 25
-    Found 335-bit shifter logical right for signal <n0009> created at line 28
-    Found 335-bit shifter logical right for signal <n0011> created at line 31
-    Found 8-bit 4-to-1 multiplexer for signal <next_row> created at line 23.
-    Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred   1 Multiplexer(s).
-	inferred   3 Combinational logic shifter(s).
-Unit <map_3> synthesized.
+	inferred   4 D-type flip-flop(s).
+Unit <car_2> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 3
- 24-bit adder                                          : 1
- 5-bit adder                                           : 1
- 8-bit adder                                           : 1
-# Registers                                            : 3
- 24-bit register                                       : 1
- 4-bit register                                        : 1
- 5-bit register                                        : 1
-# Multiplexers                                         : 4
- 1-bit 2-to-1 multiplexer                              : 1
- 24-bit 2-to-1 multiplexer                             : 1
- 5-bit 2-to-1 multiplexer                              : 1
- 8-bit 4-to-1 multiplexer                              : 1
-# Logic shifters                                       : 3
- 335-bit shifter logical right                         : 2
- 351-bit shifter logical right                         : 1
+# Registers                                            : 2
+ 4-bit register                                        : 2
 # Tristates                                            : 6
  1-bit tristate buffer                                 : 6
-# FSMs                                                 : 1
 
 =========================================================================
 
@@ -180,55 +129,27 @@ Macro Statistics
 =========================================================================
 
 
-Synthesizing (advanced) Unit <smallgc_2>.
-The following registers are absorbed into counter <M_counter_q>: 1 register on signal <M_counter_q>.
-The following registers are absorbed into counter <M_slow_q>: 1 register on signal <M_slow_q>.
-Unit <smallgc_2> synthesized (advanced).
-
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 1
- 8-bit adder                                           : 1
-# Counters                                             : 2
- 24-bit up counter                                     : 1
- 5-bit up counter                                      : 1
-# Registers                                            : 4
- Flip-Flops                                            : 4
-# Multiplexers                                         : 1
- 8-bit 4-to-1 multiplexer                              : 1
-# Logic shifters                                       : 3
- 335-bit shifter logical right                         : 2
- 351-bit shifter logical right                         : 1
-# FSMs                                                 : 1
+# Registers                                            : 8
+ Flip-Flops                                            : 8
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <FSM_0> on signal <M_levels_q[1:2]> with gray encoding.
--------------------
- State | Encoding
--------------------
- 00    | 00
- 01    | 01
- 10    | 11
- 11    | 10
--------------------
+WARNING:Xst:1293 - FF/Latch <M_carposition_q_0> has a constant value of 0 in block <car_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_carposition_q_2> has a constant value of 0 in block <car_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_carposition_q_3> has a constant value of 0 in block <car_2>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <mojo_top_0> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 1.
-FlipFlop M_levels_q_FSM_FFd1 has been replicated 2 time(s)
-FlipFlop M_levels_q_FSM_FFd2 has been replicated 1 time(s)
-FlipFlop count/M_slow_q_0 has been replicated 1 time(s)
-FlipFlop count/M_slow_q_1 has been replicated 1 time(s)
-FlipFlop count/M_slow_q_2 has been replicated 1 time(s)
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 0.
 
 Final Macro Processing ...
 
@@ -240,8 +161,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 41
- Flip-Flops                                            : 41
+# Registers                                            : 5
+ Flip-Flops                                            : 5
 
 =========================================================================
 
@@ -264,28 +185,18 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 127
-#      GND                         : 3
-#      INV                         : 1
-#      LUT2                        : 4
-#      LUT3                        : 3
-#      LUT4                        : 5
-#      LUT5                        : 3
-#      LUT6                        : 52
-#      MUXCY                       : 23
-#      MUXF7                       : 8
+# BELS                             : 5
+#      GND                         : 2
+#      INV                         : 2
 #      VCC                         : 1
-#      XORCY                       : 24
-# FlipFlops/Latches                : 41
-#      FD                          : 5
-#      FDR                         : 30
-#      FDRE                        : 2
+# FlipFlops/Latches                : 5
+#      FD                          : 1
 #      FDS                         : 4
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 54
-#      IBUF                        : 1
-#      OBUF                        : 47
+# IO Buffers                       : 53
+#      IBUF                        : 3
+#      OBUF                        : 44
 #      OBUFT                       : 6
 
 Device utilization summary:
@@ -295,20 +206,20 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              41  out of  11440     0%  
- Number of Slice LUTs:                   68  out of   5720     1%  
-    Number used as Logic:                68  out of   5720     1%  
+ Number of Slice Registers:               5  out of  11440     0%  
+ Number of Slice LUTs:                    2  out of   5720     0%  
+    Number used as Logic:                 2  out of   5720     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     77
-   Number with an unused Flip Flop:      36  out of     77    46%  
-   Number with an unused LUT:             9  out of     77    11%  
-   Number of fully used LUT-FF pairs:    32  out of     77    41%  
-   Number of unique control sets:         4
+ Number of LUT Flip Flop pairs used:      7
+   Number with an unused Flip Flop:       2  out of      7    28%  
+   Number with an unused LUT:             5  out of      7    71%  
+   Number of fully used LUT-FF pairs:     0  out of      7     0%  
+   Number of unique control sets:         2
 
 IO Utilization: 
- Number of IOs:                          94
- Number of bonded IOBs:                  55  out of    102    53%  
+ Number of IOs:                          91
+ Number of bonded IOBs:                  54  out of    102    52%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -334,7 +245,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 41    |
+clk                                | BUFGP                  | 5     |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -345,10 +256,10 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 6.668ns (Maximum Frequency: 149.970MHz)
+   Minimum period: 2.260ns (Maximum Frequency: 442.478MHz)
    Minimum input arrival time before clock: 3.526ns
-   Maximum output required time after clock: 7.051ns
-   Maximum combinational path delay: No path found
+   Maximum output required time after clock: 4.162ns
+   Maximum combinational path delay: 4.921ns
 
 Timing Details:
 ---------------
@@ -356,33 +267,27 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 6.668ns (frequency: 149.970MHz)
-  Total number of paths / destination ports: 26085 / 74
+  Clock period: 2.260ns (frequency: 442.478MHz)
+  Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
-Delay:               6.668ns (Levels of Logic = 7)
-  Source:            count/M_slow_q_3 (FF)
-  Destination:       count/M_slow_q_0 (FF)
+Delay:               2.260ns (Levels of Logic = 2)
+  Source:            reset_cond/M_stage_q_3 (FF)
+  Destination:       car1/M_carposition_q_1 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: count/M_slow_q_3 to count/M_slow_q_0
+  Data Path: reset_cond/M_stage_q_3 to car1/M_carposition_q_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            19   0.525   1.716  M_slow_q_3 (M_slow_q_3)
-     end scope: 'count:out<3>'
-     begin scope: 'map:address<3>'
-     LUT6:I0->O            1   0.254   0.000  Mmux_next_row4_G (N121)
-     MUXF7:I1->O          17   0.175   1.639  Mmux_next_row4 (next_row<3>)
-     end scope: 'map:next_row<3>'
-     LUT6:I1->O            1   0.254   0.682  M_map_next_row[7]_PWR_1_o_equal_6_o<7>_SW24 (N100)
-     begin scope: 'count:N100'
-     LUT6:I5->O            5   0.254   0.841  _n0028_inv5 (_n0028_inv)
-     LUT3:I2->O            2   0.254   0.000  M_slow_q_2_rstpot (M_slow_q_2_rstpot)
-     FDR:D                     0.074          M_slow_q_2
+     FDS:C->Q              2   0.525   0.725  M_stage_q_3 (M_stage_q_3)
+     end scope: 'reset_cond:out'
+     begin scope: 'car1:rst'
+     INV:I->O              1   0.255   0.681  M_carposition_q_1_rstpot1_INV_0 (M_carposition_q_1_rstpot)
+     FD:D                      0.074          M_carposition_q_1
     ----------------------------------------
-    Total                      6.668ns (1.790ns logic, 4.878ns route)
-                                       (26.8% logic, 73.2% route)
+    Total                      2.260ns (0.854ns logic, 1.406ns route)
+                                       (37.8% logic, 62.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -407,27 +312,41 @@ Offset:              3.526ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 125 / 22
+  Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
-Offset:              7.051ns (Levels of Logic = 5)
-  Source:            count/M_slow_q_0 (FF)
-  Destination:       io_led<7> (PAD)
+Offset:              4.162ns (Levels of Logic = 2)
+  Source:            reset_cond/M_stage_q_3 (FF)
+  Destination:       led<0> (PAD)
   Source Clock:      clk rising
 
-  Data Path: count/M_slow_q_0 to io_led<7>
+  Data Path: reset_cond/M_stage_q_3 to led<0>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             17   0.525   1.639  M_slow_q_0 (M_slow_q_0)
-     end scope: 'count:out<0>'
-     begin scope: 'map:address<0>'
-     LUT5:I0->O            1   0.254   0.790  Mmux_next_row8_SW5 (N46)
-     LUT4:I2->O            1   0.250   0.681  Mmux_next_row8 (next_row<7>)
-     end scope: 'map:next_row<7>'
-     OBUF:I->O                 2.912          io_led_7_OBUF (io_led<7>)
+     FDS:C->Q              2   0.525   0.725  M_stage_q_3 (M_stage_q_3)
+     end scope: 'reset_cond:out'
+     OBUF:I->O                 2.912          led_0_OBUF (led<0>)
     ----------------------------------------
-    Total                      7.051ns (3.941ns logic, 3.110ns route)
-                                       (55.9% logic, 44.1% route)
+    Total                      4.162ns (3.437ns logic, 0.725ns route)
+                                       (82.6% logic, 17.4% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Delay:               4.921ns (Levels of Logic = 2)
+  Source:            io_button<1> (PAD)
+  Destination:       io_led<17> (PAD)
+
+  Data Path: io_button<1> to io_led<17>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  io_button_1_IBUF (io_led_17_OBUF)
+     OBUF:I->O                 2.912          io_led_17_OBUF (io_led<17>)
+    ----------------------------------------
+    Total                      4.921ns (4.240ns logic, 0.681ns route)
+                                       (86.2% logic, 13.8% route)
 
 =========================================================================
 
@@ -439,20 +358,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    6.668|         |         |         |
+clk            |    2.260|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.96 secs
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.90 secs
  
 --> 
 
-Total memory usage is 4509028 kilobytes
+Total memory usage is 231304 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   13 (   0 filtered)
+Number of warnings :   16 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
 

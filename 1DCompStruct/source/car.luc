@@ -3,17 +3,21 @@ module car (//car module takes in the corresponding input and changes the positi
     input rst,
     input left,
     input right,
+    input position[4],
     output currentPosition[4]
   ) {
 
-  dff carposition(.clk(clk),.rst(rst));
+  dff carposition[4](.clk(clk),.rst(rst));
   
   always {
-    if(carposition.q == 1000 && right){
-      carposition.d = 0010;
+    if (carposition.q==b0000){
+      carposition.d = position;
       }
-    if(left && carposition.q == 0010){
-      carposition.d = 1000;
+    if(position==b0100 && right){
+      carposition.d = 0001;
+      }
+    if(left && position==b0001){
+      carposition.d = 0100;
       }
     currentPosition = carposition.q;
   }

@@ -7,7 +7,6 @@ module ledrow1map (
     input lane4[10],
     output color_row1[4][24]
   ) {
- 
   sig temp_r0[2];
   sig temp_r1[2];
   sig temp_r2[2];
@@ -16,8 +15,6 @@ module ledrow1map (
   sig color_cell1[24];
   sig color_cell2[24];
   sig color_cell3[24];   
- 
-
   always {
     color_cell0 = 24b0;
     color_cell1 = 24b0;
@@ -27,7 +24,6 @@ module ledrow1map (
     temp_r1 = lane2[1:0];
     temp_r2 = lane3[1:0];
     temp_r3 = lane4[1:0];
-
     
     //pixel 1 row 1
     if (temp_r0 == 2b00){

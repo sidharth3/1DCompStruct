@@ -1,21 +1,20 @@
 module car (
     input clk,  // clock
+    input rst,
     input left,
     input right,
     output currentPosition[4]
   ) {
 
-  .clk(clk) {
-  dff carposition[4](#INIT(1100));
-    
-    }
+  dff carposition(.clk(clk),.rst(rst));
+  
   always {
-  currentPosition = carposition.q;
     if(carposition.q == 1000 && right){
       carposition.d = 0010;
       }
     if(left && carposition.q == 0010){
       carposition.d = 1000;
       }
+    currentPosition = carposition.q;
   }
 }

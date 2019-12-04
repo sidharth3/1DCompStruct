@@ -1,0 +1,83 @@
+module gamestates (
+    input clk,  // clock
+    input rst,  // reset
+    input car1left,
+    input car1right,
+    input car2left,
+    input car2right,
+    output row1[4][24],
+    output row2[4][24],
+    output row3[4][24],
+    output row4[4][24],
+    output row5[4][24]
+    //output out
+  ) {
+.clk(clk) {
+  fsm gamestates = {IDLE,SHIFT,CAR1LEFT,CAR1RIGHT, CAR2LEFT, CAR2RIGHT,FAIL};
+    .rst(rst) {
+      car car1;
+      car car2;
+      registers register;
+      smallgc ctr(#SIZE(24));
+      }
+    }     
+  always {
+    row1 = register.row1;
+    row2 = register.row2;
+    row3 = register.row3;
+    row4 = register.row4;
+    row5 = register.row5;
+    ctr.reset = 0;
+    register.shift = 0;
+    car1.left = 0;
+    car1.right = 0;
+    car2.left = 0;
+    car2.right = 0;
+    case(gamestates.q){
+        gamestates.IDLE:
+            if(ctr.out == 25x{b1}){
+            gamestates.d = gamestates.SHIFT;
+            }
+          if(car1left){
+            gamestates.d = gamestates.CAR1LEFT;
+            }
+          if(car1right){
+            gamestates.d = gamestates.CAR1RIGHT;
+            }
+          if(car2left){
+            gamestates.d = gamestates.CAR2LEFT;
+            }
+          if(car2right){
+            gamestates.d = gamestates.CAR2RIGHT;
+            }
+        gamestates.SHIFT:
+            if((car1.currentPosition[1:0]&&register.lane1val)==10){
+                gamestates.d = gamestates.FAIL;
+            }
+            if((car1.currentPosition[3:2]&&register.lane1val)==10){
+                gamestates.d = gamestates.FAIL;
+            }
+            if((car2.currentPosition[1:0]&&register.lane1val)==10){
+                gamestates.d = gamestates.FAIL;
+            }
+            if((car2.currentPosition[3:2]&&register.lane1val)==10){
+                gamestates.d = gamestates.FAIL;
+            }    
+          register.shift = 1;
+          gamestates.d = gamestates.IDLE;
+        gamestates.CAR1LEFT:
+          car1.left = 1;
+          gamestates.d = gamestates.IDLE;
+        gamestates.CAR1RIGHT:
+          car1.right = 1;
+          gamestates.d = gamestates.IDLE;
+        gamestates.CAR2RIGHT:
+          car2.right = 1;
+          gamestates.d = gamestates.IDLE;
+        gamestates.CAR2LEFT:
+          car2.left = 1;
+          gamestates.d = gamestates.IDLE;
+         
+    }
+  }
+}

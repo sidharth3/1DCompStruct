@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="1DCompStruct" board="Mojo V3" language="Lucid">
   <files>
-    <src>forled.luc</src>
-    <src>ledmatrix.luc</src>
     <src>alu.luc</src>
+    <src>gamestates.luc</src>
+    <src>display.luc</src>
     <src>customCounter.luc</src>
-    <src>ledws2812b.luc</src>
     <src top="true">mojo_top.luc</src>
     <src>ledrow1map.luc</src>
     <src>car.luc</src>

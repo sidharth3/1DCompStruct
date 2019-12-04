@@ -1,91 +1,137 @@
-//module gamestates (//module which contains the game states - oscillates between idle, shift and userinput states
-//     input clk,  // clock
-//     input rst,  // reset
-//     input car1left,
-//     input car1right,
-//     input car2left,
-//     input car2right,
-//     //for debug purposes
-//     output row1[4][24],
-//     output row2[4][24],
-//     output row3[4][24],
-//     output row4[4][24],
-//     output row5[4][24],
-//     output currentState[3]
-//     //output out
-//   ) {
-// .clk(clk) {
-//   fsm gamestates = {IDLE,SHIFT,CAR1LEFT,CAR1RIGHT, CAR2LEFT, CAR2RIGHT,FAIL};
-//     .rst(rst) {
-//       car car1;
-//       car car2;
-//       registers register;
-//       smallgc ctr(#SIZE(24));
-//       }
-//     }     
-//   always {
-//     currentState[0] = 0;
-//     currentState[1] = 0;
-//     currentState[2] = 0;
-//     row1 = register.row1;
-//     row2 = register.row2;
-//     row3 = register.row3;
-//     row4 = register.row4;
-//     row5 = register.row5;
-//     ctr.reset = 0;
-//     register.shift = 0;
-//     car1.left = 0;
-//     car1.right = 0;
-//     car2.left = 0;
-//     car2.right = 0;
-//     case(gamestates.q){
-//         gamestates.IDLE:
-//             currentState[0]=1;
-//             if(ctr.out == 25x{b1}){
-//             gamestates.d = gamestates.SHIFT;
-//             }
-//             if(car1left){
-//               gamestates.d = gamestates.CAR1LEFT;
-//               }
-//             if(car1right){
-//               gamestates.d = gamestates.CAR1RIGHT;
-//               }
-//             if(car2left){
-//               gamestates.d = gamestates.CAR2LEFT;
-//               }
-//             if(car2right){
-//               gamestates.d = gamestates.CAR2RIGHT;
-//               }
-//         gamestates.SHIFT:
-//             currentState[1] = 1;
-//             if((car1.currentPosition[1:0]&&register.lane1val)==10){
-//                 gamestates.d = gamestates.FAIL;
-//             }
-//             if((car1.currentPosition[3:2]&&register.lane1val)==10){
-//                 gamestates.d = gamestates.FAIL;
-//             }
-//             if((car2.currentPosition[1:0]&&register.lane1val)==10){
-//                 gamestates.d = gamestates.FAIL;
-//             }
-//             if((car2.currentPosition[3:2]&&register.lane1val)==10){
-//                 gamestates.d = gamestates.FAIL;
-//             }    
-//           register.shift = 1;
-//           gamestates.d = gamestates.IDLE;
-//         gamestates.CAR1LEFT:
-//           currentState[2] = 1;
-//           car1.left = 1;
-//           gamestates.d = gamestates.IDLE;
-//         gamestates.CAR1RIGHT:
-//           car1.right = 1;
-//           gamestates.d = gamestates.IDLE;
-//         gamestates.CAR2RIGHT:
-//           car2.right = 1;
-//           gamestates.d = gamestates.IDLE;
-//         gamestates.CAR2LEFT:
-//           car2.left = 1;
-//           gamestates.d = gamestates.IDLE;
+module gamestates (//module which contains the game states - oscillates between idle, shift and userinput states
+    input clk,  // clock
+    input rst,  // reset
+    input car1left,
+    input car1right,
+    input car2left,
+    input car2right,
+    //for debug purposes
+
+    output row1[4][24],
+    output row2[4][24],
+    output row3[4][24],
+    output row4[4][24],
+    output row5[4][24],
+    output currentState[5],
+    output ll1[8],
+    output ll2[8],
+    output out[8],
+    output fail,
+    output car1Pos[4],
+    output car2Pos[4],
+    output rowcar[4][24],
+    output debug[8]
+  ) {
+.clk(clk) {
+  fsm gamestates = {IDLE,SHIFT,CAR1LEFT,CAR1RIGHT, CAR2LEFT, CAR2RIGHT,FAIL};
+    .rst(rst) {
+      car car1;
+      car car2;
+      registers register;
+      dff counter[26];
+      }
+    }
+ledrowcars ledrowcars;     
+  always {
+    fail = 0;
+    car1.reset = 0;
+    car2.reset = 0;
+    car1.position = b0011; // it reads from right to left thus the car is on the left
+    car2.position = b0011; // it reads from right to left thus the car is on the left
+    
+    car1.left = car1left;
+    car1.right = car1right;
+    car2.left = car2left;
+    car2.right = car2right;
+    
+    car1Pos = car1.currentPosition;
+    car2Pos = car2.currentPosition;
+    
+    ledrowcars.car1 = car1.currentPosition;
+    ledrowcars.car2 = car2.currentPosition;
+    
+    currentState[0] = 0;
+    currentState[1] = 0;
+    currentState[2] = 0;
+    
+    row1 = register.row1;
+    row2 = register.row2;
+    row3 = register.row3;
+    row4 = register.row4;
+    row5 = register.row5;
+    rowcar = ledrowcars.colorrowcar;
+    
+    register.shift = 0;  
+    
+    ll1 = register.l1;
+    ll2 = register.l2;
+    out = register.out;
+    counter.d = counter.q + 1;
+    
+    debug = car2.currentPosition[3:2]&register.lane4val;
+    case(gamestates.q){
+        gamestates.IDLE:
+            currentState[0]=5b00001;
+            if(counter.q == 26x{b1}){
+            gamestates.d = gamestates.SHIFT;
+            }
+            if(car1left){
+              gamestates.d = gamestates.CAR1LEFT;
+              }
+            if(car1right){
+              gamestates.d = gamestates.CAR1RIGHT;
+              }
+            if(car2left){
+              gamestates.d = gamestates.CAR2LEFT;
+              }
+            if(car2right){
+              gamestates.d = gamestates.CAR2RIGHT;
+              }
+        gamestates.SHIFT:
+            currentState = 5b00010;
+            // & is bitwise and
+            // && is standard bool logic
+            // car1 (right) must avoid red (01)
+            // car2 (left) must avoid green (10)
+            if((car1.currentPosition[1:0]&register.lane1val)==b01){
+                gamestates.d = gamestates.FAIL;            
+            }
+            if((car1.currentPosition[3:2]&register.lane2val)==b01){
+                 gamestates.d = gamestates.FAIL;
+            }
+            if((car2.currentPosition[1:0]&register.lane3val)==b10){
+                gamestates.d = gamestates.FAIL;
+             }
+             if((car2.currentPosition[3:2]&register.lane4val)==b10){
+                gamestates.d = gamestates.FAIL;
+             }    
+           register.shift = 1;
+          gamestates.d = gamestates.IDLE;
+        gamestates.CAR1LEFT:
+          currentState = 5b00100;
+          car1.left = 1;
+          gamestates.d = gamestates.IDLE;
+        gamestates.CAR1RIGHT:
+          currentState = 5b01000;
+          car1.right = 1;
+          gamestates.d = gamestates.IDLE;
+        gamestates.CAR2RIGHT:
+          currentState = 5b10000;
+          car2.right = 1;
+          gamestates.d = gamestates.IDLE;
+        gamestates.CAR2LEFT:
+          car2.left = 1;
+          gamestates.d = gamestates.IDLE;
+        gamestates.FAIL:
+          row1 = {Color.RED,Color.RED,Color.RED,Color.RED};
+          row2 = {Color.RED,Color.RED,Color.RED,Color.RED};
+          row3 = {Color.RED,Color.RED,Color.RED,Color.RED};
+          row4 = {Color.RED,Color.RED,Color.RED,Color.RED};
+          row5 = {Color.RED,Color.RED,Color.RED,Color.RED};
+          rowcar = {Color.RED,Color.RED,Color.RED,Color.RED};
+          fail = 1;
          
-//     }
-//   }
-// }
+    }
+  }
+}
+

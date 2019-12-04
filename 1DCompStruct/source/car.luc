@@ -3,6 +3,7 @@ module car (//car module takes in the corresponding input and changes the positi
     input rst,
     input left,
     input right,
+    input reset,
     input position[4],
     output currentPosition[4]
   ) {
@@ -10,14 +11,19 @@ module car (//car module takes in the corresponding input and changes the positi
   dff carposition[4](.clk(clk),.rst(rst));
   
   always {
+    // position is only to initialize the dff
+    // can implement reset signal?
+    if(reset==1){
+      carposition.d = b0011;
+      }
     if (carposition.q==b0000){
       carposition.d = position;
       }
-    if(position==b0100 && right){
-      carposition.d = 0001;
+    if(carposition.q==b1100 && right){
+      carposition.d = b0011;
       }
-    if(left && position==b0001){
-      carposition.d = 0100;
+    if(left && carposition.q==b0011){
+      carposition.d = b1100;
       }
     currentPosition = carposition.q;
   }

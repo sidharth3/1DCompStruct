@@ -3,6 +3,7 @@
   <files>
     <src>alu.luc</src>
     <src>gamestates.luc</src>
+    <src>ledrowcars.luc</src>
     <src>display.luc</src>
     <src>customCounter.luc</src>
     <src top="true">mojo_top.luc</src>
@@ -11,8 +12,8 @@
     <src>bitshifter.luc</src>
     <src>ledrow4map.luc</src>
     <src>ledrow2map.luc</src>
-    <src>ledrow5map.luc</src>
     <src>map.luc</src>
+    <src>ledrow5map.luc</src>
     <src>smallgc.luc</src>
     <src>adder.luc</src>
     <src>ledrow3map.luc</src>

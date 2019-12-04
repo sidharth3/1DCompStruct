@@ -28,8 +28,8 @@ module map (//mapping module that returns a new set of obstacles/powerups for th
       
     }
     //should output a sequence that can be initialized to the first register
-    // Left car catches red while right car catches blue.
-    // empty = 00 , blue = 10, red = 01
+    // Left car catches red while right car catches green.
+    // empty = 00 , green = 10, red = 01
     // 
 }
 }

@@ -1,3 +1,12 @@
+global Color {
+    // BRG 
+    const RED = c{8x{b0},8x{b1},8x{b0}};
+    const GREEN = c{8x{b0},8x{b0},8x{b1}};
+    const BLUE = c{8x{b1},8x{b0},8x{b0}};
+    const YELLOW = c{8x{b0},8x{b1},8x{b1}};
+    const WHITE = 24x{b1};
+}
+
 module mojo_top (
     input clk,              // 50MHz clock
     input rst_n,            // reset button (active low)
@@ -16,28 +25,44 @@ module mojo_top (
     output io_sel [4],      // Digit select on IO Shield
     input io_button [5],    // 5 buttons on IO Shield
     input io_dip [3][8],     // DIP switches on IO Shield
-   //      output row1,
-//     output row2,
-//     output row3,
-//     output row4,
-//     output row5,
-    input player2left,
-    input player2right,
-    input player1left,
-    input player1right
+    output row1,
+    output row2,
+    output row3,
+    output row4,
+    output row5,
+    output row6,
+    input player2leftBtn,
+    input player2rightBtn,
+    input player1leftBtn,
+    input player1rightBtn
+    //yo mario. i have set the correct pins for the buttons, but go to custom.ucf to change the pin numbers for the matrix row. couldnt test it coz ground wire game off
+    
   ) {
  
   sig rst;                  // reset signal
-
+  sig player1left;
+  sig player1right;
+  sig player2left;
+  sig player2right;
+  
+// alu alu;
   .clk(clk) {
     reset_conditioner reset_cond;
-    //button_conditioner button_cond;
+    button_conditioner player1left_cond;
+    button_conditioner player1right_cond;
+    button_conditioner player2left_cond;
+    button_conditioner player2right_cond;
     //edge_detector edge_detector (#RISE(1), #FALL(0));
    
     .rst(rst){
-      //display display;
-      //gamestates gamestates;
-      car car1;
+      display display1;
+      display display2;
+      display display3;
+      display display4;
+      display display5;
+      display display6;
+      gamestates gamestates;      
+      
       }
   } 
   always {
@@ -49,32 +74,49 @@ module mojo_top (
     avr_rx = bz;            // not using serial port
     io_led = 3x{{8h00}};    // turn LEDs off
     io_seg = 8hff;          // turn segments off
-    io_sel = 4hf;           // select no digits
-    //display.update = 1;
-    //player1left = io_button[0];
-    io_led[1] = b0010;
-    car1.position = b0010;
-    car1.left = io_button[0];
-    car1.right = io_button[1];
-    io_led[2][0] = io_button[0];
-    io_led[2][1] = io_button[1];
-    io_led[0] = car1.currentPosition;
-    //gamestates.car1left = io_button[0];
-    //gamestates.car2left = io_button[1];
-   // gamestates.car1right = io_button[2];
-   // gamestates.car2right = io_button[3];
-    //display.color = gamestates.row1;
-//     row1 = display.led;
-//     display.color = gamestates.row1;
-//     row2 = display.led;
-//     display.color = gamestates.row1;
-//     row3 = display.led;
-//     display.color = gamestates.row1;
-//     row4 = display.led;
-//     display.color = gamestates.row1;
-//     row5 = display.led;
-//     io_led[0][0] = gamestates.currentState[0];
-//     io_led[0][1] = gamestates.currentState[1];
-//     io_led[0][2] = gamestates.currentState[2];
+    io_sel = 4hf;           // select no 
+        
     
+    player1left_cond.in = player1leftBtn;
+    player1left = player1left_cond.out;
+    player1right_cond.in = player1rightBtn;
+    player1right = player1right_cond.out;
+    player2left_cond.in = player2leftBtn;
+    player2left = player2left_cond.out;
+    player2right_cond.in = player2rightBtn;
+    player2right = player2right_cond.out;
+    
+    // io_led[0] = c{gamestates.car2Pos,gamestates.car1Pos};
+    // io_led[1] = c{player2left,player2right,player1left,player1right};
+    
+    
+    gamestates.car1left = player1left;
+    gamestates.car1right = player1right;
+    gamestates.car2left = player2left;
+    gamestates.car2right = player2right;
+    // alu.alufn = 6b100000;
+    // alu.a = c{14b0, 2x{b1}};
+    // alu.b = 4b0010;
+    // io_led[0] = alu.c[7:0];
+    display1.update = 1;
+    display2.update = 1;
+    display3.update = 1;
+    display4.update = 1;
+    display5.update = 1;
+    display6.update = 1;
+
+    // when it is not fail
+    display1.color = gamestates.row1;
+    row1 = display1.led;
+    display2.color = gamestates.row2;
+    row2 = display2.led;
+    display3.color = gamestates.row3;
+    row3 = display3.led;
+    display4.color = gamestates.row4;
+    row4 = display4.led;
+    display5.color = gamestates.row5;
+    row5 = display5.led;
+    display6.color = gamestates.rowcar;
+    row6 = display6.led;
+    io_led[2] = gamestates.debug;
 }}

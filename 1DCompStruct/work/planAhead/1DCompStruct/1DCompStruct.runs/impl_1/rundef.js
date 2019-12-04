@@ -8,9 +8,9 @@ var WshShell = new ActiveXObject( "WScript.Shell" );
 var ProcEnv = WshShell.Environment( "Process" );
 var PathVal = ProcEnv("PATH");
 if ( PathVal.length == 0 ) {
-  PathVal = "C:/Xilinx/14.7/ISE_DS/EDK/bin/nt;C:/Xilinx/14.7/ISE_DS/EDK/lib/nt;C:/Xilinx/14.7/ISE_DS/ISE/bin/nt;C:/Xilinx/14.7/ISE_DS/ISE/lib/nt;C:/Xilinx/14.7/ISE_DS/common/bin/nt;C:/Xilinx/14.7/ISE_DS/common/lib/nt;C:/Xilinx/14.7/ISE_DS/PlanAhead/bin;";
+  PathVal = "D:/Xilinx/14.7/ISE_DS/EDK/bin/nt64;D:/Xilinx/14.7/ISE_DS/EDK/lib/nt64;D:/Xilinx/14.7/ISE_DS/ISE/bin/nt64;D:/Xilinx/14.7/ISE_DS/ISE/lib/nt64;D:/Xilinx/14.7/ISE_DS/common/bin/nt64;D:/Xilinx/14.7/ISE_DS/common/lib/nt64;D:/Xilinx/14.7/ISE_DS/PlanAhead/bin;";
 } else {
-  PathVal = "C:/Xilinx/14.7/ISE_DS/EDK/bin/nt;C:/Xilinx/14.7/ISE_DS/EDK/lib/nt;C:/Xilinx/14.7/ISE_DS/ISE/bin/nt;C:/Xilinx/14.7/ISE_DS/ISE/lib/nt;C:/Xilinx/14.7/ISE_DS/common/bin/nt;C:/Xilinx/14.7/ISE_DS/common/lib/nt;C:/Xilinx/14.7/ISE_DS/PlanAhead/bin;" + PathVal;
+  PathVal = "D:/Xilinx/14.7/ISE_DS/EDK/bin/nt64;D:/Xilinx/14.7/ISE_DS/EDK/lib/nt64;D:/Xilinx/14.7/ISE_DS/ISE/bin/nt64;D:/Xilinx/14.7/ISE_DS/ISE/lib/nt64;D:/Xilinx/14.7/ISE_DS/common/bin/nt64;D:/Xilinx/14.7/ISE_DS/common/lib/nt64;D:/Xilinx/14.7/ISE_DS/PlanAhead/bin;" + PathVal;
 }
 
 ProcEnv("PATH") = PathVal;
@@ -22,16 +22,8 @@ var ISEJScriptLib = RDScrDir + "/ISEWrap.js";
 eval( EAInclude(ISEJScriptLib) );
 
 
-ISEStep( "ngdbuild",
-         "-intstyle ise -p xc6slx9tqg144-2 -dd _ngo -uc \"mojo_top_0.ucf\" \"mojo_top_0.edf\"" );
-ISEStep( "map",
-         "-intstyle pa -w -pr b -mt on \"mojo_top_0.ngd\"" );
-ISEStep( "par",
-         "-intstyle pa \"mojo_top_0.ncd\" -w \"mojo_top_0_routed.ncd\" -mt on" );
-ISEStep( "trce",
-         "-intstyle ise -o \"mojo_top_0.twr\" -v 30 -l 30 \"mojo_top_0_routed.ncd\" \"mojo_top_0.pcf\"" );
-ISEStep( "xdl",
-         "-secure -ncd2xdl -nopips \"mojo_top_0_routed.ncd\" \"mojo_top_0_routed.xdl\"" );
+ISEStep( "bitgen",
+         "\"mojo_top_0_routed.ncd\" \"mojo_top_0.bit\" \"mojo_top_0.pcf\" -g Binary:Yes -g Compress -w -intstyle pa" );
 
 
 

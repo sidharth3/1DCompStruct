@@ -1,4 +1,4 @@
-module registers (
+module registers ( //module which contains all the contents of the 4 registers, shifts them for each clockcycle and sends them to the color mapping module to out a rgb code
     input clk,  // clock
     input rst,  // reset
     input shift,

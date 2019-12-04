@@ -1,4 +1,4 @@
-module ledrow1map (
+module ledrow1map (//module that takes in the contents of the vertical registers and outputs the rgb content for the rows
     //input clk,  // clock
     //input rst,  // reset
     input lane1[10],

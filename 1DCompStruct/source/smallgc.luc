@@ -1,4 +1,4 @@
-module smallgc #(
+module smallgc #(//counter module
     SIZE = 25 : SIZE > 0 // Width of the output
   )(
     input reset,

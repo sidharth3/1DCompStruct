@@ -1,4 +1,4 @@
-module gamestates (
+module gamestates (//module which contains the game states - oscillates between idle, shift and userinput states
     input clk,  // clock
     input rst,  // reset
     input car1left,

@@ -1,4 +1,4 @@
-module display #(
+module display #(//display module that takes in the contents for a row (a row has 4 leds, and each led takes 24 bits so input is [4][24]), and outputs it to the corresponding output pin for that row
    PIXEL_COUNT = 10 : PIXEL_COUNT > 0
   )(
     input clk,  // clock

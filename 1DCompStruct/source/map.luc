@@ -1,4 +1,4 @@
-module map (
+module map (//mapping module that returns a new set of obstacles/powerups for the 4 lanes
     //input clk,  // clock
     //input rst,  // reset
     input address[5],

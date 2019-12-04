@@ -1,4 +1,4 @@
-module car (
+module car (//car module takes in the corresponding input and changes the position of the car and outputs the currentPosition of the car to be checked for collision
     input clk,  // clock
     input rst,
     input left,

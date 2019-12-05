@@ -252,6 +252,15 @@ module mojo_top_0 (
     .c(M_alu_c)
   );
   
+  wire [8-1:0] M_bin_to_dec_digits;
+  reg [7-1:0] M_bin_to_dec_value;
+  bin_to_dec_20 bin_to_dec (
+    .value(M_bin_to_dec_value),
+    .digits(M_bin_to_dec_digits)
+  );
+  
+  reg [7:0] result;
+  
   always @* begin
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
@@ -305,6 +314,8 @@ module mojo_top_0 (
     M_alu_b = 16'h0001;
     io_led[16+7-:8] = M_gamestates_currentState;
     io_led[8+7-:8] = M_gamestates_score_out;
-    io_led[0+7-:8] = {4'h8{M_gamestates_fail}};
+    M_bin_to_dec_value = 8'h00;
+    result = M_bin_to_dec_digits;
+    io_led[0+7-:8] = {result[4+3-:4], result[0+3-:4]};
   end
 endmodule

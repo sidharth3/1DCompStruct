@@ -3,6 +3,7 @@ module registers ( //module which contains all the contents of the 4 registers, 
     input rst,  // reset
     input shift,
     input reset,
+    input set[1],
     output l1[8],
     output l2[8],
     output lane1val[2],
@@ -35,7 +36,7 @@ module registers ( //module which contains all the contents of the 4 registers, 
   sig templane4[10];
   .clk(clk){
  .rst(rst){
-   dff addr[5];
+   dff addr[6];
    dff lane1[10];
    dff lane2[10];
    dff lane3[10];
@@ -125,7 +126,7 @@ module registers ( //module which contains all the contents of the 4 registers, 
 //       map.level = b00;
 //       //io_led[1] = 8x{b1};
 //     }
-      
+      map.set = set;
       map.level = levelReg.q;
       if (levelReg.q == b0){
       levelReg.d = b01;

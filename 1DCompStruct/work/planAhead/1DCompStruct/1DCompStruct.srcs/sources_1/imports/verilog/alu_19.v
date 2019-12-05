@@ -17,7 +17,7 @@ module alu_19 (
   reg [6-1:0] M_adder_alufn;
   reg [16-1:0] M_adder_a;
   reg [16-1:0] M_adder_b;
-  adder_32 adder (
+  adder_35 adder (
     .alufn(M_adder_alufn),
     .a(M_adder_a),
     .b(M_adder_b),
@@ -28,7 +28,7 @@ module alu_19 (
   reg [6-1:0] M_bitshifter_alufn;
   reg [16-1:0] M_bitshifter_a;
   reg [16-1:0] M_bitshifter_b;
-  bitshifter_33 bitshifter (
+  bitshifter_36 bitshifter (
     .alufn(M_bitshifter_alufn),
     .a(M_bitshifter_a),
     .b(M_bitshifter_b),
@@ -39,7 +39,7 @@ module alu_19 (
   reg [6-1:0] M_cmp_alufn;
   reg [16-1:0] M_cmp_a;
   reg [16-1:0] M_cmp_b;
-  cmp_34 cmp (
+  cmp_37 cmp (
     .alufn(M_cmp_alufn),
     .a(M_cmp_a),
     .b(M_cmp_b),

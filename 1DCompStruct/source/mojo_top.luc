@@ -80,6 +80,8 @@ module mojo_top (
       }
   } 
  alu alu;
+bin_to_dec bin_to_dec(#DIGITS(2),#LEADING_ZEROS(1));
+sig result[2][4];
   always {
     reset_cond.in = ~rst_n; // input raw inverted reset signal
     rst = reset_cond.out;   // conditioned reset
@@ -150,5 +152,8 @@ module mojo_top (
     alu.b = 16b1;
     io_led[2] = gamestates.currentState;
     io_led[1] = gamestates.score_out;
-    io_led[0] = 8x{gamestates.fail};
+    
+    bin_to_dec.value = 8b0;
+    result = bin_to_dec.digits;
+    io_led[0] = c{result[1],result[0]};
 }}

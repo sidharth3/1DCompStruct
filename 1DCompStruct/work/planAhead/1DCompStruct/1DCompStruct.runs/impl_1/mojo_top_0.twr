@@ -28,16 +28,16 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 15639 paths analyzed, 1619 endpoints analyzed, 0 failing endpoints
+ 25382 paths analyzed, 1586 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   7.024ns.
+ Minimum period is  10.047ns.
 --------------------------------------------------------------------------------
-Slack:                  12.976ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_gamestates_q_FSM_FFd5_2 (FF)
-  Destination:          gamestates/M_high_score_q_15 (FF)
+Slack:                  9.953ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd10 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.987ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
+  Data Path Delay:      9.940ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -48,150 +48,42 @@ Slack:                  12.976ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: gamestates/M_gamestates_q_FSM_FFd5_2 to gamestates/M_high_score_q_15
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_1 to gamestates/M_gamestates_q_FSM_FFd10
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X7Y22.BQ       Tcko                  0.430   gamestates/M_gamestates_q_FSM_FFd5_2
-                                                       gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y27.A2       net (fanout=14)       1.831   gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y27.AMUX     Tilo                  0.298   gamestates/M_alu_a[14]
-                                                       gamestates/M_gamestates_q_M_alu_b<12>1
-    SLICE_X8Y27.C2       net (fanout=1)        1.516   gamestates/M_alu_b[12]
-    SLICE_X8Y27.COUT     Topcyc                0.351   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lutdi6
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.D2       net (fanout=17)       2.212   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_15_rstpot
-                                                       gamestates/M_high_score_q_15
-    -------------------------------------------------  ---------------------------
-    Total                                      6.987ns (1.428ns logic, 5.559ns route)
-                                                       (20.4% logic, 79.6% route)
-
---------------------------------------------------------------------------------
-Slack:                  12.999ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_gamestates_q_FSM_FFd5_2 (FF)
-  Destination:          gamestates/M_high_score_q_15 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.964ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_gamestates_q_FSM_FFd5_2 to gamestates/M_high_score_q_15
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y22.BQ       Tcko                  0.430   gamestates/M_gamestates_q_FSM_FFd5_2
-                                                       gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y27.A2       net (fanout=14)       1.831   gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y27.AMUX     Tilo                  0.298   gamestates/M_alu_a[14]
-                                                       gamestates/M_gamestates_q_M_alu_b<12>1
-    SLICE_X8Y27.C2       net (fanout=1)        1.516   gamestates/M_alu_b[12]
-    SLICE_X8Y27.COUT     Topcyc                0.328   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lut<6>
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.D2       net (fanout=17)       2.212   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_15_rstpot
-                                                       gamestates/M_high_score_q_15
-    -------------------------------------------------  ---------------------------
-    Total                                      6.964ns (1.405ns logic, 5.559ns route)
-                                                       (20.2% logic, 79.8% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.009ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_counter_q_11 (FF)
-  Destination:          gamestates/M_gamestates_q_FSM_FFd12 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.967ns (Levels of Logic = 4)
-  Clock Path Skew:      0.011ns (0.726 - 0.715)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_counter_q_11 to gamestates/M_gamestates_q_FSM_FFd12
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X12Y35.DQ      Tcko                  0.525   gamestates/M_counter_q[11]
-                                                       gamestates/M_counter_q_11
-    SLICE_X13Y35.A6      net (fanout=2)        1.235   gamestates/M_counter_q[11]
-    SLICE_X13Y35.A       Tilo                  0.259   gamestates/M_counter_q[24]_PWR_7_o_equal_17_o<24>2
-                                                       gamestates/M_fast_counter_q[23]_PWR_7_o_equal_19_o<23>1
-    SLICE_X13Y35.B1      net (fanout=3)        1.413   gamestates/M_counter_q[24]_PWR_7_o_equal_17_o[24]
-    SLICE_X13Y35.B       Tilo                  0.259   gamestates/M_counter_q[24]_PWR_7_o_equal_17_o<24>2
-                                                       gamestates/M_counter_q[24]_PWR_7_o_equal_17_o<24>5
-    SLICE_X5Y32.B2       net (fanout=2)        1.631   gamestates/M_counter_q[24]_PWR_7_o_equal_17_o
-    SLICE_X5Y32.B        Tilo                  0.259   out1_0
-                                                       gamestates/M_gamestates_q_FSM_FFd12-In6_SW1
-    SLICE_X7Y29.A1       net (fanout=1)        1.013   gamestates/N117
+    SLICE_X9Y5.BQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_1
+    SLICE_X15Y8.A1       net (fanout=42)       2.100   gamestates/register/M_addr_q[1]
+    SLICE_X15Y8.A        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row24
+    SLICE_X14Y8.B2       net (fanout=1)        0.543   gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.B1       net (fanout=16)       3.167   gamestates/M_levelReg_q_cst1
     SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
-                                                       gamestates/M_gamestates_q_FSM_FFd12-In6
-                                                       gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd10-In
+                                                       gamestates/M_gamestates_q_FSM_FFd10
     -------------------------------------------------  ---------------------------
-    Total                                      6.967ns (1.675ns logic, 5.292ns route)
-                                                       (24.0% logic, 76.0% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.027ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_gamestates_q_FSM_FFd5_2 (FF)
-  Destination:          gamestates/M_high_score_q_14 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.936ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_gamestates_q_FSM_FFd5_2 to gamestates/M_high_score_q_14
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y22.BQ       Tcko                  0.430   gamestates/M_gamestates_q_FSM_FFd5_2
-                                                       gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y27.A2       net (fanout=14)       1.831   gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y27.AMUX     Tilo                  0.298   gamestates/M_alu_a[14]
-                                                       gamestates/M_gamestates_q_M_alu_b<12>1
-    SLICE_X8Y27.C2       net (fanout=1)        1.516   gamestates/M_alu_b[12]
-    SLICE_X8Y27.COUT     Topcyc                0.351   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lutdi6
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.C2       net (fanout=17)       2.161   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_14_rstpot
-                                                       gamestates/M_high_score_q_14
-    -------------------------------------------------  ---------------------------
-    Total                                      6.936ns (1.428ns logic, 5.508ns route)
+    Total                                      9.940ns (2.046ns logic, 7.894ns route)
                                                        (20.6% logic, 79.4% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.050ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_gamestates_q_FSM_FFd5_2 (FF)
-  Destination:          gamestates/M_high_score_q_14 (FF)
+Slack:                  10.058ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd10 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.913ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
+  Data Path Delay:      9.835ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -202,742 +94,42 @@ Slack:                  13.050ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: gamestates/M_gamestates_q_FSM_FFd5_2 to gamestates/M_high_score_q_14
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_1 to gamestates/M_gamestates_q_FSM_FFd10
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X7Y22.BQ       Tcko                  0.430   gamestates/M_gamestates_q_FSM_FFd5_2
-                                                       gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y27.A2       net (fanout=14)       1.831   gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y27.AMUX     Tilo                  0.298   gamestates/M_alu_a[14]
-                                                       gamestates/M_gamestates_q_M_alu_b<12>1
-    SLICE_X8Y27.C2       net (fanout=1)        1.516   gamestates/M_alu_b[12]
-    SLICE_X8Y27.COUT     Topcyc                0.328   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lut<6>
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.C2       net (fanout=17)       2.161   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_14_rstpot
-                                                       gamestates/M_high_score_q_14
+    SLICE_X9Y5.BQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_1
+    SLICE_X15Y8.D1       net (fanout=42)       2.092   gamestates/register/M_addr_q[1]
+    SLICE_X15Y8.D        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row641
+    SLICE_X14Y8.B5       net (fanout=2)        0.446   gamestates/register/map/Mmux_next_row64
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.B1       net (fanout=16)       3.167   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd10-In
+                                                       gamestates/M_gamestates_q_FSM_FFd10
     -------------------------------------------------  ---------------------------
-    Total                                      6.913ns (1.405ns logic, 5.508ns route)
-                                                       (20.3% logic, 79.7% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.087ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_score_q_0 (FF)
-  Destination:          gamestates/M_high_score_q_15 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.876ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_score_q_0 to gamestates/M_high_score_q_15
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X8Y28.BQ       Tcko                  0.525   M_score_q_0
-                                                       gamestates/M_score_q_0
-    SLICE_X3Y26.A2       net (fanout=12)       1.748   M_score_q_0
-    SLICE_X3Y26.A        Tilo                  0.259   gamestates/M_alu_a[0]
-                                                       gamestates/M_alu_a<16>1
-    SLICE_X8Y26.A1       net (fanout=2)        1.205   gamestates/M_alu_a[0]
-    SLICE_X8Y26.COUT     Topcya                0.482   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lutdi
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<3>
-    SLICE_X8Y27.CIN      net (fanout=1)        0.003   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-    SLICE_X8Y27.COUT     Tbyp                  0.093   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.D2       net (fanout=17)       2.212   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_15_rstpot
-                                                       gamestates/M_high_score_q_15
-    -------------------------------------------------  ---------------------------
-    Total                                      6.876ns (1.708ns logic, 5.168ns route)
-                                                       (24.8% logic, 75.2% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.095ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_score_q_0 (FF)
-  Destination:          gamestates/M_high_score_q_15 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.868ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_score_q_0 to gamestates/M_high_score_q_15
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X8Y28.BQ       Tcko                  0.525   M_score_q_0
-                                                       gamestates/M_score_q_0
-    SLICE_X3Y26.A2       net (fanout=12)       1.748   M_score_q_0
-    SLICE_X3Y26.A        Tilo                  0.259   gamestates/M_alu_a[0]
-                                                       gamestates/M_alu_a<16>1
-    SLICE_X8Y26.A1       net (fanout=2)        1.205   gamestates/M_alu_a[0]
-    SLICE_X8Y26.COUT     Topcya                0.474   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lut<0>
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<3>
-    SLICE_X8Y27.CIN      net (fanout=1)        0.003   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-    SLICE_X8Y27.COUT     Tbyp                  0.093   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.D2       net (fanout=17)       2.212   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_15_rstpot
-                                                       gamestates/M_high_score_q_15
-    -------------------------------------------------  ---------------------------
-    Total                                      6.868ns (1.700ns logic, 5.168ns route)
-                                                       (24.8% logic, 75.2% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.121ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_gamestates_q_FSM_FFd5_2 (FF)
-  Destination:          gamestates/M_high_score_q_13 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.842ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_gamestates_q_FSM_FFd5_2 to gamestates/M_high_score_q_13
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y22.BQ       Tcko                  0.430   gamestates/M_gamestates_q_FSM_FFd5_2
-                                                       gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y27.A2       net (fanout=14)       1.831   gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y27.AMUX     Tilo                  0.298   gamestates/M_alu_a[14]
-                                                       gamestates/M_gamestates_q_M_alu_b<12>1
-    SLICE_X8Y27.C2       net (fanout=1)        1.516   gamestates/M_alu_b[12]
-    SLICE_X8Y27.COUT     Topcyc                0.351   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lutdi6
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.B3       net (fanout=17)       2.067   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_13_rstpot
-                                                       gamestates/M_high_score_q_13
-    -------------------------------------------------  ---------------------------
-    Total                                      6.842ns (1.428ns logic, 5.414ns route)
-                                                       (20.9% logic, 79.1% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.138ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_score_q_0 (FF)
-  Destination:          gamestates/M_high_score_q_14 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.825ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_score_q_0 to gamestates/M_high_score_q_14
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X8Y28.BQ       Tcko                  0.525   M_score_q_0
-                                                       gamestates/M_score_q_0
-    SLICE_X3Y26.A2       net (fanout=12)       1.748   M_score_q_0
-    SLICE_X3Y26.A        Tilo                  0.259   gamestates/M_alu_a[0]
-                                                       gamestates/M_alu_a<16>1
-    SLICE_X8Y26.A1       net (fanout=2)        1.205   gamestates/M_alu_a[0]
-    SLICE_X8Y26.COUT     Topcya                0.482   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lutdi
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<3>
-    SLICE_X8Y27.CIN      net (fanout=1)        0.003   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-    SLICE_X8Y27.COUT     Tbyp                  0.093   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.C2       net (fanout=17)       2.161   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_14_rstpot
-                                                       gamestates/M_high_score_q_14
-    -------------------------------------------------  ---------------------------
-    Total                                      6.825ns (1.708ns logic, 5.117ns route)
-                                                       (25.0% logic, 75.0% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.144ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_gamestates_q_FSM_FFd5_2 (FF)
-  Destination:          gamestates/M_high_score_q_13 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.819ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_gamestates_q_FSM_FFd5_2 to gamestates/M_high_score_q_13
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y22.BQ       Tcko                  0.430   gamestates/M_gamestates_q_FSM_FFd5_2
-                                                       gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y27.A2       net (fanout=14)       1.831   gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y27.AMUX     Tilo                  0.298   gamestates/M_alu_a[14]
-                                                       gamestates/M_gamestates_q_M_alu_b<12>1
-    SLICE_X8Y27.C2       net (fanout=1)        1.516   gamestates/M_alu_b[12]
-    SLICE_X8Y27.COUT     Topcyc                0.328   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lut<6>
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.B3       net (fanout=17)       2.067   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_13_rstpot
-                                                       gamestates/M_high_score_q_13
-    -------------------------------------------------  ---------------------------
-    Total                                      6.819ns (1.405ns logic, 5.414ns route)
-                                                       (20.6% logic, 79.4% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.146ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_score_q_0 (FF)
-  Destination:          gamestates/M_high_score_q_14 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.817ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_score_q_0 to gamestates/M_high_score_q_14
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X8Y28.BQ       Tcko                  0.525   M_score_q_0
-                                                       gamestates/M_score_q_0
-    SLICE_X3Y26.A2       net (fanout=12)       1.748   M_score_q_0
-    SLICE_X3Y26.A        Tilo                  0.259   gamestates/M_alu_a[0]
-                                                       gamestates/M_alu_a<16>1
-    SLICE_X8Y26.A1       net (fanout=2)        1.205   gamestates/M_alu_a[0]
-    SLICE_X8Y26.COUT     Topcya                0.474   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lut<0>
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<3>
-    SLICE_X8Y27.CIN      net (fanout=1)        0.003   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-    SLICE_X8Y27.COUT     Tbyp                  0.093   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.C2       net (fanout=17)       2.161   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_14_rstpot
-                                                       gamestates/M_high_score_q_14
-    -------------------------------------------------  ---------------------------
-    Total                                      6.817ns (1.700ns logic, 5.117ns route)
-                                                       (24.9% logic, 75.1% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.232ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_score_q_0 (FF)
-  Destination:          gamestates/M_high_score_q_13 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.731ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_score_q_0 to gamestates/M_high_score_q_13
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X8Y28.BQ       Tcko                  0.525   M_score_q_0
-                                                       gamestates/M_score_q_0
-    SLICE_X3Y26.A2       net (fanout=12)       1.748   M_score_q_0
-    SLICE_X3Y26.A        Tilo                  0.259   gamestates/M_alu_a[0]
-                                                       gamestates/M_alu_a<16>1
-    SLICE_X8Y26.A1       net (fanout=2)        1.205   gamestates/M_alu_a[0]
-    SLICE_X8Y26.COUT     Topcya                0.482   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lutdi
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<3>
-    SLICE_X8Y27.CIN      net (fanout=1)        0.003   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-    SLICE_X8Y27.COUT     Tbyp                  0.093   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.B3       net (fanout=17)       2.067   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_13_rstpot
-                                                       gamestates/M_high_score_q_13
-    -------------------------------------------------  ---------------------------
-    Total                                      6.731ns (1.708ns logic, 5.023ns route)
-                                                       (25.4% logic, 74.6% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.236ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_gamestates_q_FSM_FFd5_2 (FF)
-  Destination:          gamestates/M_high_score_q_12 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.727ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_gamestates_q_FSM_FFd5_2 to gamestates/M_high_score_q_12
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y22.BQ       Tcko                  0.430   gamestates/M_gamestates_q_FSM_FFd5_2
-                                                       gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y27.A2       net (fanout=14)       1.831   gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y27.AMUX     Tilo                  0.298   gamestates/M_alu_a[14]
-                                                       gamestates/M_gamestates_q_M_alu_b<12>1
-    SLICE_X8Y27.C2       net (fanout=1)        1.516   gamestates/M_alu_b[12]
-    SLICE_X8Y27.COUT     Topcyc                0.351   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lutdi6
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.A4       net (fanout=17)       1.952   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_12_rstpot
-                                                       gamestates/M_high_score_q_12
-    -------------------------------------------------  ---------------------------
-    Total                                      6.727ns (1.428ns logic, 5.299ns route)
-                                                       (21.2% logic, 78.8% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.238ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_score_q_8 (FF)
-  Destination:          gamestates/M_high_score_q_15 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.718ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.009ns (0.337 - 0.346)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_score_q_8 to gamestates/M_high_score_q_15
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y27.AQ       Tcko                  0.430   gamestates/M_score_q[10]
-                                                       gamestates/M_score_q_8
-    SLICE_X2Y26.A1       net (fanout=5)        1.364   gamestates/M_score_q[8]
-    SLICE_X2Y26.A        Tilo                  0.235   gamestates/N120
-                                                       gamestates/M_gamestates_q_M_alu_b<8>1
-    SLICE_X8Y27.A2       net (fanout=1)        1.646   gamestates/M_alu_b[8]
-    SLICE_X8Y27.COUT     Topcya                0.482   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lutdi4
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.D2       net (fanout=17)       2.212   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_15_rstpot
-                                                       gamestates/M_high_score_q_15
-    -------------------------------------------------  ---------------------------
-    Total                                      6.718ns (1.496ns logic, 5.222ns route)
-                                                       (22.3% logic, 77.7% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.240ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_gamestates_q_FSM_FFd5_1 (FF)
-  Destination:          gamestates/M_high_score_q_15 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.723ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_gamestates_q_FSM_FFd5_1 to gamestates/M_high_score_q_15
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y22.AQ       Tcko                  0.430   gamestates/M_gamestates_q_FSM_FFd5_2
-                                                       gamestates/M_gamestates_q_FSM_FFd5_1
-    SLICE_X3Y27.B1       net (fanout=15)       1.645   gamestates/M_gamestates_q_FSM_FFd5_1
-    SLICE_X3Y27.B        Tilo                  0.259   gamestates/M_score_q[15]
-                                                       gamestates/M_gamestates_q_M_alu_b<13>1
-    SLICE_X8Y27.C3       net (fanout=1)        1.477   gamestates/M_alu_b[13]
-    SLICE_X8Y27.COUT     Topcyc                0.351   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lutdi6
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.D2       net (fanout=17)       2.212   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_15_rstpot
-                                                       gamestates/M_high_score_q_15
-    -------------------------------------------------  ---------------------------
-    Total                                      6.723ns (1.389ns logic, 5.334ns route)
-                                                       (20.7% logic, 79.3% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.240ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_score_q_0 (FF)
-  Destination:          gamestates/M_high_score_q_13 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.723ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_score_q_0 to gamestates/M_high_score_q_13
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X8Y28.BQ       Tcko                  0.525   M_score_q_0
-                                                       gamestates/M_score_q_0
-    SLICE_X3Y26.A2       net (fanout=12)       1.748   M_score_q_0
-    SLICE_X3Y26.A        Tilo                  0.259   gamestates/M_alu_a[0]
-                                                       gamestates/M_alu_a<16>1
-    SLICE_X8Y26.A1       net (fanout=2)        1.205   gamestates/M_alu_a[0]
-    SLICE_X8Y26.COUT     Topcya                0.474   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lut<0>
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<3>
-    SLICE_X8Y27.CIN      net (fanout=1)        0.003   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-    SLICE_X8Y27.COUT     Tbyp                  0.093   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.B3       net (fanout=17)       2.067   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_13_rstpot
-                                                       gamestates/M_high_score_q_13
-    -------------------------------------------------  ---------------------------
-    Total                                      6.723ns (1.700ns logic, 5.023ns route)
-                                                       (25.3% logic, 74.7% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.245ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_high_score_q_0 (FF)
-  Destination:          gamestates/M_high_score_q_15 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.719ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.001ns (0.337 - 0.338)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_high_score_q_0 to gamestates/M_high_score_q_15
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X10Y28.AMUX    Tshcko                0.535   M_gamestates_row5[95]
-                                                       gamestates/M_high_score_q_0
-    SLICE_X3Y26.A3       net (fanout=3)        1.581   gamestates/M_high_score_q[0]
-    SLICE_X3Y26.A        Tilo                  0.259   gamestates/M_alu_a[0]
-                                                       gamestates/M_alu_a<16>1
-    SLICE_X8Y26.A1       net (fanout=2)        1.205   gamestates/M_alu_a[0]
-    SLICE_X8Y26.COUT     Topcya                0.482   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lutdi
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<3>
-    SLICE_X8Y27.CIN      net (fanout=1)        0.003   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-    SLICE_X8Y27.COUT     Tbyp                  0.093   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.D2       net (fanout=17)       2.212   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_15_rstpot
-                                                       gamestates/M_high_score_q_15
-    -------------------------------------------------  ---------------------------
-    Total                                      6.719ns (1.718ns logic, 5.001ns route)
-                                                       (25.6% logic, 74.4% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.246ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_score_q_8 (FF)
-  Destination:          gamestates/M_high_score_q_15 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.710ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.009ns (0.337 - 0.346)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_score_q_8 to gamestates/M_high_score_q_15
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y27.AQ       Tcko                  0.430   gamestates/M_score_q[10]
-                                                       gamestates/M_score_q_8
-    SLICE_X2Y26.A1       net (fanout=5)        1.364   gamestates/M_score_q[8]
-    SLICE_X2Y26.A        Tilo                  0.235   gamestates/N120
-                                                       gamestates/M_gamestates_q_M_alu_b<8>1
-    SLICE_X8Y27.A2       net (fanout=1)        1.646   gamestates/M_alu_b[8]
-    SLICE_X8Y27.COUT     Topcya                0.474   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lut<4>
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.D2       net (fanout=17)       2.212   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_15_rstpot
-                                                       gamestates/M_high_score_q_15
-    -------------------------------------------------  ---------------------------
-    Total                                      6.710ns (1.488ns logic, 5.222ns route)
-                                                       (22.2% logic, 77.8% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.253ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_high_score_q_0 (FF)
-  Destination:          gamestates/M_high_score_q_15 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.711ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.001ns (0.337 - 0.338)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_high_score_q_0 to gamestates/M_high_score_q_15
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X10Y28.AMUX    Tshcko                0.535   M_gamestates_row5[95]
-                                                       gamestates/M_high_score_q_0
-    SLICE_X3Y26.A3       net (fanout=3)        1.581   gamestates/M_high_score_q[0]
-    SLICE_X3Y26.A        Tilo                  0.259   gamestates/M_alu_a[0]
-                                                       gamestates/M_alu_a<16>1
-    SLICE_X8Y26.A1       net (fanout=2)        1.205   gamestates/M_alu_a[0]
-    SLICE_X8Y26.COUT     Topcya                0.474   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lut<0>
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<3>
-    SLICE_X8Y27.CIN      net (fanout=1)        0.003   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-    SLICE_X8Y27.COUT     Tbyp                  0.093   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.D2       net (fanout=17)       2.212   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_15_rstpot
-                                                       gamestates/M_high_score_q_15
-    -------------------------------------------------  ---------------------------
-    Total                                      6.711ns (1.710ns logic, 5.001ns route)
-                                                       (25.5% logic, 74.5% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.259ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_gamestates_q_FSM_FFd5_2 (FF)
-  Destination:          gamestates/M_high_score_q_12 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.704ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_gamestates_q_FSM_FFd5_2 to gamestates/M_high_score_q_12
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y22.BQ       Tcko                  0.430   gamestates/M_gamestates_q_FSM_FFd5_2
-                                                       gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y27.A2       net (fanout=14)       1.831   gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y27.AMUX     Tilo                  0.298   gamestates/M_alu_a[14]
-                                                       gamestates/M_gamestates_q_M_alu_b<12>1
-    SLICE_X8Y27.C2       net (fanout=1)        1.516   gamestates/M_alu_b[12]
-    SLICE_X8Y27.COUT     Topcyc                0.328   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lut<6>
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.A4       net (fanout=17)       1.952   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_12_rstpot
-                                                       gamestates/M_high_score_q_12
-    -------------------------------------------------  ---------------------------
-    Total                                      6.704ns (1.405ns logic, 5.299ns route)
-                                                       (21.0% logic, 79.0% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.263ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_gamestates_q_FSM_FFd5_1 (FF)
-  Destination:          gamestates/M_high_score_q_15 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.700ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_gamestates_q_FSM_FFd5_1 to gamestates/M_high_score_q_15
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y22.AQ       Tcko                  0.430   gamestates/M_gamestates_q_FSM_FFd5_2
-                                                       gamestates/M_gamestates_q_FSM_FFd5_1
-    SLICE_X3Y27.B1       net (fanout=15)       1.645   gamestates/M_gamestates_q_FSM_FFd5_1
-    SLICE_X3Y27.B        Tilo                  0.259   gamestates/M_score_q[15]
-                                                       gamestates/M_gamestates_q_M_alu_b<13>1
-    SLICE_X8Y27.C3       net (fanout=1)        1.477   gamestates/M_alu_b[13]
-    SLICE_X8Y27.COUT     Topcyc                0.328   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lut<6>
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.D2       net (fanout=17)       2.212   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_15_rstpot
-                                                       gamestates/M_high_score_q_15
-    -------------------------------------------------  ---------------------------
-    Total                                      6.700ns (1.366ns logic, 5.334ns route)
-                                                       (20.4% logic, 79.6% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.289ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_score_q_8 (FF)
-  Destination:          gamestates/M_high_score_q_14 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.667ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.009ns (0.337 - 0.346)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_score_q_8 to gamestates/M_high_score_q_14
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y27.AQ       Tcko                  0.430   gamestates/M_score_q[10]
-                                                       gamestates/M_score_q_8
-    SLICE_X2Y26.A1       net (fanout=5)        1.364   gamestates/M_score_q[8]
-    SLICE_X2Y26.A        Tilo                  0.235   gamestates/N120
-                                                       gamestates/M_gamestates_q_M_alu_b<8>1
-    SLICE_X8Y27.A2       net (fanout=1)        1.646   gamestates/M_alu_b[8]
-    SLICE_X8Y27.COUT     Topcya                0.482   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lutdi4
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.C2       net (fanout=17)       2.161   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_14_rstpot
-                                                       gamestates/M_high_score_q_14
-    -------------------------------------------------  ---------------------------
-    Total                                      6.667ns (1.496ns logic, 5.171ns route)
-                                                       (22.4% logic, 77.6% route)
-
---------------------------------------------------------------------------------
-Slack:                  13.291ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_gamestates_q_FSM_FFd5_1 (FF)
-  Destination:          gamestates/M_high_score_q_14 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      6.672ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: gamestates/M_gamestates_q_FSM_FFd5_1 to gamestates/M_high_score_q_14
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y22.AQ       Tcko                  0.430   gamestates/M_gamestates_q_FSM_FFd5_2
-                                                       gamestates/M_gamestates_q_FSM_FFd5_1
-    SLICE_X3Y27.B1       net (fanout=15)       1.645   gamestates/M_gamestates_q_FSM_FFd5_1
-    SLICE_X3Y27.B        Tilo                  0.259   gamestates/M_score_q[15]
-                                                       gamestates/M_gamestates_q_M_alu_b<13>1
-    SLICE_X8Y27.C3       net (fanout=1)        1.477   gamestates/M_alu_b[13]
-    SLICE_X8Y27.COUT     Topcyc                0.351   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lutdi6
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.C2       net (fanout=17)       2.161   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_14_rstpot
-                                                       gamestates/M_high_score_q_14
-    -------------------------------------------------  ---------------------------
-    Total                                      6.672ns (1.389ns logic, 5.283ns route)
+    Total                                      9.835ns (2.046ns logic, 7.789ns route)
                                                        (20.8% logic, 79.2% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.295ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_gamestates_q_FSM_FFd5_2 (FF)
-  Destination:          gamestates/M_high_score_q_15 (FF)
+Slack:                  10.064ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd10 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.668ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
+  Data Path Delay:      9.829ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -948,34 +140,42 @@ Slack:                  13.295ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: gamestates/M_gamestates_q_FSM_FFd5_2 to gamestates/M_high_score_q_15
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_1 to gamestates/M_gamestates_q_FSM_FFd10
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X7Y22.BQ       Tcko                  0.430   gamestates/M_gamestates_q_FSM_FFd5_2
-                                                       gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y26.A5       net (fanout=14)       1.314   gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y26.A        Tilo                  0.235   gamestates/N120
-                                                       gamestates/M_gamestates_q_M_alu_b<8>1
-    SLICE_X8Y27.A2       net (fanout=1)        1.646   gamestates/M_alu_b[8]
-    SLICE_X8Y27.COUT     Topcya                0.482   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lutdi4
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.D2       net (fanout=17)       2.212   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_15_rstpot
-                                                       gamestates/M_high_score_q_15
+    SLICE_X9Y5.BQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_1
+    SLICE_X15Y8.B4       net (fanout=42)       2.118   gamestates/register/M_addr_q[1]
+    SLICE_X15Y8.B        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B6       net (fanout=1)        0.414   gamestates/register/map/Mmux_next_row22
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.B1       net (fanout=16)       3.167   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd10-In
+                                                       gamestates/M_gamestates_q_FSM_FFd10
     -------------------------------------------------  ---------------------------
-    Total                                      6.668ns (1.496ns logic, 5.172ns route)
-                                                       (22.4% logic, 77.6% route)
+    Total                                      9.829ns (2.046ns logic, 7.783ns route)
+                                                       (20.8% logic, 79.2% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.296ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_high_score_q_0 (FF)
-  Destination:          gamestates/M_high_score_q_14 (FF)
+Slack:                  10.083ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd12 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.668ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.001ns (0.337 - 0.338)
+  Data Path Delay:      9.810ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -986,37 +186,42 @@ Slack:                  13.296ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: gamestates/M_high_score_q_0 to gamestates/M_high_score_q_14
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_1 to gamestates/M_gamestates_q_FSM_FFd12
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X10Y28.AMUX    Tshcko                0.535   M_gamestates_row5[95]
-                                                       gamestates/M_high_score_q_0
-    SLICE_X3Y26.A3       net (fanout=3)        1.581   gamestates/M_high_score_q[0]
-    SLICE_X3Y26.A        Tilo                  0.259   gamestates/M_alu_a[0]
-                                                       gamestates/M_alu_a<16>1
-    SLICE_X8Y26.A1       net (fanout=2)        1.205   gamestates/M_alu_a[0]
-    SLICE_X8Y26.COUT     Topcya                0.482   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lutdi
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<3>
-    SLICE_X8Y27.CIN      net (fanout=1)        0.003   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-    SLICE_X8Y27.COUT     Tbyp                  0.093   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.C2       net (fanout=17)       2.161   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_14_rstpot
-                                                       gamestates/M_high_score_q_14
+    SLICE_X9Y5.BQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_1
+    SLICE_X15Y8.A1       net (fanout=42)       2.100   gamestates/register/M_addr_q[1]
+    SLICE_X15Y8.A        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row24
+    SLICE_X14Y8.B2       net (fanout=1)        0.543   gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.D3       net (fanout=16)       3.037   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd12-In5
+                                                       gamestates/M_gamestates_q_FSM_FFd12
     -------------------------------------------------  ---------------------------
-    Total                                      6.668ns (1.718ns logic, 4.950ns route)
-                                                       (25.8% logic, 74.2% route)
+    Total                                      9.810ns (2.046ns logic, 7.764ns route)
+                                                       (20.9% logic, 79.1% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.297ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_score_q_8 (FF)
-  Destination:          gamestates/M_high_score_q_14 (FF)
+Slack:                  10.116ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd11 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.659ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.009ns (0.337 - 0.346)
+  Data Path Delay:      9.777ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1027,34 +232,637 @@ Slack:                  13.297ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: gamestates/M_score_q_8 to gamestates/M_high_score_q_14
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_1 to gamestates/M_gamestates_q_FSM_FFd11
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X7Y27.AQ       Tcko                  0.430   gamestates/M_score_q[10]
-                                                       gamestates/M_score_q_8
-    SLICE_X2Y26.A1       net (fanout=5)        1.364   gamestates/M_score_q[8]
-    SLICE_X2Y26.A        Tilo                  0.235   gamestates/N120
-                                                       gamestates/M_gamestates_q_M_alu_b<8>1
-    SLICE_X8Y27.A2       net (fanout=1)        1.646   gamestates/M_alu_b[8]
-    SLICE_X8Y27.COUT     Topcya                0.474   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lut<4>
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.C2       net (fanout=17)       2.161   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_14_rstpot
-                                                       gamestates/M_high_score_q_14
+    SLICE_X9Y5.BQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_1
+    SLICE_X15Y8.A1       net (fanout=42)       2.100   gamestates/register/M_addr_q[1]
+    SLICE_X15Y8.A        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row24
+    SLICE_X14Y8.B2       net (fanout=1)        0.543   gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.C3       net (fanout=16)       3.004   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd11-In
+                                                       gamestates/M_gamestates_q_FSM_FFd11
     -------------------------------------------------  ---------------------------
-    Total                                      6.659ns (1.488ns logic, 5.171ns route)
+    Total                                      9.777ns (2.046ns logic, 7.731ns route)
+                                                       (20.9% logic, 79.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.188ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd12 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.705ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_1 to gamestates/M_gamestates_q_FSM_FFd12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y5.BQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_1
+    SLICE_X15Y8.D1       net (fanout=42)       2.092   gamestates/register/M_addr_q[1]
+    SLICE_X15Y8.D        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row641
+    SLICE_X14Y8.B5       net (fanout=2)        0.446   gamestates/register/map/Mmux_next_row64
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.D3       net (fanout=16)       3.037   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd12-In5
+                                                       gamestates/M_gamestates_q_FSM_FFd12
+    -------------------------------------------------  ---------------------------
+    Total                                      9.705ns (2.046ns logic, 7.659ns route)
+                                                       (21.1% logic, 78.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.194ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd12 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.699ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_1 to gamestates/M_gamestates_q_FSM_FFd12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y5.BQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_1
+    SLICE_X15Y8.B4       net (fanout=42)       2.118   gamestates/register/M_addr_q[1]
+    SLICE_X15Y8.B        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B6       net (fanout=1)        0.414   gamestates/register/map/Mmux_next_row22
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.D3       net (fanout=16)       3.037   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd12-In5
+                                                       gamestates/M_gamestates_q_FSM_FFd12
+    -------------------------------------------------  ---------------------------
+    Total                                      9.699ns (2.046ns logic, 7.653ns route)
+                                                       (21.1% logic, 78.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.221ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd11 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.672ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_1 to gamestates/M_gamestates_q_FSM_FFd11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y5.BQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_1
+    SLICE_X15Y8.D1       net (fanout=42)       2.092   gamestates/register/M_addr_q[1]
+    SLICE_X15Y8.D        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row641
+    SLICE_X14Y8.B5       net (fanout=2)        0.446   gamestates/register/map/Mmux_next_row64
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.C3       net (fanout=16)       3.004   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd11-In
+                                                       gamestates/M_gamestates_q_FSM_FFd11
+    -------------------------------------------------  ---------------------------
+    Total                                      9.672ns (2.046ns logic, 7.626ns route)
+                                                       (21.2% logic, 78.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.227ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd11 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.666ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_1 to gamestates/M_gamestates_q_FSM_FFd11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y5.BQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_1
+    SLICE_X15Y8.B4       net (fanout=42)       2.118   gamestates/register/M_addr_q[1]
+    SLICE_X15Y8.B        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B6       net (fanout=1)        0.414   gamestates/register/map/Mmux_next_row22
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.C3       net (fanout=16)       3.004   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd11-In
+                                                       gamestates/M_gamestates_q_FSM_FFd11
+    -------------------------------------------------  ---------------------------
+    Total                                      9.666ns (2.046ns logic, 7.620ns route)
+                                                       (21.2% logic, 78.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.331ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd9 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.562ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_1 to gamestates/M_gamestates_q_FSM_FFd9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y5.BQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_1
+    SLICE_X15Y8.A1       net (fanout=42)       2.100   gamestates/register/M_addr_q[1]
+    SLICE_X15Y8.A        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row24
+    SLICE_X14Y8.B2       net (fanout=1)        0.543   gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.A6       net (fanout=16)       2.789   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd9-In1
+                                                       gamestates/M_gamestates_q_FSM_FFd9
+    -------------------------------------------------  ---------------------------
+    Total                                      9.562ns (2.046ns logic, 7.516ns route)
+                                                       (21.4% logic, 78.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.363ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/M_set_q_0 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd10 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.553ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.049ns (0.636 - 0.685)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/M_set_q_0 to gamestates/M_gamestates_q_FSM_FFd10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y2.AQ       Tcko                  0.430   gamestates/M_set_q_0
+                                                       gamestates/M_set_q_0
+    SLICE_X15Y8.A3       net (fanout=24)       1.713   gamestates/M_set_q_0
+    SLICE_X15Y8.A        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row24
+    SLICE_X14Y8.B2       net (fanout=1)        0.543   gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.B1       net (fanout=16)       3.167   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd10-In
+                                                       gamestates/M_gamestates_q_FSM_FFd10
+    -------------------------------------------------  ---------------------------
+    Total                                      9.553ns (2.046ns logic, 7.507ns route)
+                                                       (21.4% logic, 78.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.420ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_0 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd10 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.473ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_0 to gamestates/M_gamestates_q_FSM_FFd10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y5.AQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_0
+    SLICE_X15Y8.B1       net (fanout=45)       1.762   gamestates/register/M_addr_q[0]
+    SLICE_X15Y8.B        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B6       net (fanout=1)        0.414   gamestates/register/map/Mmux_next_row22
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.B1       net (fanout=16)       3.167   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd10-In
+                                                       gamestates/M_gamestates_q_FSM_FFd10
+    -------------------------------------------------  ---------------------------
+    Total                                      9.473ns (2.046ns logic, 7.427ns route)
+                                                       (21.6% logic, 78.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.436ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd9 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.457ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_1 to gamestates/M_gamestates_q_FSM_FFd9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y5.BQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_1
+    SLICE_X15Y8.D1       net (fanout=42)       2.092   gamestates/register/M_addr_q[1]
+    SLICE_X15Y8.D        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row641
+    SLICE_X14Y8.B5       net (fanout=2)        0.446   gamestates/register/map/Mmux_next_row64
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.A6       net (fanout=16)       2.789   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd9-In1
+                                                       gamestates/M_gamestates_q_FSM_FFd9
+    -------------------------------------------------  ---------------------------
+    Total                                      9.457ns (2.046ns logic, 7.411ns route)
+                                                       (21.6% logic, 78.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.442ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd9 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.451ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_1 to gamestates/M_gamestates_q_FSM_FFd9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y5.BQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_1
+    SLICE_X15Y8.B4       net (fanout=42)       2.118   gamestates/register/M_addr_q[1]
+    SLICE_X15Y8.B        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B6       net (fanout=1)        0.414   gamestates/register/map/Mmux_next_row22
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.A6       net (fanout=16)       2.789   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd9-In1
+                                                       gamestates/M_gamestates_q_FSM_FFd9
+    -------------------------------------------------  ---------------------------
+    Total                                      9.451ns (2.046ns logic, 7.405ns route)
+                                                       (21.6% logic, 78.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.450ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd10 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.443ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_1 to gamestates/M_gamestates_q_FSM_FFd10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y5.BQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_1
+    SLICE_X14Y8.D1       net (fanout=42)       2.109   gamestates/register/M_addr_q[1]
+    SLICE_X14Y8.D        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row21
+    SLICE_X14Y8.A4       net (fanout=1)        0.492   gamestates/register/map/Mmux_next_row2
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.B1       net (fanout=16)       3.167   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd10-In
+                                                       gamestates/M_gamestates_q_FSM_FFd10
+    -------------------------------------------------  ---------------------------
+    Total                                      9.443ns (1.787ns logic, 7.656ns route)
+                                                       (18.9% logic, 81.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.493ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/M_set_q_0 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd12 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.423ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.049ns (0.636 - 0.685)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/M_set_q_0 to gamestates/M_gamestates_q_FSM_FFd12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y2.AQ       Tcko                  0.430   gamestates/M_set_q_0
+                                                       gamestates/M_set_q_0
+    SLICE_X15Y8.A3       net (fanout=24)       1.713   gamestates/M_set_q_0
+    SLICE_X15Y8.A        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row24
+    SLICE_X14Y8.B2       net (fanout=1)        0.543   gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.D3       net (fanout=16)       3.037   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd12-In5
+                                                       gamestates/M_gamestates_q_FSM_FFd12
+    -------------------------------------------------  ---------------------------
+    Total                                      9.423ns (2.046ns logic, 7.377ns route)
+                                                       (21.7% logic, 78.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.496ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_levelReg_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd10 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.401ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.068ns (0.636 - 0.704)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_levelReg_q_1 to gamestates/M_gamestates_q_FSM_FFd10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y6.AQ       Tcko                  0.430   M_levelReg_q_2
+                                                       gamestates/register/M_levelReg_q_1
+    SLICE_X15Y8.B2       net (fanout=50)       1.690   M_levelReg_q_1
+    SLICE_X15Y8.B        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B6       net (fanout=1)        0.414   gamestates/register/map/Mmux_next_row22
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.B1       net (fanout=16)       3.167   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd10-In
+                                                       gamestates/M_gamestates_q_FSM_FFd10
+    -------------------------------------------------  ---------------------------
+    Total                                      9.401ns (2.046ns logic, 7.355ns route)
+                                                       (21.8% logic, 78.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.496ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_levelReg_q_1_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd10 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.401ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.068ns (0.636 - 0.704)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_levelReg_q_1_1 to gamestates/M_gamestates_q_FSM_FFd10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y6.AQ       Tcko                  0.476   gamestates/register/M_levelReg_q_1_1
+                                                       gamestates/register/M_levelReg_q_1_1
+    SLICE_X15Y8.A2       net (fanout=9)        1.515   gamestates/register/M_levelReg_q_1_1
+    SLICE_X15Y8.A        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row24
+    SLICE_X14Y8.B2       net (fanout=1)        0.543   gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.B1       net (fanout=16)       3.167   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd10-In
+                                                       gamestates/M_gamestates_q_FSM_FFd10
+    -------------------------------------------------  ---------------------------
+    Total                                      9.401ns (2.092ns logic, 7.309ns route)
                                                        (22.3% logic, 77.7% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.303ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_gamestates_q_FSM_FFd5_2 (FF)
-  Destination:          gamestates/M_high_score_q_15 (FF)
+Slack:                  10.518ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_0 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd10 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.660ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
+  Data Path Delay:      9.375ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1065,34 +873,42 @@ Slack:                  13.303ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: gamestates/M_gamestates_q_FSM_FFd5_2 to gamestates/M_high_score_q_15
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_0 to gamestates/M_gamestates_q_FSM_FFd10
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X7Y22.BQ       Tcko                  0.430   gamestates/M_gamestates_q_FSM_FFd5_2
-                                                       gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y26.A5       net (fanout=14)       1.314   gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y26.A        Tilo                  0.235   gamestates/N120
-                                                       gamestates/M_gamestates_q_M_alu_b<8>1
-    SLICE_X8Y27.A2       net (fanout=1)        1.646   gamestates/M_alu_b[8]
-    SLICE_X8Y27.COUT     Topcya                0.474   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lut<4>
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.D2       net (fanout=17)       2.212   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_15_rstpot
-                                                       gamestates/M_high_score_q_15
+    SLICE_X9Y5.AQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_0
+    SLICE_X15Y8.D3       net (fanout=45)       1.632   gamestates/register/M_addr_q[0]
+    SLICE_X15Y8.D        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row641
+    SLICE_X14Y8.B5       net (fanout=2)        0.446   gamestates/register/map/Mmux_next_row64
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.B1       net (fanout=16)       3.167   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd10-In
+                                                       gamestates/M_gamestates_q_FSM_FFd10
     -------------------------------------------------  ---------------------------
-    Total                                      6.660ns (1.488ns logic, 5.172ns route)
-                                                       (22.3% logic, 77.7% route)
+    Total                                      9.375ns (2.046ns logic, 7.329ns route)
+                                                       (21.8% logic, 78.2% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.304ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_high_score_q_0 (FF)
-  Destination:          gamestates/M_high_score_q_14 (FF)
+Slack:                  10.526ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/M_set_q_0 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd11 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.660ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.001ns (0.337 - 0.338)
+  Data Path Delay:      9.390ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.049ns (0.636 - 0.685)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1103,37 +919,42 @@ Slack:                  13.304ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: gamestates/M_high_score_q_0 to gamestates/M_high_score_q_14
+  Maximum Data Path at Slow Process Corner: gamestates/M_set_q_0 to gamestates/M_gamestates_q_FSM_FFd11
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X10Y28.AMUX    Tshcko                0.535   M_gamestates_row5[95]
-                                                       gamestates/M_high_score_q_0
-    SLICE_X3Y26.A3       net (fanout=3)        1.581   gamestates/M_high_score_q[0]
-    SLICE_X3Y26.A        Tilo                  0.259   gamestates/M_alu_a[0]
-                                                       gamestates/M_alu_a<16>1
-    SLICE_X8Y26.A1       net (fanout=2)        1.205   gamestates/M_alu_a[0]
-    SLICE_X8Y26.COUT     Topcya                0.474   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lut<0>
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<3>
-    SLICE_X8Y27.CIN      net (fanout=1)        0.003   gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy[3]
-    SLICE_X8Y27.COUT     Tbyp                  0.093   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.C2       net (fanout=17)       2.161   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_14_rstpot
-                                                       gamestates/M_high_score_q_14
+    SLICE_X13Y2.AQ       Tcko                  0.430   gamestates/M_set_q_0
+                                                       gamestates/M_set_q_0
+    SLICE_X15Y8.A3       net (fanout=24)       1.713   gamestates/M_set_q_0
+    SLICE_X15Y8.A        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row24
+    SLICE_X14Y8.B2       net (fanout=1)        0.543   gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.C3       net (fanout=16)       3.004   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd11-In
+                                                       gamestates/M_gamestates_q_FSM_FFd11
     -------------------------------------------------  ---------------------------
-    Total                                      6.660ns (1.710ns logic, 4.950ns route)
-                                                       (25.7% logic, 74.3% route)
+    Total                                      9.390ns (2.046ns logic, 7.344ns route)
+                                                       (21.8% logic, 78.2% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.314ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_gamestates_q_FSM_FFd5_1 (FF)
-  Destination:          gamestates/M_high_score_q_14 (FF)
+Slack:                  10.550ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_0 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd12 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.649ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
+  Data Path Delay:      9.343ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1144,34 +965,42 @@ Slack:                  13.314ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: gamestates/M_gamestates_q_FSM_FFd5_1 to gamestates/M_high_score_q_14
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_0 to gamestates/M_gamestates_q_FSM_FFd12
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X7Y22.AQ       Tcko                  0.430   gamestates/M_gamestates_q_FSM_FFd5_2
-                                                       gamestates/M_gamestates_q_FSM_FFd5_1
-    SLICE_X3Y27.B1       net (fanout=15)       1.645   gamestates/M_gamestates_q_FSM_FFd5_1
-    SLICE_X3Y27.B        Tilo                  0.259   gamestates/M_score_q[15]
-                                                       gamestates/M_gamestates_q_M_alu_b<13>1
-    SLICE_X8Y27.C3       net (fanout=1)        1.477   gamestates/M_alu_b[13]
-    SLICE_X8Y27.COUT     Topcyc                0.328   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lut<6>
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.C2       net (fanout=17)       2.161   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_14_rstpot
-                                                       gamestates/M_high_score_q_14
+    SLICE_X9Y5.AQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_0
+    SLICE_X15Y8.B1       net (fanout=45)       1.762   gamestates/register/M_addr_q[0]
+    SLICE_X15Y8.B        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B6       net (fanout=1)        0.414   gamestates/register/map/Mmux_next_row22
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.D3       net (fanout=16)       3.037   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd12-In5
+                                                       gamestates/M_gamestates_q_FSM_FFd12
     -------------------------------------------------  ---------------------------
-    Total                                      6.649ns (1.366ns logic, 5.283ns route)
-                                                       (20.5% logic, 79.5% route)
+    Total                                      9.343ns (2.046ns logic, 7.297ns route)
+                                                       (21.9% logic, 78.1% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.346ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               gamestates/M_gamestates_q_FSM_FFd5_2 (FF)
-  Destination:          gamestates/M_high_score_q_14 (FF)
+Slack:                  10.580ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd12 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.617ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.002ns (0.337 - 0.339)
+  Data Path Delay:      9.313ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1182,26 +1011,396 @@ Slack:                  13.346ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: gamestates/M_gamestates_q_FSM_FFd5_2 to gamestates/M_high_score_q_14
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_1 to gamestates/M_gamestates_q_FSM_FFd12
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X7Y22.BQ       Tcko                  0.430   gamestates/M_gamestates_q_FSM_FFd5_2
-                                                       gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y26.A5       net (fanout=14)       1.314   gamestates/M_gamestates_q_FSM_FFd5_2
-    SLICE_X2Y26.A        Tilo                  0.235   gamestates/N120
-                                                       gamestates/M_gamestates_q_M_alu_b<8>1
-    SLICE_X8Y27.A2       net (fanout=1)        1.646   gamestates/M_alu_b[8]
-    SLICE_X8Y27.COUT     Topcya                0.482   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_lutdi4
-                                                       gamestates/alu/cmp/Mcompar_a[15]_b[15]_LessThan_2_o_cy<7>
-    SLICE_X2Y28.C2       net (fanout=17)       2.161   gamestates/Mcompar_a[15]_b[15]_LessThan_2_o_cy[7]
-    SLICE_X2Y28.CLK      Tas                   0.349   gamestates/M_high_score_q[15]
-                                                       gamestates/M_high_score_q_14_rstpot
-                                                       gamestates/M_high_score_q_14
+    SLICE_X9Y5.BQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_1
+    SLICE_X14Y8.D1       net (fanout=42)       2.109   gamestates/register/M_addr_q[1]
+    SLICE_X14Y8.D        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row21
+    SLICE_X14Y8.A4       net (fanout=1)        0.492   gamestates/register/map/Mmux_next_row2
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.D3       net (fanout=16)       3.037   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd12-In5
+                                                       gamestates/M_gamestates_q_FSM_FFd12
     -------------------------------------------------  ---------------------------
-    Total                                      6.617ns (1.496ns logic, 5.121ns route)
+    Total                                      9.313ns (1.787ns logic, 7.526ns route)
+                                                       (19.2% logic, 80.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.583ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_0 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd11 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.310ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_0 to gamestates/M_gamestates_q_FSM_FFd11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y5.AQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_0
+    SLICE_X15Y8.B1       net (fanout=45)       1.762   gamestates/register/M_addr_q[0]
+    SLICE_X15Y8.B        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B6       net (fanout=1)        0.414   gamestates/register/map/Mmux_next_row22
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.C3       net (fanout=16)       3.004   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd11-In
+                                                       gamestates/M_gamestates_q_FSM_FFd11
+    -------------------------------------------------  ---------------------------
+    Total                                      9.310ns (2.046ns logic, 7.264ns route)
+                                                       (22.0% logic, 78.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.585ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/M_set_q_0 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd10 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.331ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.049ns (0.636 - 0.685)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/M_set_q_0 to gamestates/M_gamestates_q_FSM_FFd10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y2.AQ       Tcko                  0.430   gamestates/M_set_q_0
+                                                       gamestates/M_set_q_0
+    SLICE_X15Y8.D5       net (fanout=24)       1.588   gamestates/M_set_q_0
+    SLICE_X15Y8.D        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row641
+    SLICE_X14Y8.B5       net (fanout=2)        0.446   gamestates/register/map/Mmux_next_row64
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.B1       net (fanout=16)       3.167   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd10-In
+                                                       gamestates/M_gamestates_q_FSM_FFd10
+    -------------------------------------------------  ---------------------------
+    Total                                      9.331ns (2.046ns logic, 7.285ns route)
+                                                       (21.9% logic, 78.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.599ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_3 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd10 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.294ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_3 to gamestates/M_gamestates_q_FSM_FFd10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y5.DQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_3
+    SLICE_X15Y8.A5       net (fanout=42)       1.454   gamestates/register/M_addr_q[3]
+    SLICE_X15Y8.A        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row24
+    SLICE_X14Y8.B2       net (fanout=1)        0.543   gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.B1       net (fanout=16)       3.167   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd10-In
+                                                       gamestates/M_gamestates_q_FSM_FFd10
+    -------------------------------------------------  ---------------------------
+    Total                                      9.294ns (2.046ns logic, 7.248ns route)
+                                                       (22.0% logic, 78.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.613ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd11 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.280ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_1 to gamestates/M_gamestates_q_FSM_FFd11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y5.BQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_1
+    SLICE_X14Y8.D1       net (fanout=42)       2.109   gamestates/register/M_addr_q[1]
+    SLICE_X14Y8.D        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row21
+    SLICE_X14Y8.A4       net (fanout=1)        0.492   gamestates/register/map/Mmux_next_row2
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.C3       net (fanout=16)       3.004   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd11-In
+                                                       gamestates/M_gamestates_q_FSM_FFd11
+    -------------------------------------------------  ---------------------------
+    Total                                      9.280ns (1.787ns logic, 7.493ns route)
+                                                       (19.3% logic, 80.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.619ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.265ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.081ns (0.627 - 0.708)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_1 to gamestates/M_gamestates_q_FSM_FFd2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y5.BQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_1
+    SLICE_X15Y8.A1       net (fanout=42)       2.100   gamestates/register/M_addr_q[1]
+    SLICE_X15Y8.A        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row24
+    SLICE_X14Y8.B2       net (fanout=1)        0.543   gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X9Y28.B4       net (fanout=16)       2.492   gamestates/M_levelReg_q_cst1
+    SLICE_X9Y28.CLK      Tas                   0.373   M_gamestates_q_FSM_FFd6
+                                                       gamestates/M_gamestates_q_FSM_FFd2-In
+                                                       gamestates/M_gamestates_q_FSM_FFd2
+    -------------------------------------------------  ---------------------------
+    Total                                      9.265ns (2.046ns logic, 7.219ns route)
+                                                       (22.1% logic, 77.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.626ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_levelReg_q_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd12 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.271ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.068ns (0.636 - 0.704)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_levelReg_q_1 to gamestates/M_gamestates_q_FSM_FFd12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y6.AQ       Tcko                  0.430   M_levelReg_q_2
+                                                       gamestates/register/M_levelReg_q_1
+    SLICE_X15Y8.B2       net (fanout=50)       1.690   M_levelReg_q_1
+    SLICE_X15Y8.B        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B6       net (fanout=1)        0.414   gamestates/register/map/Mmux_next_row22
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.D3       net (fanout=16)       3.037   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd12-In5
+                                                       gamestates/M_gamestates_q_FSM_FFd12
+    -------------------------------------------------  ---------------------------
+    Total                                      9.271ns (2.046ns logic, 7.225ns route)
+                                                       (22.1% logic, 77.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.626ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_levelReg_q_1_1 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd12 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.271ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.068ns (0.636 - 0.704)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_levelReg_q_1_1 to gamestates/M_gamestates_q_FSM_FFd12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y6.AQ       Tcko                  0.476   gamestates/register/M_levelReg_q_1_1
+                                                       gamestates/register/M_levelReg_q_1_1
+    SLICE_X15Y8.A2       net (fanout=9)        1.515   gamestates/register/M_levelReg_q_1_1
+    SLICE_X15Y8.A        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row24
+    SLICE_X14Y8.B2       net (fanout=1)        0.543   gamestates/register/map/Mmux_next_row23
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.D3       net (fanout=16)       3.037   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd12-In5
+                                                       gamestates/M_gamestates_q_FSM_FFd12
+    -------------------------------------------------  ---------------------------
+    Total                                      9.271ns (2.092ns logic, 7.179ns route)
                                                        (22.6% logic, 77.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.636ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gamestates/register/M_addr_q_3 (FF)
+  Destination:          gamestates/M_gamestates_q_FSM_FFd10 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.257ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.072ns (0.636 - 0.708)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gamestates/register/M_addr_q_3 to gamestates/M_gamestates_q_FSM_FFd10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y5.DQ        Tcko                  0.430   gamestates/register/M_addr_q[3]
+                                                       gamestates/register/M_addr_q_3
+    SLICE_X15Y8.D4       net (fanout=42)       1.514   gamestates/register/M_addr_q[3]
+    SLICE_X15Y8.D        Tilo                  0.259   gamestates/register/map/Mmux_next_row64
+                                                       gamestates/register/map/Mmux_next_row641
+    SLICE_X14Y8.B5       net (fanout=2)        0.446   gamestates/register/map/Mmux_next_row64
+    SLICE_X14Y8.B        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29_SW0
+    SLICE_X14Y8.A5       net (fanout=1)        0.196   gamestates/register/map/N160
+    SLICE_X14Y8.A        Tilo                  0.235   M_lane1_q_4
+                                                       gamestates/register/map/Mmux_next_row29
+    SLICE_X15Y6.B2       net (fanout=2)        0.908   gamestates/register/M_register_out[1]
+    SLICE_X15Y6.B        Tilo                  0.259   M_lane3_q_3
+                                                       gamestates/register/M_levelReg_q_cst1_SW1
+    SLICE_X12Y5.C1       net (fanout=1)        0.980   gamestates/register/N158
+    SLICE_X12Y5.C        Tilo                  0.255   M_levelReg_q_0
+                                                       gamestates/register/M_levelReg_q_cst1
+    SLICE_X7Y29.B1       net (fanout=16)       3.167   gamestates/M_levelReg_q_cst1
+    SLICE_X7Y29.CLK      Tas                   0.373   gamestates/M_gamestates_q_FSM_FFd12
+                                                       gamestates/M_gamestates_q_FSM_FFd10-In
+                                                       gamestates/M_gamestates_q_FSM_FFd10
+    -------------------------------------------------  ---------------------------
+    Total                                      9.257ns (2.046ns logic, 7.211ns route)
+                                                       (22.1% logic, 77.9% route)
 
 --------------------------------------------------------------------------------
 
@@ -1220,7 +1419,7 @@ Slack: 18.601ns (period - min period limit)
   Min period limit: 1.399ns (714.796MHz) (Tcp)
   Physical resource: player2right_cond/M_sync_out/CLK
   Logical resource: bigbtn_cond/sync/Mshreg_M_pipe_q_1/CLK
-  Location pin: SLICE_X8Y36.CLK
+  Location pin: SLICE_X12Y39.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 18.601ns (period - min period limit)
@@ -1228,7 +1427,7 @@ Slack: 18.601ns (period - min period limit)
   Min period limit: 1.399ns (714.796MHz) (Tcp)
   Physical resource: player2right_cond/M_sync_out/CLK
   Logical resource: player2left_cond/sync/Mshreg_M_pipe_q_1/CLK
-  Location pin: SLICE_X8Y36.CLK
+  Location pin: SLICE_X12Y39.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 18.601ns (period - min period limit)
@@ -1236,7 +1435,7 @@ Slack: 18.601ns (period - min period limit)
   Min period limit: 1.399ns (714.796MHz) (Tcp)
   Physical resource: player2right_cond/M_sync_out/CLK
   Logical resource: player1left_cond/sync/Mshreg_M_pipe_q_1/CLK
-  Location pin: SLICE_X8Y36.CLK
+  Location pin: SLICE_X12Y39.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 18.601ns (period - min period limit)
@@ -1244,7 +1443,7 @@ Slack: 18.601ns (period - min period limit)
   Min period limit: 1.399ns (714.796MHz) (Tcp)
   Physical resource: player2right_cond/M_sync_out/CLK
   Logical resource: player1right_cond/sync/Mshreg_M_pipe_q_1/CLK
-  Location pin: SLICE_X8Y36.CLK
+  Location pin: SLICE_X12Y39.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 18.601ns (period - min period limit)
@@ -1252,199 +1451,199 @@ Slack: 18.601ns (period - min period limit)
   Min period limit: 1.399ns (714.796MHz) (Tcp)
   Physical resource: player2right_cond/M_sync_out/CLK
   Logical resource: player2right_cond/sync/Mshreg_M_pipe_q_1/CLK
-  Location pin: SLICE_X8Y36.CLK
+  Location pin: SLICE_X12Y39.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: M_score_q_0/CLK
-  Logical resource: gamestates/M_score_q_0/CK
-  Location pin: SLICE_X8Y28.CLK
+  Physical resource: gamestates/M_counter_q[3]/CLK
+  Logical resource: gamestates/M_counter_q_0/CK
+  Location pin: SLICE_X0Y20.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[3]/CLK
-  Logical resource: player2left_cond/M_ctr_q_0/CK
-  Location pin: SLICE_X0Y34.CLK
+  Physical resource: gamestates/M_counter_q[3]/CLK
+  Logical resource: gamestates/M_counter_q_1/CK
+  Location pin: SLICE_X0Y20.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[3]/CLK
-  Logical resource: player2left_cond/M_ctr_q_1/CK
-  Location pin: SLICE_X0Y34.CLK
+  Physical resource: gamestates/M_counter_q[3]/CLK
+  Logical resource: gamestates/M_counter_q_2/CK
+  Location pin: SLICE_X0Y20.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[3]/CLK
-  Logical resource: player2left_cond/M_ctr_q_2/CK
-  Location pin: SLICE_X0Y34.CLK
+  Physical resource: gamestates/M_counter_q[3]/CLK
+  Logical resource: gamestates/M_counter_q_3/CK
+  Location pin: SLICE_X0Y20.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[3]/CLK
-  Logical resource: player2left_cond/M_ctr_q_3/CK
-  Location pin: SLICE_X0Y34.CLK
+  Physical resource: gamestates/M_counter_q[7]/CLK
+  Logical resource: gamestates/M_counter_q_4/CK
+  Location pin: SLICE_X0Y21.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[7]/CLK
-  Logical resource: player2left_cond/M_ctr_q_4/CK
-  Location pin: SLICE_X0Y35.CLK
+  Physical resource: gamestates/M_counter_q[7]/CLK
+  Logical resource: gamestates/M_counter_q_5/CK
+  Location pin: SLICE_X0Y21.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[7]/CLK
-  Logical resource: player2left_cond/M_ctr_q_5/CK
-  Location pin: SLICE_X0Y35.CLK
+  Physical resource: gamestates/M_counter_q[7]/CLK
+  Logical resource: gamestates/M_counter_q_6/CK
+  Location pin: SLICE_X0Y21.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[7]/CLK
-  Logical resource: player2left_cond/M_ctr_q_6/CK
-  Location pin: SLICE_X0Y35.CLK
+  Physical resource: gamestates/M_counter_q[7]/CLK
+  Logical resource: gamestates/M_counter_q_7/CK
+  Location pin: SLICE_X0Y21.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[7]/CLK
-  Logical resource: player2left_cond/M_ctr_q_7/CK
-  Location pin: SLICE_X0Y35.CLK
+  Physical resource: gamestates/M_counter_q[11]/CLK
+  Logical resource: gamestates/M_counter_q_8/CK
+  Location pin: SLICE_X0Y22.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[11]/CLK
-  Logical resource: player2left_cond/M_ctr_q_8/CK
-  Location pin: SLICE_X0Y36.CLK
+  Physical resource: gamestates/M_counter_q[11]/CLK
+  Logical resource: gamestates/M_counter_q_9/CK
+  Location pin: SLICE_X0Y22.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[11]/CLK
-  Logical resource: player2left_cond/M_ctr_q_9/CK
-  Location pin: SLICE_X0Y36.CLK
+  Physical resource: gamestates/M_counter_q[11]/CLK
+  Logical resource: gamestates/M_counter_q_10/CK
+  Location pin: SLICE_X0Y22.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[11]/CLK
-  Logical resource: player2left_cond/M_ctr_q_10/CK
-  Location pin: SLICE_X0Y36.CLK
+  Physical resource: gamestates/M_counter_q[11]/CLK
+  Logical resource: gamestates/M_counter_q_11/CK
+  Location pin: SLICE_X0Y22.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[11]/CLK
-  Logical resource: player2left_cond/M_ctr_q_11/CK
-  Location pin: SLICE_X0Y36.CLK
+  Physical resource: gamestates/M_counter_q[15]/CLK
+  Logical resource: gamestates/M_counter_q_12/CK
+  Location pin: SLICE_X0Y23.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[15]/CLK
-  Logical resource: player2left_cond/M_ctr_q_12/CK
-  Location pin: SLICE_X0Y37.CLK
+  Physical resource: gamestates/M_counter_q[15]/CLK
+  Logical resource: gamestates/M_counter_q_13/CK
+  Location pin: SLICE_X0Y23.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[15]/CLK
-  Logical resource: player2left_cond/M_ctr_q_13/CK
-  Location pin: SLICE_X0Y37.CLK
+  Physical resource: gamestates/M_counter_q[15]/CLK
+  Logical resource: gamestates/M_counter_q_14/CK
+  Location pin: SLICE_X0Y23.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[15]/CLK
-  Logical resource: player2left_cond/M_ctr_q_14/CK
-  Location pin: SLICE_X0Y37.CLK
+  Physical resource: gamestates/M_counter_q[15]/CLK
+  Logical resource: gamestates/M_counter_q_15/CK
+  Location pin: SLICE_X0Y23.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[15]/CLK
-  Logical resource: player2left_cond/M_ctr_q_15/CK
-  Location pin: SLICE_X0Y37.CLK
+  Physical resource: gamestates/M_counter_q[19]/CLK
+  Logical resource: gamestates/M_counter_q_16/CK
+  Location pin: SLICE_X0Y24.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[19]/CLK
-  Logical resource: player2left_cond/M_ctr_q_16/CK
-  Location pin: SLICE_X0Y38.CLK
+  Physical resource: gamestates/M_counter_q[19]/CLK
+  Logical resource: gamestates/M_counter_q_17/CK
+  Location pin: SLICE_X0Y24.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[19]/CLK
-  Logical resource: player2left_cond/M_ctr_q_17/CK
-  Location pin: SLICE_X0Y38.CLK
+  Physical resource: gamestates/M_counter_q[19]/CLK
+  Logical resource: gamestates/M_counter_q_18/CK
+  Location pin: SLICE_X0Y24.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[19]/CLK
-  Logical resource: player2left_cond/M_ctr_q_18/CK
-  Location pin: SLICE_X0Y38.CLK
+  Physical resource: gamestates/M_counter_q[19]/CLK
+  Logical resource: gamestates/M_counter_q_19/CK
+  Location pin: SLICE_X0Y24.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player2left_cond/M_ctr_q[19]/CLK
-  Logical resource: player2left_cond/M_ctr_q_19/CK
-  Location pin: SLICE_X0Y38.CLK
+  Physical resource: gamestates/M_counter_q[23]/CLK
+  Logical resource: gamestates/M_counter_q_20/CK
+  Location pin: SLICE_X0Y25.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player1left_cond/M_ctr_q[3]/CLK
-  Logical resource: player1left_cond/M_ctr_q_0/CK
-  Location pin: SLICE_X4Y36.CLK
+  Physical resource: gamestates/M_counter_q[23]/CLK
+  Logical resource: gamestates/M_counter_q_21/CK
+  Location pin: SLICE_X0Y25.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player1left_cond/M_ctr_q[3]/CLK
-  Logical resource: player1left_cond/M_ctr_q_1/CK
-  Location pin: SLICE_X4Y36.CLK
+  Physical resource: gamestates/M_counter_q[23]/CLK
+  Logical resource: gamestates/M_counter_q_22/CK
+  Location pin: SLICE_X0Y25.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: player1left_cond/M_ctr_q[3]/CLK
-  Logical resource: player1left_cond/M_ctr_q_2/CK
-  Location pin: SLICE_X4Y36.CLK
+  Physical resource: gamestates/M_counter_q[23]/CLK
+  Logical resource: gamestates/M_counter_q_23/CK
+  Location pin: SLICE_X0Y25.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -1461,7 +1660,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    7.024|         |         |         |
+clk            |   10.047|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -1470,16 +1669,16 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 15639 paths, 0 nets, and 1971 connections
+Constraints cover 25382 paths, 0 nets, and 2040 connections
 
 Design statistics:
-   Minimum period:   7.024ns{1}   (Maximum frequency: 142.369MHz)
+   Minimum period:  10.047ns{1}   (Maximum frequency:  99.532MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Thu Dec 05 22:21:30 2019 
+Analysis completed Fri Dec 06 04:31:46 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:

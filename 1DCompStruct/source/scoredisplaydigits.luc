@@ -1,0 +1,67 @@
+module scoredisplaydigits (
+    input digits[2][4],
+    input color[24],
+    output tens[4][24],
+    output ones[4][24]
+  ) {
+  sig temp_7[24];
+  sig temp_6[24];
+  sig temp_5[24];
+  sig temp_4[24];
+  sig temp_3[24];
+  sig temp_2[24];
+  sig temp_1[24];
+  sig temp_0[24];            
+  always {
+    if (digits[1][3]){
+      temp_7 = color;
+      }
+    else{
+      temp_7 = 24b0;
+      }
+    if (digits[1][2]){
+      temp_6 = color;
+      }
+    else{
+      temp_6 = 24b0;
+      }
+    if (digits[1][1]){
+      temp_5 = color;
+      }
+    else{
+      temp_5 = 24b0;
+      }
+    if (digits[1][0]){
+      temp_4 = color;
+      }
+    else{
+      temp_4 = 24b0;
+      }
+    if (digits[0][3]){
+      temp_3 = color;
+      }
+    else{
+      temp_3 = 24b0;
+      }
+    if (digits[0][2]){
+      temp_2 = color;
+      }
+    else{
+      temp_2 = 24b0;
+      }
+    if (digits[0][1]){
+      temp_1 = color;
+      }
+    else{
+      temp_1 = 24b0;
+      }
+    if (digits[0][0]){
+      temp_0 = color;
+      }
+    else{
+      temp_0 = 24b0;
+      }
+    tens = {temp_4,temp_5,temp_6,temp_7};
+    ones = {temp_0,temp_1,temp_2,temp_3};
+  }
+}

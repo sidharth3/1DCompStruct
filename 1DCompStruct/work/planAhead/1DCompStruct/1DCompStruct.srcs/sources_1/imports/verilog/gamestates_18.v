@@ -57,7 +57,7 @@ module gamestates_18 (
   reg [1-1:0] M_car1_right;
   reg [1-1:0] M_car1_reset;
   reg [4-1:0] M_car1_position;
-  car_25 car1 (
+  car_26 car1 (
     .clk(clk),
     .rst(rst),
     .left(M_car1_left),
@@ -71,7 +71,7 @@ module gamestates_18 (
   reg [1-1:0] M_car2_right;
   reg [1-1:0] M_car2_reset;
   reg [4-1:0] M_car2_position;
-  car_25 car2 (
+  car_26 car2 (
     .clk(clk),
     .rst(rst),
     .left(M_car2_left),
@@ -96,11 +96,13 @@ module gamestates_18 (
   wire [1-1:0] M_register_levelUp;
   reg [1-1:0] M_register_shift;
   reg [1-1:0] M_register_reset;
-  registers_27 register (
+  reg [1-1:0] M_register_set;
+  registers_28 register (
     .clk(clk),
     .rst(rst),
     .shift(M_register_shift),
     .reset(M_register_reset),
+    .set(M_register_set),
     .l1(M_register_l1),
     .l2(M_register_l2),
     .lane1val(M_register_lane1val),
@@ -124,12 +126,17 @@ module gamestates_18 (
   reg [25:0] M_slow1_d, M_slow1_q = 1'h0;
   reg [15:0] M_score_d, M_score_q = 1'h0;
   reg [15:0] M_high_score_d, M_high_score_q = 1'h0;
+  reg [0:0] M_set_d, M_set_q = 1'h0;
   
   reg [7:0] temp_score;
   
   reg [0:0] levelUp;
   
   reg [2:0] level;
+  
+  reg [7:0] deci_score;
+  
+  reg [7:0] deci_highscore;
   
   wire [16-1:0] M_alu_c;
   reg [6-1:0] M_alu_alufn;
@@ -145,32 +152,46 @@ module gamestates_18 (
   wire [96-1:0] M_ledrowcars_colorrowcar;
   reg [4-1:0] M_ledrowcars_car1;
   reg [4-1:0] M_ledrowcars_car2;
-  ledrowcars_29 ledrowcars (
+  ledrowcars_30 ledrowcars (
     .car1(M_ledrowcars_car1),
     .car2(M_ledrowcars_car2),
     .colorrowcar(M_ledrowcars_colorrowcar)
   );
   
-  wire [96-1:0] M_scoredisplay_row1;
-  wire [96-1:0] M_scoredisplay_row2;
-  reg [8-1:0] M_scoredisplay_score;
-  reg [24-1:0] M_scoredisplay_color;
-  scoredisplay_30 scoredisplay (
-    .score(M_scoredisplay_score),
-    .color(M_scoredisplay_color),
-    .row1(M_scoredisplay_row1),
-    .row2(M_scoredisplay_row2)
+  wire [96-1:0] M_scoredisplaydigits_tens;
+  wire [96-1:0] M_scoredisplaydigits_ones;
+  reg [8-1:0] M_scoredisplaydigits_digits;
+  reg [24-1:0] M_scoredisplaydigits_color;
+  scoredisplaydigits_31 scoredisplaydigits (
+    .digits(M_scoredisplaydigits_digits),
+    .color(M_scoredisplaydigits_color),
+    .tens(M_scoredisplaydigits_tens),
+    .ones(M_scoredisplaydigits_ones)
   );
   
-  wire [96-1:0] M_highscoredisplay_row1;
-  wire [96-1:0] M_highscoredisplay_row2;
-  reg [8-1:0] M_highscoredisplay_score;
-  reg [24-1:0] M_highscoredisplay_color;
-  scoredisplay_30 highscoredisplay (
-    .score(M_highscoredisplay_score),
-    .color(M_highscoredisplay_color),
-    .row1(M_highscoredisplay_row1),
-    .row2(M_highscoredisplay_row2)
+  wire [96-1:0] M_highscoredisplaydigits_tens;
+  wire [96-1:0] M_highscoredisplaydigits_ones;
+  reg [8-1:0] M_highscoredisplaydigits_digits;
+  reg [24-1:0] M_highscoredisplaydigits_color;
+  scoredisplaydigits_31 highscoredisplaydigits (
+    .digits(M_highscoredisplaydigits_digits),
+    .color(M_highscoredisplaydigits_color),
+    .tens(M_highscoredisplaydigits_tens),
+    .ones(M_highscoredisplaydigits_ones)
+  );
+  
+  wire [8-1:0] M_bin_to_dec_score_digits;
+  reg [7-1:0] M_bin_to_dec_score_value;
+  bin_to_dec_20 bin_to_dec_score (
+    .value(M_bin_to_dec_score_value),
+    .digits(M_bin_to_dec_score_digits)
+  );
+  
+  wire [8-1:0] M_bin_to_dec_highscore_digits;
+  reg [7-1:0] M_bin_to_dec_highscore_value;
+  bin_to_dec_20 bin_to_dec_highscore (
+    .value(M_bin_to_dec_highscore_value),
+    .digits(M_bin_to_dec_highscore_digits)
   );
   
   always @* begin
@@ -178,9 +199,10 @@ module gamestates_18 (
     M_high_score_d = M_high_score_q;
     M_readycounter_d = M_readycounter_q;
     M_slow1_d = M_slow1_q;
+    M_set_d = M_set_q;
     M_counter_d = M_counter_q;
-    M_loop_d = M_loop_q;
     M_score_d = M_score_q;
+    M_loop_d = M_loop_q;
     M_fast_counter_d = M_fast_counter_q;
     
     fail = 1'h0;
@@ -206,6 +228,8 @@ module gamestates_18 (
     row5 = M_register_row5;
     rowcar = M_ledrowcars_colorrowcar;
     M_register_shift = 1'h0;
+    M_register_reset = 1'h0;
+    M_register_set = M_set_q;
     ll1 = M_register_l1;
     ll2 = M_register_l2;
     out = M_register_out;
@@ -214,15 +238,20 @@ module gamestates_18 (
     M_alu_alufn = 6'h00;
     M_alu_a = 1'h0;
     M_alu_b = 1'h0;
-    M_register_reset = 1'h0;
     score_out = M_score_q;
     debug = M_car2_currentPosition[2+1-:2] & M_register_lane4val;
-    M_scoredisplay_color = 24'hff00ff;
-    M_scoredisplay_score = M_score_q[0+7-:8];
-    M_highscoredisplay_color = 24'hbda400;
-    M_highscoredisplay_score = M_high_score_q[0+7-:8];
+    M_bin_to_dec_score_value = M_score_q[0+6-:7];
+    M_bin_to_dec_highscore_value = M_high_score_q[0+6-:7];
+    deci_score = M_bin_to_dec_score_digits;
+    deci_highscore = M_bin_to_dec_highscore_digits;
+    M_scoredisplaydigits_color = 24'hff00ff;
+    M_scoredisplaydigits_digits = deci_score;
+    M_highscoredisplaydigits_color = 24'hbda400;
+    M_highscoredisplaydigits_digits = deci_highscore;
     levelUp = M_register_levelUp;
     level = M_register_level;
+    M_slow1_d = 1'h0;
+    M_readycounter_d = 1'h0;
     
     case (M_gamestates_q)
       START_gamestates: begin
@@ -232,9 +261,60 @@ module gamestates_18 (
         row4 = 96'h0000ff0000ff00ff0000ff00;
         row5 = 96'h0000ff0000ff00ff0000ff00;
         rowcar = 96'h0000000000ff00ff00000000;
+        M_slow1_d = M_slow1_q + 1'h1;
+        if (M_slow1_q == 25'h1ffffff) begin
+          M_loop_d = M_loop_q + 1'h1;
+          if (M_loop_q == 3'h5) begin
+            M_loop_d = 1'h0;
+          end
+        end
+        
+        case (M_loop_q)
+          2'h2: begin
+            row1 = 96'h0000000000ff00ff00000000;
+            row2 = 96'h0000ff0000ff00ff0000ff00;
+            row3 = 96'h0000ff0000ff00ff0000ff00;
+            row4 = 96'h000000000000000000000000;
+            row5 = 96'h000000000000000000000000;
+            rowcar = 96'h000000000000000000000000;
+          end
+          2'h3: begin
+            row1 = 96'h000000000000000000000000;
+            row2 = 96'h000000000000000000000000;
+            row3 = 96'h000000000000000000000000;
+            row4 = 96'h0000ff0000ff00ff0000ff00;
+            row5 = 96'h0000ff0000ff00ff0000ff00;
+            rowcar = 96'h0000000000ff00ff00000000;
+          end
+          3'h4: begin
+            row1 = 96'h0000000000ff000000000000;
+            row2 = 96'h0000ff0000ff000000000000;
+            row3 = 96'h0000ff0000ff000000000000;
+            row4 = 96'h00000000000000ff0000ff00;
+            row5 = 96'h00000000000000ff0000ff00;
+            rowcar = 96'h00000000000000ff00000000;
+          end
+          3'h5: begin
+            row1 = 96'h00000000000000ff00000000;
+            row2 = 96'h00000000000000ff0000ff00;
+            row3 = 96'h00000000000000ff0000ff00;
+            row4 = 96'h0000ff0000ff000000000000;
+            row5 = 96'h0000ff0000ff000000000000;
+            rowcar = 96'h0000000000ff000000000000;
+          end
+          default: begin
+            row1 = 96'h0000000000ff00ff00000000;
+            row2 = 96'h0000ff0000ff00ff0000ff00;
+            row3 = 96'h0000ff0000ff00ff0000ff00;
+            row4 = 96'h0000ff0000ff00ff0000ff00;
+            row5 = 96'h0000ff0000ff00ff0000ff00;
+            rowcar = 96'h0000000000ff00ff00000000;
+          end
+        endcase
         currentState = 5'h03;
         if (bigbtn) begin
           M_register_reset = 1'h1;
+          M_loop_d = 1'h0;
           M_score_d = 1'h0;
           M_gamestates_d = READY1_gamestates;
         end
@@ -383,11 +463,11 @@ module gamestates_18 (
       end
       SCORE_gamestates: begin
         currentState = 5'h0f;
-        row1 = M_scoredisplay_row1;
-        row2 = M_scoredisplay_row2;
+        row1 = M_scoredisplaydigits_tens;
+        row2 = M_scoredisplaydigits_ones;
         row3 = 96'h000000000000000000000000;
-        row4 = M_highscoredisplay_row1;
-        row5 = M_highscoredisplay_row2;
+        row4 = M_highscoredisplaydigits_tens;
+        row5 = M_highscoredisplaydigits_ones;
         rowcar = 96'h000000000000000000000000;
         M_alu_alufn = 6'h35;
         M_alu_a = M_high_score_q;
@@ -422,6 +502,7 @@ module gamestates_18 (
           M_high_score_d = M_score_q;
         end
         if (bigbtn) begin
+          M_set_d = M_set_q + 1'h1;
           M_gamestates_d = START_gamestates;
         end
       end
@@ -467,6 +548,14 @@ module gamestates_18 (
           rowcar = 96'h000000000000000000000000;
         end
         if (level == 3'h4) begin
+          row1 = 96'h00ff7800000000000000ff78;
+          row2 = 96'h00ff7800000000000000ff78;
+          row3 = 96'h00ff7800ff7800ff7800ff78;
+          row4 = 96'h00ff78000000000000000000;
+          row5 = 96'h00ff78000000000000000000;
+          rowcar = 96'h000000000000000000000000;
+        end
+        if (level == 3'h5) begin
           M_gamestates_d = WIN_gamestates;
         end
         if (bigbtn) begin
@@ -500,6 +589,7 @@ module gamestates_18 (
       M_slow1_q <= 1'h0;
       M_score_q <= 1'h0;
       M_high_score_q <= 1'h0;
+      M_set_q <= 1'h0;
     end else begin
       M_counter_q <= M_counter_d;
       M_fast_counter_q <= M_fast_counter_d;
@@ -509,6 +599,7 @@ module gamestates_18 (
       M_slow1_q <= M_slow1_d;
       M_score_q <= M_score_d;
       M_high_score_q <= M_high_score_d;
+      M_set_q <= M_set_d;
     end
   end
   

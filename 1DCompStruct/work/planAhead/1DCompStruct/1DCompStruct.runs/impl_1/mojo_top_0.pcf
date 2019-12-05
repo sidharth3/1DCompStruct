@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Dec 05 22:21:21 2019
+// Written by: Map P.20131013 on Fri Dec 06 04:31:36 2019
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -75,12 +75,12 @@ COMP "spi_ss" LOCATE = SITE "P48" LEVEL 1;
 COMP "io_led[10]" LOCATE = SITE "P82" LEVEL 1;
 COMP "io_led[11]" LOCATE = SITE "P83" LEVEL 1;
 COMP "io_led[20]" LOCATE = SITE "P22" LEVEL 1;
-COMP "io_led[13]" LOCATE = SITE "P81" LEVEL 1;
 COMP "io_led[21]" LOCATE = SITE "P23" LEVEL 1;
-COMP "io_led[14]" LOCATE = SITE "P11" LEVEL 1;
+COMP "io_led[13]" LOCATE = SITE "P81" LEVEL 1;
 COMP "io_led[22]" LOCATE = SITE "P24" LEVEL 1;
-COMP "io_led[15]" LOCATE = SITE "P14" LEVEL 1;
+COMP "io_led[14]" LOCATE = SITE "P11" LEVEL 1;
 COMP "io_led[23]" LOCATE = SITE "P26" LEVEL 1;
+COMP "io_led[15]" LOCATE = SITE "P14" LEVEL 1;
 COMP "io_led[16]" LOCATE = SITE "P15" LEVEL 1;
 COMP "io_led[17]" LOCATE = SITE "P16" LEVEL 1;
 COMP "io_led[18]" LOCATE = SITE "P17" LEVEL 1;
@@ -93,18 +93,17 @@ TIMEGRP clk = BEL "gamestates/M_readycounter_q_10" BEL
         "gamestates/M_readycounter_q_14" BEL "gamestates/M_readycounter_q_15"
         BEL "gamestates/M_readycounter_q_20" BEL
         "gamestates/M_readycounter_q_21" BEL "gamestates/M_readycounter_q_16"
-        BEL "gamestates/M_readycounter_q_22" BEL "gamestates/M_slow1_q_0" BEL
-        "gamestates/M_readycounter_q_17" BEL "gamestates/M_readycounter_q_18"
-        BEL "gamestates/M_slow1_q_1" BEL "gamestates/M_readycounter_q_23" BEL
+        BEL "gamestates/M_readycounter_q_22" BEL
+        "gamestates/M_readycounter_q_17" BEL "gamestates/M_slow1_q_0" BEL
+        "gamestates/M_readycounter_q_23" BEL "gamestates/M_readycounter_q_18"
+        BEL "gamestates/M_slow1_q_1" BEL "gamestates/M_readycounter_q_19" BEL
         "gamestates/M_readycounter_q_24" BEL "gamestates/M_slow1_q_2" BEL
-        "gamestates/M_readycounter_q_19" BEL "gamestates/M_slow1_q_3" BEL
-        "gamestates/M_slow1_q_4" BEL "gamestates/M_slow1_q_5" BEL
-        "gamestates/M_slow1_q_6" BEL "gamestates/M_slow1_q_7" BEL
-        "gamestates/M_slow1_q_8" BEL "gamestates/M_slow1_q_9" BEL
-        "gamestates/M_loop_q_0" BEL "gamestates/M_loop_q_1" BEL
-        "gamestates/M_gamestates_q_FSM_FFd3_1" BEL
-        "gamestates/register/M_levelReg_q_1" BEL
-        "gamestates/register/M_levelReg_q_2" BEL
+        "gamestates/M_slow1_q_3" BEL "gamestates/M_slow1_q_4" BEL
+        "gamestates/M_slow1_q_5" BEL "gamestates/M_slow1_q_6" BEL
+        "gamestates/M_slow1_q_7" BEL "gamestates/M_slow1_q_8" BEL
+        "gamestates/M_slow1_q_9" BEL "gamestates/M_loop_q_0" BEL
+        "gamestates/M_loop_q_1" BEL "gamestates/M_loop_q_2" BEL
+        "gamestates/M_loop_q_3" BEL "gamestates/M_loop_q_4" BEL
         "gamestates/register/M_lane4_q_9" BEL
         "gamestates/register/M_lane4_q_8" BEL
         "gamestates/register/M_lane4_q_7" BEL
@@ -115,26 +114,6 @@ TIMEGRP clk = BEL "gamestates/M_readycounter_q_10" BEL
         "gamestates/register/M_lane4_q_2" BEL
         "gamestates/register/M_lane4_q_1" BEL
         "gamestates/register/M_lane4_q_0" BEL
-        "gamestates/register/M_lane2_q_9" BEL
-        "gamestates/register/M_lane2_q_8" BEL
-        "gamestates/register/M_lane2_q_7" BEL
-        "gamestates/register/M_lane2_q_6" BEL
-        "gamestates/register/M_lane2_q_5" BEL
-        "gamestates/register/M_lane2_q_4" BEL
-        "gamestates/register/M_lane2_q_3" BEL
-        "gamestates/register/M_lane2_q_2" BEL
-        "gamestates/register/M_lane2_q_1" BEL
-        "gamestates/register/M_lane2_q_0" BEL
-        "gamestates/register/M_lane1_q_9" BEL
-        "gamestates/register/M_lane1_q_8" BEL
-        "gamestates/register/M_lane1_q_7" BEL
-        "gamestates/register/M_lane1_q_6" BEL
-        "gamestates/register/M_lane1_q_5" BEL
-        "gamestates/register/M_lane1_q_4" BEL
-        "gamestates/register/M_lane1_q_3" BEL
-        "gamestates/register/M_lane1_q_2" BEL
-        "gamestates/register/M_lane1_q_1" BEL
-        "gamestates/register/M_lane1_q_0" BEL
         "gamestates/register/M_lane3_q_9" BEL
         "gamestates/register/M_lane3_q_8" BEL
         "gamestates/register/M_lane3_q_7" BEL
@@ -145,15 +124,34 @@ TIMEGRP clk = BEL "gamestates/M_readycounter_q_10" BEL
         "gamestates/register/M_lane3_q_2" BEL
         "gamestates/register/M_lane3_q_1" BEL
         "gamestates/register/M_lane3_q_0" BEL
+        "gamestates/register/M_lane1_q_9" BEL
+        "gamestates/register/M_lane1_q_8" BEL
+        "gamestates/register/M_lane1_q_7" BEL
+        "gamestates/register/M_lane1_q_6" BEL
+        "gamestates/register/M_lane1_q_5" BEL
+        "gamestates/register/M_lane1_q_4" BEL
+        "gamestates/register/M_lane1_q_3" BEL
+        "gamestates/register/M_lane1_q_2" BEL
+        "gamestates/register/M_lane1_q_1" BEL
+        "gamestates/register/M_lane1_q_0" BEL
+        "gamestates/register/M_lane2_q_9" BEL
+        "gamestates/register/M_lane2_q_8" BEL
+        "gamestates/register/M_lane2_q_7" BEL
+        "gamestates/register/M_lane2_q_6" BEL
+        "gamestates/register/M_lane2_q_5" BEL
+        "gamestates/register/M_lane2_q_4" BEL
+        "gamestates/register/M_lane2_q_3" BEL
+        "gamestates/register/M_lane2_q_2" BEL
+        "gamestates/register/M_lane2_q_1" BEL
+        "gamestates/register/M_lane2_q_0" BEL
         "gamestates/register/M_levelReg_q_0" BEL
-        "gamestates/register/M_levelReg_q_2_1" BEL
-        "gamestates/register/M_addr_q_4" BEL "gamestates/register/M_addr_q_3"
+        "gamestates/register/M_addr_q_2" BEL "gamestates/register/M_addr_q_0"
         BEL "gamestates/register/M_addr_q_1" BEL
-        "gamestates/register/M_addr_q_0" BEL "gamestates/register/M_addr_q_2"
-        BEL "gamestates/register/M_addr_q_1_1" BEL
-        "gamestates/M_gamestates_q_FSM_FFd4_1" BEL
-        "gamestates/M_gamestates_q_FSM_FFd5_1" BEL
-        "gamestates/M_gamestates_q_FSM_FFd5_2" BEL
+        "gamestates/register/M_levelReg_q_2" BEL
+        "gamestates/register/M_levelReg_q_1" BEL
+        "gamestates/register/M_addr_q_5" BEL "gamestates/register/M_addr_q_4"
+        BEL "gamestates/register/M_addr_q_3" BEL
+        "gamestates/register/M_levelReg_q_1_1" BEL
         "gamestates/M_high_score_q_0" BEL "gamestates/M_high_score_q_1" BEL
         "gamestates/M_high_score_q_2" BEL "gamestates/M_high_score_q_3" BEL
         "gamestates/M_high_score_q_4" BEL "gamestates/M_high_score_q_5" BEL
@@ -170,7 +168,7 @@ TIMEGRP clk = BEL "gamestates/M_readycounter_q_10" BEL
         BEL "gamestates/M_readycounter_q_5" BEL
         "gamestates/M_readycounter_q_6" BEL "gamestates/M_readycounter_q_7"
         BEL "gamestates/M_readycounter_q_8" BEL
-        "gamestates/M_readycounter_q_9" BEL
+        "gamestates/M_readycounter_q_9" BEL "gamestates/M_set_q_0" BEL
         "gamestates/M_gamestates_q_FSM_FFd1" BEL
         "gamestates/M_gamestates_q_FSM_FFd2" BEL
         "gamestates/M_gamestates_q_FSM_FFd3" BEL
@@ -199,16 +197,16 @@ TIMEGRP clk = BEL "gamestates/M_readycounter_q_10" BEL
         "gamestates/M_score_q_5" BEL "gamestates/M_score_q_6" BEL
         "gamestates/M_score_q_7" BEL "gamestates/M_score_q_8" BEL
         "gamestates/M_score_q_9" BEL "gamestates/M_score_q_10" BEL
-        "gamestates/M_score_q_11" BEL "gamestates/M_slow1_q_10" BEL
-        "gamestates/M_score_q_12" BEL "gamestates/M_slow1_q_11" BEL
-        "gamestates/M_score_q_13" BEL "gamestates/M_score_q_14" BEL
+        "gamestates/M_score_q_11" BEL "gamestates/M_score_q_12" BEL
+        "gamestates/M_slow1_q_10" BEL "gamestates/M_score_q_13" BEL
+        "gamestates/M_slow1_q_11" BEL "gamestates/M_score_q_14" BEL
         "gamestates/M_slow1_q_12" BEL "gamestates/M_score_q_15" BEL
         "gamestates/M_slow1_q_13" BEL "gamestates/M_slow1_q_14" BEL
         "gamestates/M_slow1_q_20" BEL "gamestates/M_slow1_q_15" BEL
         "gamestates/M_slow1_q_21" BEL "gamestates/M_slow1_q_16" BEL
-        "gamestates/M_slow1_q_22" BEL "gamestates/M_slow1_q_17" BEL
+        "gamestates/M_slow1_q_17" BEL "gamestates/M_slow1_q_22" BEL
         "gamestates/M_slow1_q_23" BEL "gamestates/M_slow1_q_18" BEL
-        "gamestates/M_slow1_q_24" BEL "gamestates/M_slow1_q_19" BEL
+        "gamestates/M_slow1_q_19" BEL "gamestates/M_slow1_q_24" BEL
         "gamestates/M_slow1_q_25" BEL "gamestates/M_counter_q_10" BEL
         "gamestates/M_counter_q_11" BEL "gamestates/M_counter_q_12" BEL
         "gamestates/M_counter_q_13" BEL "gamestates/M_counter_q_14" BEL
@@ -228,10 +226,9 @@ TIMEGRP clk = BEL "gamestates/M_readycounter_q_10" BEL
         BEL "display6/M_ctr_q_2" BEL "display6/M_ctr_q_1" BEL
         "display6/M_pixel_ctr_q_3" BEL "display6/M_pixel_ctr_q_2" BEL
         "display6/M_pixel_ctr_q_1" BEL "display6/M_pixel_ctr_q_0" BEL
-        "display6/M_state_q" BEL "display6/M_ctr_q_3_1" BEL
         "display6/M_bit_ctr_q_4" BEL "display6/M_bit_ctr_q_3" BEL
         "display6/M_bit_ctr_q_2" BEL "display6/M_bit_ctr_q_1" BEL
-        "display6/M_bit_ctr_q_0" BEL "display6/M_ctr_q_2_1" BEL
+        "display6/M_bit_ctr_q_0" BEL "display6/M_state_q" BEL
         "edge1right/M_last_q" BEL "reset_cond/M_stage_q_3" BEL
         "reset_cond/M_stage_q_2" BEL "reset_cond/M_stage_q_1" BEL
         "reset_cond/M_stage_q_0" BEL "edge2right/M_last_q" BEL

@@ -39,15 +39,24 @@ module gamestates (//module which contains the game states - oscillates between 
       dff slow1[26];
       dff score[16];
       dff high_score[16];
+      dff set[1];
       }
     }
 sig temp_score[8];
 sig levelUp[1];
 sig level[3];
+sig deci_score[2][4];
+sig deci_highscore[2][4];
 alu alu;
 ledrowcars ledrowcars;
-scoredisplay scoredisplay;
-scoredisplay highscoredisplay;      
+  
+// scoredisplay scoredisplay;
+// scoredisplay highscoredisplay;
+
+scoredisplaydigits scoredisplaydigits;
+scoredisplaydigits highscoredisplaydigits;
+bin_to_dec bin_to_dec_score(#DIGITS(2),#LEADING_ZEROS(1));
+bin_to_dec bin_to_dec_highscore(#DIGITS(2),#LEADING_ZEROS(1));     
   always {
     fail = 0;
     car1.reset = 0;
@@ -75,7 +84,10 @@ scoredisplay highscoredisplay;
     row4 = register.row4;
     row5 = register.row5;
     rowcar = ledrowcars.colorrowcar;
+    
     register.shift = 0;  
+    register.reset = 0;
+    register.set = set.q;  
     
     ll1 = register.l1;
     ll2 = register.l2;
@@ -86,19 +98,34 @@ scoredisplay highscoredisplay;
     alu.alufn = 6b0;
     alu.a = 0;
     alu.b = 0;
-    
-    register.reset = 0;
+      
     score_out = score.q;
     debug = car2.currentPosition[3:2]&register.lane4val;
     
-    scoredisplay.color = Color.CYAN;
-    scoredisplay.score = score.q[7:0];
+    // scoredisplay.color = Color.CYAN;
+    // scoredisplay.score = score.q[7:0];     
     
-    highscoredisplay.color = Color.PURPLE;
-    highscoredisplay.score = high_score.q[7:0];
+    // highscoredisplay.color = Color.PURPLE;
+    // highscoredisplay.score = high_score.q[7:0];
     
+    bin_to_dec_score.value = score.q[6:0]; 
+    bin_to_dec_highscore.value = high_score.q[6:0];
+    
+    deci_score = bin_to_dec_score.digits;
+    deci_highscore = bin_to_dec_highscore.digits;
+    
+    scoredisplaydigits.color = Color.CYAN;
+    scoredisplaydigits.digits = deci_score;
+    
+    highscoredisplaydigits.color = Color.PURPLE;
+    highscoredisplaydigits.digits = deci_highscore;
+       
     levelUp = register.levelUp;
     level = register.level;
+    
+    // reset slow and ready counter
+    slow1.d = 0;
+    readycounter.d = 0;
     case(gamestates.q){
         gamestates.START:
           // hard code the arrow
@@ -120,9 +147,59 @@ scoredisplay highscoredisplay;
           row4 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
           row5 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
           rowcar = {24b0,Color.GREEN,Color.RED,24b0};
+          
+          // animation for the start state
+          
+          // counter and loop
+          slow1.d = slow1.q + 1;
+          if (slow1.q == 25x{b1}){
+            loop.d = loop.q + 1;
+            if (loop.q == 5){
+              loop.d = 0;
+            }
+          }
+          case (loop.q){
+          2:
+            row1 = {24b0,Color.GREEN,Color.RED,24b0};
+            row2 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
+            row3 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
+            row4 = ColorRow.EMPTY;
+            row5 = ColorRow.EMPTY;
+            rowcar = ColorRow.EMPTY;
+          3:
+            row1 = ColorRow.EMPTY;
+            row2 = ColorRow.EMPTY;
+            row3 = ColorRow.EMPTY;
+            row4 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
+            row5 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
+            rowcar = {24b0,Color.GREEN,Color.RED,24b0};
+          4:
+            row1 = {24b0,Color.GREEN,24b0,24b0};
+            row2 = {Color.GREEN,Color.GREEN,24b0,24b0};
+            row3 = {Color.GREEN,Color.GREEN,24b0,24b0};
+            row4 = {24b0,24b0,Color.RED,Color.RED};
+            row5 = {24b0,24b0,Color.RED,Color.RED};
+            rowcar = {24b0,24b0,Color.RED,24b0};
+          5:
+            row1 = {24b0,24b0,Color.RED,24b0};
+            row2 = {24b0,24b0,Color.RED,Color.RED};
+            row3 = {24b0,24b0,Color.RED,Color.RED};
+            row4 = {Color.GREEN,Color.GREEN,24b0,24b0};
+            row5 = {Color.GREEN,Color.GREEN,24b0,24b0};
+            rowcar = {24b0,Color.GREEN,24b0,24b0};
+          default:
+            row1 = {24b0,Color.GREEN,Color.RED,24b0};
+            row2 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
+            row3 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
+            row4 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
+            row5 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
+            rowcar = {24b0,Color.GREEN,Color.RED,24b0};
+          }
+          
           currentState=5b00011;
           if (bigbtn){
              register.reset = 1;
+             loop.d = 0;
              score.d = 0;
              gamestates.d = gamestates.READY1;
           }
@@ -269,11 +346,11 @@ scoredisplay highscoredisplay;
           }
         gamestates.SCORE:
           currentState = 5b01111;
-          row1 = scoredisplay.row1;
-          row2 = scoredisplay.row2;
+          row1 = scoredisplaydigits.tens;
+          row2 = scoredisplaydigits.ones;
           row3 = {24b0,24b0,24b0,24b0}; 
-          row4 = highscoredisplay.row1;
-          row5 = highscoredisplay.row2;
+          row4 = highscoredisplaydigits.tens;
+          row5 = highscoredisplaydigits.ones;
           rowcar = {24b0,24b0,24b0,24b0}; 
           // compare if highscore is less than current score
           alu.alufn = b110101;
@@ -308,6 +385,7 @@ scoredisplay highscoredisplay;
           }
                
           if (bigbtn){
+            set.d = set.q+1;
             gamestates.d = gamestates.START;
           }
         gamestates.POINT1:
@@ -353,6 +431,15 @@ scoredisplay highscoredisplay;
           }
           
           if (level==b100){
+            row1 = {Color.ORANGE, 24b0, 24b0, Color.ORANGE};
+            row2 = {Color.ORANGE, 24b0, 24b0, Color.ORANGE};
+            row3 = {Color.ORANGE, Color.ORANGE, Color.ORANGE, Color.ORANGE};  
+            row4 = {Color.ORANGE, 24b0, 24b0, 24b0};
+            row5 = {Color.ORANGE, 24b0, 24b0, 24b0};
+            rowcar = {24b0, 24b0, 24b0, 24b0}; 
+          }
+        
+          if (level==b101){
             gamestates.d = gamestates.WIN;
           }
           if(bigbtn){

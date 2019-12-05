@@ -28,48 +28,15 @@ module registers_28 (
   
   
   
-  wire [16-1:0] M_alu1_c;
-  reg [6-1:0] M_alu1_alufn;
-  reg [16-1:0] M_alu1_a;
-  reg [16-1:0] M_alu1_b;
-  alu_19 alu1 (
-    .alufn(M_alu1_alufn),
-    .a(M_alu1_a),
-    .b(M_alu1_b),
-    .c(M_alu1_c)
-  );
-  
-  wire [16-1:0] M_alu2_c;
-  reg [6-1:0] M_alu2_alufn;
-  reg [16-1:0] M_alu2_a;
-  reg [16-1:0] M_alu2_b;
-  alu_19 alu2 (
-    .alufn(M_alu2_alufn),
-    .a(M_alu2_a),
-    .b(M_alu2_b),
-    .c(M_alu2_c)
-  );
-  
-  wire [16-1:0] M_alu3_c;
-  reg [6-1:0] M_alu3_alufn;
-  reg [16-1:0] M_alu3_a;
-  reg [16-1:0] M_alu3_b;
-  alu_19 alu3 (
-    .alufn(M_alu3_alufn),
-    .a(M_alu3_a),
-    .b(M_alu3_b),
-    .c(M_alu3_c)
-  );
-  
-  wire [16-1:0] M_alu4_c;
-  reg [6-1:0] M_alu4_alufn;
-  reg [16-1:0] M_alu4_a;
-  reg [16-1:0] M_alu4_b;
-  alu_19 alu4 (
-    .alufn(M_alu4_alufn),
-    .a(M_alu4_a),
-    .b(M_alu4_b),
-    .c(M_alu4_c)
+  wire [16-1:0] M_alu_c;
+  reg [6-1:0] M_alu_alufn;
+  reg [16-1:0] M_alu_a;
+  reg [16-1:0] M_alu_b;
+  alu_19 alu (
+    .alufn(M_alu_alufn),
+    .a(M_alu_a),
+    .b(M_alu_b),
+    .c(M_alu_c)
   );
   
   wire [8-1:0] M_map_next_row;
@@ -162,6 +129,7 @@ module registers_28 (
   reg [9:0] M_lane3_d, M_lane3_q = 1'h0;
   reg [9:0] M_lane4_d, M_lane4_q = 1'h0;
   reg [2:0] M_levelReg_d, M_levelReg_q = 1'h0;
+  reg [4:0] M_loop_d, M_loop_q = 1'h0;
   wire [5-1:0] M_ctr_out;
   reg [1-1:0] M_ctr_reset;
   smallgc_44 ctr (
@@ -174,6 +142,7 @@ module registers_28 (
   always @* begin
     M_lane4_d = M_lane4_q;
     M_levelReg_d = M_levelReg_q;
+    M_loop_d = M_loop_q;
     M_addr_d = M_addr_q;
     M_lane2_d = M_lane2_q;
     M_lane3_d = M_lane3_q;
@@ -208,24 +177,16 @@ module registers_28 (
     row5 = M_ledrow5map_color_row5;
     M_ctr_reset = 1'h0;
     M_map_address = 1'h0;
-    M_alu1_a = 1'h0;
-    M_alu1_b = 1'h0;
-    M_alu1_alufn = 6'h00;
-    M_alu2_a = 1'h0;
-    M_alu2_b = 1'h0;
-    M_alu2_alufn = 6'h00;
-    M_alu3_a = 1'h0;
-    M_alu3_b = 1'h0;
-    M_alu3_alufn = 6'h00;
-    M_alu4_a = 1'h0;
-    M_alu4_b = 1'h0;
-    M_alu4_alufn = 6'h00;
+    M_alu_a = 1'h0;
+    M_alu_b = 1'h0;
+    M_alu_alufn = 6'h00;
     lane1val = M_lane1_q[8+1-:2];
     lane2val = M_lane2_q[8+1-:2];
     lane3val = M_lane3_q[8+1-:2];
     lane4val = M_lane4_q[8+1-:2];
     if (reset) begin
       M_levelReg_d = 2'h1;
+      M_loop_d = 1'h0;
       M_addr_d = 1'h0;
       M_lane1_d = 10'h000;
       M_lane2_d = 10'h000;
@@ -247,15 +208,34 @@ module registers_28 (
       levelUp = 1'h1;
     end
     if (shift == 1'h1) begin
-      templane1 = M_lane1_q << 2'h2;
-      M_lane1_d = {templane1[2+7-:8], M_map_next_row[0+1-:2]};
-      templane2 = M_lane2_q << 2'h2;
-      M_lane2_d = {templane2[2+7-:8], M_map_next_row[2+1-:2]};
-      templane3 = M_lane3_q << 2'h2;
-      M_lane3_d = {templane3[2+7-:8], M_map_next_row[4+1-:2]};
-      templane4 = M_lane4_q << 2'h2;
-      M_lane4_d = {templane4[2+7-:8], M_map_next_row[6+1-:2]};
-      M_addr_d = M_addr_q + 1'h1;
+      M_loop_d = M_loop_q + 1'h1;
+      M_alu_alufn = 6'h20;
+      M_alu_b = 2'h2;
+      if (M_loop_q == 1'h0) begin
+        M_alu_a = M_lane1_q;
+        templane1 = M_alu_c;
+        M_lane1_d = {templane1[2+7-:8], M_map_next_row[0+1-:2]};
+      end else begin
+        if (M_loop_q == 1'h1) begin
+          M_alu_a = M_lane2_q;
+          templane2 = M_alu_c;
+          M_lane2_d = {templane2[2+7-:8], M_map_next_row[2+1-:2]};
+        end else begin
+          if (M_loop_q == 2'h2) begin
+            M_alu_a = M_lane3_q;
+            templane3 = M_alu_c;
+            M_lane3_d = {templane3[2+7-:8], M_map_next_row[4+1-:2]};
+          end else begin
+            if (M_loop_q == 2'h3) begin
+              M_alu_a = M_lane4_q;
+              templane4 = M_alu_c;
+              M_lane4_d = {templane4[2+7-:8], M_map_next_row[6+1-:2]};
+              M_addr_d = M_addr_q + 1'h1;
+              M_loop_d = 1'h0;
+            end
+          end
+        end
+      end
     end
   end
   
@@ -267,6 +247,7 @@ module registers_28 (
       M_lane3_q <= 1'h0;
       M_lane4_q <= 1'h0;
       M_levelReg_q <= 1'h0;
+      M_loop_q <= 1'h0;
     end else begin
       M_addr_q <= M_addr_d;
       M_lane1_q <= M_lane1_d;
@@ -274,6 +255,7 @@ module registers_28 (
       M_lane3_q <= M_lane3_d;
       M_lane4_q <= M_lane4_d;
       M_levelReg_q <= M_levelReg_d;
+      M_loop_q <= M_loop_d;
     end
   end
   

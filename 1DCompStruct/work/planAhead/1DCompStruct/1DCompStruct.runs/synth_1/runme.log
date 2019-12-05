@@ -89,10 +89,6 @@ Elaborating module <adder_35>.
 Elaborating module <bitshifter_36>.
 
 Elaborating module <cmp_37>.
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" Line 39: Assignment to M_alu1_c ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" Line 50: Assignment to M_alu2_c ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" Line 61: Assignment to M_alu3_c ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" Line 72: Assignment to M_alu4_c ignored, since the identifier is never used
 
 Elaborating module <map_38>.
 
@@ -107,7 +103,11 @@ Elaborating module <ledrow4map_42>.
 Elaborating module <ledrow5map_43>.
 
 Elaborating module <smallgc_44>.
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" Line 171: Assignment to M_ctr_out ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" Line 139: Assignment to M_ctr_out ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" Line 216: Result of 16-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" Line 221: Result of 16-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" Line 226: Result of 16-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" Line 231: Result of 16-bit expression is truncated to fit in 10-bit target.
 
 Elaborating module <ledrowcars_30>.
 
@@ -117,7 +117,7 @@ Elaborating module <bin_to_dec_20>.
 WARNING:HDLCompiler:413 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/bin_to_dec_20.v" Line 39: Result of 64-bit expression is truncated to fit in 32-bit target.
 WARNING:HDLCompiler:413 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/bin_to_dec_20.v" Line 51: Result of 5-bit expression is truncated to fit in 4-bit target.
 WARNING:HDLCompiler:413 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/bin_to_dec_20.v" Line 52: Result of 8-bit expression is truncated to fit in 7-bit target.
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/gamestates_18.v" Line 580: Assignment to M_faster_counter_q ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/gamestates_18.v" Line 586: Assignment to M_faster_counter_q ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 233: Assignment to M_gamestates_ll1 ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 234: Assignment to M_gamestates_ll2 ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 235: Assignment to M_gamestates_out ignored, since the identifier is never used
@@ -126,11 +126,7 @@ WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1
 WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 238: Assignment to M_gamestates_car2Pos ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 252: Assignment to M_alu_c ignored, since the identifier is never used
 WARNING:HDLCompiler:413 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 316: Result of 16-bit expression is truncated to fit in 8-bit target.
-WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" line 35. All outputs of instance <alu1> of block <alu_19> are unconnected in block <registers_28>. Underlying logic will be removed.
-WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" line 46. All outputs of instance <alu2> of block <alu_19> are unconnected in block <registers_28>. Underlying logic will be removed.
-WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" line 57. All outputs of instance <alu3> of block <alu_19> are unconnected in block <registers_28>. Underlying logic will be removed.
-WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" line 68. All outputs of instance <alu4> of block <alu_19> are unconnected in block <registers_28>. Underlying logic will be removed.
-WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" line 167. All outputs of instance <ctr> of block <smallgc_44> are unconnected in block <registers_28>. Underlying logic will be removed.
+WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" line 135. All outputs of instance <ctr> of block <smallgc_44> are unconnected in block <registers_28>. Underlying logic will be removed.
 WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 248. All outputs of instance <alu> of block <alu_19> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
 
 =========================================================================
@@ -240,22 +236,22 @@ Synthesizing Unit <gamestates_18>.
     Found 1-bit register for signal <M_set_q>.
     Found finite state machine <FSM_0> for signal <M_gamestates_q>.
     -----------------------------------------------------------------------
-    | States             | 16                                             |
-    | Transitions        | 47                                             |
+    | States             | 17                                             |
+    | Transitions        | 49                                             |
     | Inputs             | 21                                             |
-    | Outputs            | 16                                             |
+    | Outputs            | 21                                             |
     | Clock              | clk (rising_edge)                              |
     | Power Up State     | 00000                                          |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 25-bit adder for signal <M_counter_d> created at line 236.
-    Found 24-bit adder for signal <M_fast_counter_q[23]_GND_8_o_add_1_OUT> created at line 237.
-    Found 26-bit adder for signal <M_slow1_q[25]_GND_8_o_add_3_OUT> created at line 264.
-    Found 5-bit adder for signal <M_loop_q[4]_GND_8_o_add_5_OUT> created at line 266.
-    Found 25-bit adder for signal <M_readycounter_q[24]_GND_8_o_add_177_OUT> created at line 329.
-    Found 1-bit adder for signal <M_set_q[0]_PWR_7_o_add_266_OUT<0>> created at line 505.
-    Found 4x96-bit Read Only RAM for signal <_n0383>
+    Found 25-bit adder for signal <M_counter_d> created at line 237.
+    Found 24-bit adder for signal <M_fast_counter_d> created at line 238.
+    Found 25-bit adder for signal <M_readycounter_q[24]_GND_8_o_add_183_OUT> created at line 354.
+    Found 5-bit adder for signal <M_loop_q[4]_GND_8_o_add_250_OUT> created at line 483.
+    Found 1-bit adder for signal <M_set_q[0]_PWR_7_o_add_268_OUT<0>> created at line 511.
+    Found 26-bit adder for signal <M_slow1_q[25]_GND_8_o_add_270_OUT> created at line 528.
+    Found 4x96-bit Read Only RAM for signal <_n0428>
 WARNING:Xst:737 - Found 1-bit latch for signal <currentState<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <currentState<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
@@ -263,7 +259,7 @@ WARNING:Xst:737 - Found 1-bit latch for signal <currentState<4>>. Latches may be
 	inferred   6 Adder/Subtractor(s).
 	inferred 138 D-type flip-flop(s).
 	inferred   2 Latch(s).
-	inferred  43 Multiplexer(s).
+	inferred  95 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <gamestates_18> synthesized.
 
@@ -272,28 +268,27 @@ Synthesizing Unit <car_26>.
     Found 4-bit register for signal <M_carposition_q>.
     Summary:
 	inferred   4 D-type flip-flop(s).
-	inferred   2 Multiplexer(s).
+	inferred   3 Multiplexer(s).
 Unit <car_26> synthesized.
 
 Synthesizing Unit <registers_28>.
     Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v".
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" line 35: Output port <c> of the instance <alu1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" line 46: Output port <c> of the instance <alu2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" line 57: Output port <c> of the instance <alu3> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" line 68: Output port <c> of the instance <alu4> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" line 167: Output port <out> of the instance <ctr> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_28.v" line 135: Output port <out> of the instance <ctr> is unconnected or connected to loadless signal.
     Found 10-bit register for signal <M_lane1_q>.
     Found 10-bit register for signal <M_lane2_q>.
     Found 10-bit register for signal <M_lane3_q>.
     Found 10-bit register for signal <M_lane4_q>.
     Found 3-bit register for signal <M_levelReg_q>.
+    Found 5-bit register for signal <M_loop_q>.
     Found 6-bit register for signal <M_addr_q>.
-    Found 3-bit adder for signal <M_levelReg_q[2]_GND_10_o_add_9_OUT> created at line 245.
-    Found 6-bit adder for signal <M_addr_q[5]_GND_10_o_add_13_OUT> created at line 258.
+    Found 3-bit adder for signal <M_levelReg_q[2]_GND_10_o_add_10_OUT> created at line 206.
+    Found 5-bit adder for signal <M_loop_q[4]_GND_10_o_add_14_OUT> created at line 211.
+    Found 6-bit adder for signal <M_addr_q[5]_GND_10_o_add_19_OUT> created at line 233.
+    Found 16-bit 4-to-1 multiplexer for signal <_n0188> created at line 218.
     Summary:
-	inferred   2 Adder/Subtractor(s).
-	inferred  49 D-type flip-flop(s).
-	inferred   2 Multiplexer(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred  54 D-type flip-flop(s).
+	inferred  20 Multiplexer(s).
 Unit <registers_28> synthesized.
 
 Synthesizing Unit <alu_19>.
@@ -544,36 +539,36 @@ Macro Statistics
 # RAMs                                                 : 21
  4x24-bit single-port Read Only RAM                    : 20
  4x96-bit single-port Read Only RAM                    : 1
-# Multipliers                                          : 8
- 16x16-bit multiplier                                  : 2
+# Multipliers                                          : 10
+ 16x16-bit multiplier                                  : 4
  5x4-bit multiplier                                    : 6
-# Adders/Subtractors                                   : 80
+# Adders/Subtractors                                   : 114
  1-bit adder                                           : 1
  12-bit adder                                          : 6
- 17-bit adder                                          : 2
- 17-bit addsub                                         : 1
- 18-bit adder                                          : 2
- 19-bit adder                                          : 2
- 20-bit adder                                          : 7
- 21-bit adder                                          : 2
- 22-bit adder                                          : 2
- 23-bit adder                                          : 2
- 24-bit adder                                          : 3
- 25-bit adder                                          : 4
- 26-bit adder                                          : 3
- 27-bit adder                                          : 2
- 28-bit adder                                          : 2
- 29-bit adder                                          : 2
+ 17-bit adder                                          : 4
+ 17-bit addsub                                         : 2
+ 18-bit adder                                          : 4
+ 19-bit adder                                          : 4
+ 20-bit adder                                          : 9
+ 21-bit adder                                          : 4
+ 22-bit adder                                          : 4
+ 23-bit adder                                          : 4
+ 24-bit adder                                          : 5
+ 25-bit adder                                          : 6
+ 26-bit adder                                          : 5
+ 27-bit adder                                          : 4
+ 28-bit adder                                          : 4
+ 29-bit adder                                          : 4
  3-bit adder                                           : 1
- 30-bit adder                                          : 2
- 31-bit adder                                          : 2
- 32-bit adder                                          : 2
+ 30-bit adder                                          : 4
+ 31-bit adder                                          : 4
+ 32-bit adder                                          : 4
  4-bit adder                                           : 6
- 5-bit adder                                           : 7
+ 5-bit adder                                           : 8
  6-bit adder                                           : 7
  7-bit subtractor                                      : 3
  9-bit adder                                           : 7
-# Registers                                            : 62
+# Registers                                            : 63
  1-bit register                                        : 12
  10-bit register                                       : 4
  12-bit register                                       : 6
@@ -585,51 +580,53 @@ Macro Statistics
  26-bit register                                       : 1
  3-bit register                                        : 1
  4-bit register                                        : 9
- 5-bit register                                        : 7
+ 5-bit register                                        : 8
  6-bit register                                        : 7
 # Latches                                              : 2
  1-bit latch                                           : 2
-# Comparators                                          : 92
- 16-bit comparator equal                               : 1
- 16-bit comparator greater                             : 1
- 16-bit comparator lessequal                           : 2
- 17-bit comparator lessequal                           : 1
- 18-bit comparator lessequal                           : 1
- 19-bit comparator lessequal                           : 1
- 20-bit comparator lessequal                           : 1
- 21-bit comparator lessequal                           : 1
- 22-bit comparator lessequal                           : 1
- 23-bit comparator lessequal                           : 1
- 24-bit comparator lessequal                           : 1
- 25-bit comparator lessequal                           : 1
- 26-bit comparator lessequal                           : 1
- 27-bit comparator lessequal                           : 1
- 28-bit comparator lessequal                           : 1
- 29-bit comparator lessequal                           : 1
- 30-bit comparator lessequal                           : 1
- 31-bit comparator lessequal                           : 1
- 32-bit comparator lessequal                           : 1
+# Comparators                                          : 112
+ 16-bit comparator equal                               : 2
+ 16-bit comparator greater                             : 2
+ 16-bit comparator lessequal                           : 4
+ 17-bit comparator lessequal                           : 2
+ 18-bit comparator lessequal                           : 2
+ 19-bit comparator lessequal                           : 2
+ 20-bit comparator lessequal                           : 2
+ 21-bit comparator lessequal                           : 2
+ 22-bit comparator lessequal                           : 2
+ 23-bit comparator lessequal                           : 2
+ 24-bit comparator lessequal                           : 2
+ 25-bit comparator lessequal                           : 2
+ 26-bit comparator lessequal                           : 2
+ 27-bit comparator lessequal                           : 2
+ 28-bit comparator lessequal                           : 2
+ 29-bit comparator lessequal                           : 2
+ 30-bit comparator lessequal                           : 2
+ 31-bit comparator lessequal                           : 2
+ 32-bit comparator lessequal                           : 2
  6-bit comparator greater                              : 12
  7-bit comparator greater                              : 60
-# Multiplexers                                         : 590
- 1-bit 2-to-1 multiplexer                              : 480
- 1-bit 4-to-1 multiplexer                              : 1
- 16-bit 2-to-1 multiplexer                             : 2
- 16-bit 4-to-1 multiplexer                             : 2
- 17-bit 2-to-1 multiplexer                             : 4
+# Multiplexers                                         : 911
+ 1-bit 2-to-1 multiplexer                              : 721
+ 1-bit 4-to-1 multiplexer                              : 2
+ 10-bit 2-to-1 multiplexer                             : 10
+ 16-bit 2-to-1 multiplexer                             : 9
+ 16-bit 4-to-1 multiplexer                             : 5
+ 17-bit 2-to-1 multiplexer                             : 8
  24-bit 2-to-1 multiplexer                             : 18
- 26-bit 2-to-1 multiplexer                             : 1
+ 25-bit 2-to-1 multiplexer                             : 1
+ 26-bit 2-to-1 multiplexer                             : 3
  3-bit 2-to-1 multiplexer                              : 1
- 4-bit 2-to-1 multiplexer                              : 10
- 5-bit 2-to-1 multiplexer                              : 5
- 6-bit 2-to-1 multiplexer                              : 1
+ 4-bit 2-to-1 multiplexer                              : 12
+ 5-bit 2-to-1 multiplexer                              : 17
+ 6-bit 2-to-1 multiplexer                              : 4
  7-bit 2-to-1 multiplexer                              : 27
  8-bit 2-to-1 multiplexer                              : 7
- 96-bit 2-to-1 multiplexer                             : 31
-# Logic shifters                                       : 19
- 16-bit shifter arithmetic right                       : 1
- 16-bit shifter logical left                           : 1
- 16-bit shifter logical right                          : 1
+ 96-bit 2-to-1 multiplexer                             : 66
+# Logic shifters                                       : 22
+ 16-bit shifter arithmetic right                       : 2
+ 16-bit shifter logical left                           : 2
+ 16-bit shifter logical right                          : 2
  191-bit shifter logical right                         : 6
  431-bit shifter logical right                         : 2
  447-bit shifter logical right                         : 1
@@ -661,9 +658,10 @@ Unit <display_12> synthesized (advanced).
 
 Synthesizing (advanced) Unit <gamestates_18>.
 The following registers are absorbed into counter <M_counter_q>: 1 register on signal <M_counter_q>.
+The following registers are absorbed into counter <M_fast_counter_q>: 1 register on signal <M_fast_counter_q>.
 The following registers are absorbed into counter <M_readycounter_q>: 1 register on signal <M_readycounter_q>.
 The following registers are absorbed into counter <M_set_q_0>: 1 register on signal <M_set_q_0>.
-INFO:Xst:3231 - The small RAM <Mram__n0383> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+INFO:Xst:3212 - HDL ADVISOR - Asynchronous or synchronous initialization of the register <M_loop_q> prevents it from being combined with the RAM <Mram__n0428> for implementation as read-only block RAM.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -913,7 +911,6 @@ Unit <ledrow5map_43> synthesized (advanced).
 
 Synthesizing (advanced) Unit <registers_28>.
 The following registers are absorbed into counter <M_levelReg_q>: 1 register on signal <M_levelReg_q>.
-The following registers are absorbed into counter <M_addr_q>: 1 register on signal <M_addr_q>.
 Unit <registers_28> synthesized (advanced).
 
 =========================================================================
@@ -925,66 +922,69 @@ Macro Statistics
  4x96-bit single-port distributed Read Only RAM        : 1
 # MACs                                                 : 6
  5x4-to-7-bit MAC                                      : 6
-# Multipliers                                          : 2
- 16x16-bit multiplier                                  : 2
-# Adders/Subtractors                                   : 24
- 16-bit adder carry in                                 : 16
- 17-bit addsub                                         : 1
- 24-bit adder                                          : 1
+# Multipliers                                          : 4
+ 16x16-bit multiplier                                  : 4
+# Adders/Subtractors                                   : 42
+ 16-bit adder carry in                                 : 32
+ 17-bit addsub                                         : 2
  26-bit adder                                          : 1
- 5-bit adder                                           : 1
+ 5-bit adder                                           : 2
+ 6-bit adder                                           : 1
  7-bit subtractor                                      : 3
  9-bit adder                                           : 1
 # Counters                                             : 34
  1-bit up counter                                      : 1
  12-bit up counter                                     : 6
  20-bit up counter                                     : 5
+ 24-bit up counter                                     : 1
  25-bit up counter                                     : 2
  3-bit up counter                                      : 1
  4-bit up counter                                      : 6
  5-bit up counter                                      : 6
- 6-bit up counter                                      : 7
-# Registers                                            : 160
- Flip-Flops                                            : 160
-# Comparators                                          : 92
- 16-bit comparator equal                               : 1
- 16-bit comparator greater                             : 1
- 16-bit comparator lessequal                           : 2
- 17-bit comparator lessequal                           : 1
- 18-bit comparator lessequal                           : 1
- 19-bit comparator lessequal                           : 1
- 20-bit comparator lessequal                           : 1
- 21-bit comparator lessequal                           : 1
- 22-bit comparator lessequal                           : 1
- 23-bit comparator lessequal                           : 1
- 24-bit comparator lessequal                           : 1
- 25-bit comparator lessequal                           : 1
- 26-bit comparator lessequal                           : 1
- 27-bit comparator lessequal                           : 1
- 28-bit comparator lessequal                           : 1
- 29-bit comparator lessequal                           : 1
- 30-bit comparator lessequal                           : 1
- 31-bit comparator lessequal                           : 1
- 32-bit comparator lessequal                           : 1
+ 6-bit up counter                                      : 6
+# Registers                                            : 147
+ Flip-Flops                                            : 147
+# Comparators                                          : 112
+ 16-bit comparator equal                               : 2
+ 16-bit comparator greater                             : 2
+ 16-bit comparator lessequal                           : 4
+ 17-bit comparator lessequal                           : 2
+ 18-bit comparator lessequal                           : 2
+ 19-bit comparator lessequal                           : 2
+ 20-bit comparator lessequal                           : 2
+ 21-bit comparator lessequal                           : 2
+ 22-bit comparator lessequal                           : 2
+ 23-bit comparator lessequal                           : 2
+ 24-bit comparator lessequal                           : 2
+ 25-bit comparator lessequal                           : 2
+ 26-bit comparator lessequal                           : 2
+ 27-bit comparator lessequal                           : 2
+ 28-bit comparator lessequal                           : 2
+ 29-bit comparator lessequal                           : 2
+ 30-bit comparator lessequal                           : 2
+ 31-bit comparator lessequal                           : 2
+ 32-bit comparator lessequal                           : 2
  6-bit comparator greater                              : 12
  7-bit comparator greater                              : 60
-# Multiplexers                                         : 582
- 1-bit 2-to-1 multiplexer                              : 480
- 1-bit 4-to-1 multiplexer                              : 1
- 16-bit 2-to-1 multiplexer                             : 2
- 16-bit 4-to-1 multiplexer                             : 2
- 17-bit 2-to-1 multiplexer                             : 4
+# Multiplexers                                         : 903
+ 1-bit 2-to-1 multiplexer                              : 721
+ 1-bit 4-to-1 multiplexer                              : 2
+ 10-bit 2-to-1 multiplexer                             : 10
+ 16-bit 2-to-1 multiplexer                             : 9
+ 16-bit 4-to-1 multiplexer                             : 5
+ 17-bit 2-to-1 multiplexer                             : 8
  24-bit 2-to-1 multiplexer                             : 18
- 26-bit 2-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 4
- 5-bit 2-to-1 multiplexer                              : 5
+ 26-bit 2-to-1 multiplexer                             : 3
+ 4-bit 2-to-1 multiplexer                              : 6
+ 5-bit 2-to-1 multiplexer                              : 17
+ 6-bit 2-to-1 multiplexer                              : 4
  7-bit 2-to-1 multiplexer                              : 27
  8-bit 2-to-1 multiplexer                              : 7
- 96-bit 2-to-1 multiplexer                             : 31
-# Logic shifters                                       : 19
- 16-bit shifter arithmetic right                       : 1
- 16-bit shifter logical left                           : 1
- 16-bit shifter logical right                          : 1
+ 96-bit 2-to-1 multiplexer                             : 66
+# Logic shifters                                       : 22
+ 16-bit shifter arithmetic right                       : 2
+ 16-bit shifter logical left                           : 2
+ 16-bit shifter logical right                          : 2
  191-bit shifter logical right                         : 6
  431-bit shifter logical right                         : 2
  447-bit shifter logical right                         : 1
@@ -998,32 +998,28 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <gamestates/FSM_0> on signal <M_gamestates_q[1:16]> with one-hot encoding.
----------------------------
+Optimizing FSM <gamestates/FSM_0> on signal <M_gamestates_q[1:5]> with user encoding.
+-------------------
  State | Encoding
----------------------------
- 00000 | 0000000000000001
- 01100 | 0000000000000010
- 01101 | 0000000000000100
- 01110 | 0000000000001000
- 00001 | 0000000000010000
- 00010 | 0000000000100000
- 00011 | 0000000001000000
- 00100 | 0000000010000000
- 00110 | 0000000100000000
- 00101 | 0000001000000000
- 00111 | 0000010000000000
- 01010 | 0000100000000000
- 01000 | 0001000000000000
- 01001 | 0010000000000000
- 01011 | 0100000000000000
- 10010 | 1000000000000000
----------------------------
-WARNING:Xst:2973 - All outputs of instance <a[15]_b[15]_div_3> of block <div_16u_16u> are unconnected in block <adder_35>. Underlying logic will be removed.
-WARNING:Xst:2677 - Node <Mmult_n0014> of sequential type is unconnected in block <adder_35>.
-WARNING:Xst:2677 - Node <Mmult_n0016> of sequential type is unconnected in block <adder_35>.
-
-Optimizing unit <adder_35> ...
+-------------------
+ 00000 | 00000
+ 01101 | 01101
+ 01100 | 01100
+ 00011 | 00011
+ 00100 | 00100
+ 00101 | 00101
+ 00110 | 00110
+ 01011 | 01011
+ 01010 | 01010
+ 00001 | 00001
+ 00010 | 00010
+ 10011 | 10011
+ 01000 | 01000
+ 01001 | 01001
+ 00111 | 00111
+ 01110 | 01110
+ 01111 | 01111
+-------------------
 
 Optimizing unit <mojo_top_0> ...
 
@@ -1037,9 +1033,16 @@ Optimizing unit <registers_28> ...
 
 Optimizing unit <map_38> ...
 
-Optimizing unit <bin_to_dec_20> ...
+Optimizing unit <adder_35> ...
 
 Optimizing unit <div_16u_16u> ...
+
+Optimizing unit <bin_to_dec_20> ...
+WARNING:Xst:2677 - Node <gamestates/alu/adder/Mmult_n0016> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <gamestates/alu/adder/Mmult_n0014> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:1293 - FF/Latch <gamestates/register/M_loop_q_4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <gamestates/register/M_loop_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <gamestates/register/M_loop_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <display6/M_bit_ctr_q_0> in Unit <mojo_top_0> is equivalent to the following 5 FFs/Latches, which will be removed : <display5/M_bit_ctr_q_0> <display4/M_bit_ctr_q_0> <display3/M_bit_ctr_q_0> <display2/M_bit_ctr_q_0> <display1/M_bit_ctr_q_0> 
 INFO:Xst:2261 - The FF/Latch <display6/M_bit_ctr_q_1> in Unit <mojo_top_0> is equivalent to the following 5 FFs/Latches, which will be removed : <display5/M_bit_ctr_q_1> <display4/M_bit_ctr_q_1> <display3/M_bit_ctr_q_1> <display2/M_bit_ctr_q_1> <display1/M_bit_ctr_q_1> 
 INFO:Xst:2261 - The FF/Latch <display6/M_bit_ctr_q_2> in Unit <mojo_top_0> is equivalent to the following 5 FFs/Latches, which will be removed : <display5/M_bit_ctr_q_2> <display4/M_bit_ctr_q_2> <display3/M_bit_ctr_q_2> <display2/M_bit_ctr_q_2> <display1/M_bit_ctr_q_2> 
@@ -1070,37 +1073,50 @@ INFO:Xst:2261 - The FF/Latch <display6/M_rst_ctr_q_6> in Unit <mojo_top_0> is eq
 INFO:Xst:2261 - The FF/Latch <display6/M_rst_ctr_q_7> in Unit <mojo_top_0> is equivalent to the following 5 FFs/Latches, which will be removed : <display5/M_rst_ctr_q_7> <display4/M_rst_ctr_q_7> <display3/M_rst_ctr_q_7> <display2/M_rst_ctr_q_7> <display1/M_rst_ctr_q_7> 
 INFO:Xst:2261 - The FF/Latch <display6/M_rst_ctr_q_8> in Unit <mojo_top_0> is equivalent to the following 5 FFs/Latches, which will be removed : <display5/M_rst_ctr_q_8> <display4/M_rst_ctr_q_8> <display3/M_rst_ctr_q_8> <display2/M_rst_ctr_q_8> <display1/M_rst_ctr_q_8> 
 INFO:Xst:2261 - The FF/Latch <display6/M_rst_ctr_q_9> in Unit <mojo_top_0> is equivalent to the following 5 FFs/Latches, which will be removed : <display5/M_rst_ctr_q_9> <display4/M_rst_ctr_q_9> <display3/M_rst_ctr_q_9> <display2/M_rst_ctr_q_9> <display1/M_rst_ctr_q_9> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_10> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_11> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_10> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_11> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_12> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_13> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_14> 
 INFO:Xst:2261 - The FF/Latch <gamestates/car1/M_carposition_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/car1/M_carposition_q_0> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_12> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_13> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_20> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_20> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_15> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_21> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_21> 
 INFO:Xst:2261 - The FF/Latch <gamestates/car1/M_carposition_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/car1/M_carposition_q_2> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_14> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_20> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_20> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_15> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_21> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_21> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_16> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_22> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_22> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_17> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_23> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_23> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_18> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_18> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_19> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_19> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_0> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_1> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_2> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_3> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_4> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_5> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_6> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_7> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_8> 
-INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_9> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_16> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_22> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_22> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_17> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_23> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_23> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_18> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_18> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_19> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_19> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_0> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_1> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_2> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_3> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_4> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_5> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_6> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_7> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_8> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_fast_counter_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_counter_q_9> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 23.
-FlipFlop gamestates/register/M_levelReg_q_1 has been replicated 1 time(s)
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 28.
+FlipFlop gamestates/M_gamestates_q_FSM_FFd1 has been replicated 3 time(s)
+FlipFlop gamestates/M_gamestates_q_FSM_FFd2 has been replicated 2 time(s)
+FlipFlop gamestates/M_gamestates_q_FSM_FFd3 has been replicated 3 time(s)
+FlipFlop gamestates/M_gamestates_q_FSM_FFd4 has been replicated 3 time(s)
+FlipFlop gamestates/M_gamestates_q_FSM_FFd5 has been replicated 3 time(s)
+FlipFlop gamestates/M_set_q_0 has been replicated 1 time(s)
+FlipFlop gamestates/register/M_addr_q_0 has been replicated 1 time(s)
+FlipFlop gamestates/register/M_addr_q_1 has been replicated 1 time(s)
+FlipFlop gamestates/register/M_addr_q_2 has been replicated 1 time(s)
+FlipFlop gamestates/register/M_addr_q_3 has been replicated 1 time(s)
+FlipFlop gamestates/register/M_addr_q_4 has been replicated 1 time(s)
+FlipFlop gamestates/register/M_levelReg_q_0 has been replicated 3 time(s)
+FlipFlop gamestates/register/M_levelReg_q_1 has been replicated 3 time(s)
+FlipFlop gamestates/register/M_levelReg_q_2 has been replicated 2 time(s)
 
 Final Macro Processing ...
 
@@ -1117,8 +1133,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 321
- Flip-Flops                                            : 321
+# Registers                                            : 339
+ Flip-Flops                                            : 339
 # Shift Registers                                      : 5
  2-bit shift register                                  : 5
 
@@ -1141,12 +1157,12 @@ Partition Implementation Status
 
 Clock Information:
 ------------------
------------------------------------------------------+-----------------------------------+-------+
-Clock Signal                                         | Clock buffer(FF name)             | Load  |
------------------------------------------------------+-----------------------------------+-------+
-clk                                                  | BUFGP                             | 331   |
-gamestates/_n0379(gamestates/M_gamestates_q__n0379:O)| NONE(*)(gamestates/currentState_4)| 2     |
------------------------------------------------------+-----------------------------------+-------+
+---------------------------------------------------------------------------------------+-----------------------------------+-------+
+Clock Signal                                                                           | Clock buffer(FF name)             | Load  |
+---------------------------------------------------------------------------------------+-----------------------------------+-------+
+clk                                                                                    | BUFGP                             | 349   |
+gamestates/M_gamestates_q[4]_GND_27_o_Mux_338_o(gamestates/M_gamestates_q__n0554<9>1:O)| NONE(*)(gamestates/currentState_4)| 2     |
+---------------------------------------------------------------------------------------+-----------------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
@@ -1160,9 +1176,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 8.677ns (Maximum Frequency: 115.246MHz)
+   Minimum period: 8.742ns (Maximum Frequency: 114.390MHz)
    Minimum input arrival time before clock: 3.526ns
-   Maximum output required time after clock: 23.898ns
+   Maximum output required time after clock: 25.003ns
    Maximum combinational path delay: No path found
 
 =========================================================================

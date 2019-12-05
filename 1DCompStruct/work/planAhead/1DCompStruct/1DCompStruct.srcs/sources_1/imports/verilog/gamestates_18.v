@@ -43,13 +43,14 @@ module gamestates_18 (
   localparam POINT2_gamestates = 5'd9;
   localparam SCORE_gamestates = 5'd10;
   localparam LEVELUP_gamestates = 5'd11;
-  localparam READY1_gamestates = 5'd12;
-  localparam READY2_gamestates = 5'd13;
-  localparam READY3_gamestates = 5'd14;
-  localparam LEVEL1_gamestates = 5'd15;
-  localparam LEVEL2_gamestates = 5'd16;
-  localparam LEVEL3_gamestates = 5'd17;
-  localparam WIN_gamestates = 5'd18;
+  localparam CHECK_gamestates = 5'd12;
+  localparam READY1_gamestates = 5'd13;
+  localparam READY2_gamestates = 5'd14;
+  localparam READY3_gamestates = 5'd15;
+  localparam LEVEL1_gamestates = 5'd16;
+  localparam LEVEL2_gamestates = 5'd17;
+  localparam LEVEL3_gamestates = 5'd18;
+  localparam WIN_gamestates = 5'd19;
   
   reg [4:0] M_gamestates_d, M_gamestates_q = START_gamestates;
   wire [4-1:0] M_car1_currentPosition;
@@ -359,15 +360,12 @@ module gamestates_18 (
         currentState = 5'h01;
         if ((level == 2'h1) || (level == 2'h2)) begin
           if (M_counter_q == 25'h1ffffff) begin
-            M_gamestates_d = SHIFT_gamestates;
+            M_gamestates_d = CHECK_gamestates;
           end
         end else begin
           if (M_fast_counter_q == 24'hffffff) begin
-            M_gamestates_d = SHIFT_gamestates;
+            M_gamestates_d = CHECK_gamestates;
           end
-        end
-        if (M_counter_q == 25'h1ffffff) begin
-          M_gamestates_d = SHIFT_gamestates;
         end
         if (car1left) begin
           M_gamestates_d = CAR1LEFT_gamestates;
@@ -388,10 +386,8 @@ module gamestates_18 (
           M_gamestates_d = SCORE_gamestates;
         end
       end
-      SHIFT_gamestates: begin
-        currentState = 5'h02;
-        M_register_shift = 1'h1;
-        M_gamestates_d = IDLE_gamestates;
+      CHECK_gamestates: begin
+        M_gamestates_d = SHIFT_gamestates;
         if ((M_car1_currentPosition[0+1-:2] & M_register_lane1val) == 2'h2) begin
           M_gamestates_d = POINT1_gamestates;
         end
@@ -429,6 +425,15 @@ module gamestates_18 (
           M_gamestates_d = FAIL_gamestates;
         end
       end
+      SHIFT_gamestates: begin
+        currentState = 5'h02;
+        M_loop_d = M_loop_q + 1'h1;
+        M_register_shift = 1'h1;
+        if (M_loop_q == 2'h3) begin
+          M_loop_d = 1'h0;
+          M_gamestates_d = IDLE_gamestates;
+        end
+      end
       CAR1LEFT_gamestates: begin
         currentState = 5'h04;
         M_car1_left = 1'h1;
@@ -449,6 +454,7 @@ module gamestates_18 (
         M_gamestates_d = IDLE_gamestates;
       end
       FAIL_gamestates: begin
+        M_loop_d = 1'h0;
         currentState = 5'h07;
         row1 = 96'h00ff0000ff0000ff0000ff00;
         row2 = 96'h00ff0000ff0000ff0000ff00;
@@ -510,13 +516,13 @@ module gamestates_18 (
         M_alu_a = M_score_q;
         M_alu_b = 16'h0001;
         M_score_d = M_alu_c;
-        M_gamestates_d = IDLE_gamestates;
+        M_gamestates_d = SHIFT_gamestates;
       end
       POINT2_gamestates: begin
         M_alu_a = M_score_q;
         M_alu_b = 16'h0002;
         M_score_d = M_alu_c;
-        M_gamestates_d = IDLE_gamestates;
+        M_gamestates_d = SHIFT_gamestates;
       end
       LEVELUP_gamestates: begin
         M_slow1_d = M_slow1_q + 1'h1;

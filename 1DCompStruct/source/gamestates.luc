@@ -25,7 +25,7 @@ module gamestates (//module which contains the game states - oscillates between 
     output score_out[16]
   ) {
 .clk(clk) {
-  fsm gamestates = {START,IDLE,SHIFT,CAR1LEFT,CAR1RIGHT, CAR2LEFT, CAR2RIGHT,FAIL,POINT1,POINT2,SCORE,LEVELUP,
+  fsm gamestates = {START,IDLE,SHIFT,CAR1LEFT,CAR1RIGHT, CAR2LEFT, CAR2RIGHT,FAIL,POINT1,POINT2,SCORE,LEVELUP, CHECK,
     READY1,READY2,READY3,LEVEL1,LEVEL2,LEVEL3,WIN};
     .rst(rst) {
       car car1;
@@ -240,16 +240,15 @@ bin_to_dec bin_to_dec_highscore(#DIGITS(2),#LEADING_ZEROS(1));
             currentState=5b00001;
             if ((level == b01) || (level == b10)){
                 if(counter.q == 25x{b1}){
-                    gamestates.d = gamestates.SHIFT;
+                    // gamestates.d = gamestates.SHIFT;
+                    gamestates.d = gamestates.CHECK;
                   }
             }
             else{
                 if(fast_counter.q == 24x{b1}){
-                    gamestates.d = gamestates.SHIFT;
+                    // gamestates.d = gamestates.SHIFT;
+                    gamestates.d = gamestates.CHECK;
                   }
-          }
-            if(counter.q == 25x{b1}){
-            gamestates.d = gamestates.SHIFT;
             }
             if(car1left){
               gamestates.d = gamestates.CAR1LEFT;
@@ -269,15 +268,15 @@ bin_to_dec bin_to_dec_highscore(#DIGITS(2),#LEADING_ZEROS(1));
             if(bigbtn){
               gamestates.d = gamestates.SCORE;
           }
-        gamestates.SHIFT:
-            currentState = 5b00010;
-            register.shift = 1;
-            gamestates.d = gamestates.IDLE;
+        
+      gamestates.CHECK:
+            // check before shift
             // & is bitwise and
             // && is standard bool logic
             // car1 (right) must avoid red (01)
             // car2 (left) must avoid green (10)
-             if((car1.currentPosition[1:0]&register.lane1val)==b10){
+            gamestates.d = gamestates.SHIFT;
+            if((car1.currentPosition[1:0]&register.lane1val)==b10){
                 gamestates.d = gamestates.POINT1;            
             }
             if((car1.currentPosition[3:2]&register.lane2val)==b10){
@@ -316,7 +315,18 @@ bin_to_dec bin_to_dec_highscore(#DIGITS(2),#LEADING_ZEROS(1));
              }
              if((car2.currentPosition[3:2]&register.lane4val)==b10){
                 gamestates.d = gamestates.FAIL;
-             }       
+           }
+        gamestates.SHIFT:
+            currentState = 5b00010;
+            // increment loop
+            loop.d = loop.q + 1;
+            register.shift = 1;
+              // stay for 4 clockcyle
+              if (loop.q == 3){
+                  loop.d = 0;
+                  gamestates.d = gamestates.IDLE; 
+              } 
+               
         gamestates.CAR1LEFT:
           currentState = 5b00100;
           car1.left = 1;
@@ -333,6 +343,8 @@ bin_to_dec bin_to_dec_highscore(#DIGITS(2),#LEADING_ZEROS(1));
           car2.left = 1;
           gamestates.d = gamestates.IDLE;
         gamestates.FAIL:
+          // reset the loop from shift
+          loop.d = 0;
           currentState = 5b00111;
           row1 = {Color.RED,Color.RED,Color.RED,Color.RED};
           row2 = {Color.RED,Color.RED,Color.RED,Color.RED};
@@ -392,13 +404,15 @@ bin_to_dec bin_to_dec_highscore(#DIGITS(2),#LEADING_ZEROS(1));
           alu.a = score.q;
           alu.b = 16b1;
           score.d = alu.c;
-          gamestates.d = gamestates.IDLE;
+          // gamestates.d = gamestates.IDLE;
+          gamestates.d = gamestates.SHIFT;
         
       gamestates.POINT2:
           alu.a = score.q;
           alu.b = 16b10;
           score.d = alu.c;
-          gamestates.d = gamestates.IDLE;
+          // gamestates.d = gamestates.IDLE;
+          gamestates.d = gamestates.SHIFT;
         
       gamestates.LEVELUP:
           slow1.d = slow1.q + 1;

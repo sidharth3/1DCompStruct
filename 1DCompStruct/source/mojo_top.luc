@@ -4,7 +4,15 @@ global Color {
     const GREEN = c{8x{b0},8x{b0},8x{b1}};
     const BLUE = c{8x{b1},8x{b0},8x{b0}};
     const YELLOW = c{8x{b0},8x{b1},8x{b1}};
+    const PURPLE = c{8b10111101,8b10100100,8b0};
+    const CYAN = c{8x{b1},8b0,8x{b1}};
     const WHITE = 24x{b1};
+    const ORANGE = c{8b0,8x{b1},8b1111000};
+}
+
+global ColorRow{
+    const EMPTY = {24b0,24b0,24b0,24b0};
+    const GREEN = {c{8x{b0},8x{b0},8x{b1}},c{8x{b0},8x{b0},8x{b1}},c{8x{b0},8x{b0},8x{b1}},c{8x{b0},8x{b0},8x{b1}}};
 }
 
 module mojo_top (
@@ -34,7 +42,8 @@ module mojo_top (
     input player2leftBtn,
     input player2rightBtn,
     input player1leftBtn,
-    input player1rightBtn
+    input player1rightBtn,
+    input startBtn
     //yo mario. i have set the correct pins for the buttons, but go to custom.ucf to change the pin numbers for the matrix row. couldnt test it coz ground wire game off
     
   ) {
@@ -52,7 +61,12 @@ module mojo_top (
     button_conditioner player1right_cond;
     button_conditioner player2left_cond;
     button_conditioner player2right_cond;
-    //edge_detector edge_detector (#RISE(1), #FALL(0));
+    button_conditioner bigbtn_cond;
+    edge_detector edge (#RISE(1), #FALL(0));
+    edge_detector edge1left (#RISE(1), #FALL(0));
+    edge_detector edge1right (#RISE(1), #FALL(0));
+    edge_detector edge2left (#RISE(1), #FALL(0));
+    edge_detector edge2right (#RISE(1), #FALL(0));
    
     .rst(rst){
       display display1;
@@ -65,6 +79,7 @@ module mojo_top (
       
       }
   } 
+ alu alu;
   always {
     reset_cond.in = ~rst_n; // input raw inverted reset signal
     rst = reset_cond.out;   // conditioned reset
@@ -78,13 +93,20 @@ module mojo_top (
         
     
     player1left_cond.in = player1leftBtn;
-    player1left = player1left_cond.out;
+    edge1left.in = player1left_cond.out;
+    player1left = edge1left.out;
+    
     player1right_cond.in = player1rightBtn;
-    player1right = player1right_cond.out;
+    edge1right.in = player1right_cond.out;
+    player1right = edge1right.out;
+    
     player2left_cond.in = player2leftBtn;
-    player2left = player2left_cond.out;
+    edge2left.in = player2left_cond.out;
+    player2left = edge2left.out;
+    
     player2right_cond.in = player2rightBtn;
-    player2right = player2right_cond.out;
+    edge2right.in = player2right_cond.out;
+    player2right = edge2right.out;
     
     // io_led[0] = c{gamestates.car2Pos,gamestates.car1Pos};
     // io_led[1] = c{player2left,player2right,player1left,player1right};
@@ -94,6 +116,10 @@ module mojo_top (
     gamestates.car1right = player1right;
     gamestates.car2left = player2left;
     gamestates.car2right = player2right;
+    
+    bigbtn_cond.in = startBtn;
+    edge.in = bigbtn_cond.out;
+    gamestates.bigbtn = edge.out;
     // alu.alufn = 6b100000;
     // alu.a = c{14b0, 2x{b1}};
     // alu.b = 4b0010;
@@ -119,4 +145,10 @@ module mojo_top (
     display6.color = gamestates.rowcar;
     row6 = display6.led;
     io_led[2] = gamestates.debug;
+    alu.alufn = 6b0;
+    alu.a = 16b0;
+    alu.b = 16b1;
+    io_led[2] = gamestates.currentState;
+    io_led[1] = gamestates.score_out;
+    io_led[0] = 8x{gamestates.fail};
 }}

@@ -6,6 +6,7 @@ module alu (
   ) {
   adder adder;
   bitshifter bitshifter;
+  cmp cmp;
   always {
     adder.alufn = alufn;
     adder.a = a;
@@ -15,6 +16,9 @@ module alu (
     bitshifter.a = a;
     bitshifter.b = b;
     
+    cmp.alufn = alufn;
+    cmp.a = a;
+    cmp.b = b;
     case(alufn[5:4]){
       b00:
         // add: alufn = b000000
@@ -26,6 +30,11 @@ module alu (
         // SHR: alufn = b100001
         // SRA: alufn = b100011
         c = bitshifter.c;
+      b11:
+        // cmpeq: alufn = 110011
+        // cmplt: alufn = 110101
+        // cmple: alufn = 110111
+        c = cmp.c;
       default:
         c = 16b0;
       }

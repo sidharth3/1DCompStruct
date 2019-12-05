@@ -5,6 +5,7 @@ module gamestates (//module which contains the game states - oscillates between 
     input car1right,
     input car2left,
     input car2right,
+    input bigbtn,
     //for debug purposes
 
     output row1[4][24],
@@ -20,18 +21,33 @@ module gamestates (//module which contains the game states - oscillates between 
     output car1Pos[4],
     output car2Pos[4],
     output rowcar[4][24],
-    output debug[8]
+    output debug[8],
+    output score_out[16]
   ) {
 .clk(clk) {
-  fsm gamestates = {IDLE,SHIFT,CAR1LEFT,CAR1RIGHT, CAR2LEFT, CAR2RIGHT,FAIL};
+  fsm gamestates = {START,IDLE,SHIFT,CAR1LEFT,CAR1RIGHT, CAR2LEFT, CAR2RIGHT,FAIL,POINT1,POINT2,SCORE,LEVELUP,
+    READY1,READY2,READY3,LEVEL1,LEVEL2,LEVEL3,WIN};
     .rst(rst) {
       car car1;
       car car2;
       registers register;
-      dff counter[26];
+      dff counter[25];
+      dff fast_counter[24];
+      dff faster_counter[23];
+      dff readycounter[25];
+      dff loop[5];
+      dff slow1[26];
+      dff score[16];
+      dff high_score[16];
       }
     }
-ledrowcars ledrowcars;     
+sig temp_score[8];
+sig levelUp[1];
+sig level[3];
+alu alu;
+ledrowcars ledrowcars;
+scoredisplay scoredisplay;
+scoredisplay highscoredisplay;      
   always {
     fail = 0;
     car1.reset = 0;
@@ -53,26 +69,109 @@ ledrowcars ledrowcars;
     currentState[0] = 0;
     currentState[1] = 0;
     currentState[2] = 0;
-    
     row1 = register.row1;
     row2 = register.row2;
     row3 = register.row3;
     row4 = register.row4;
     row5 = register.row5;
     rowcar = ledrowcars.colorrowcar;
-    
     register.shift = 0;  
     
     ll1 = register.l1;
     ll2 = register.l2;
     out = register.out;
     counter.d = counter.q + 1;
+    fast_counter.d = fast_counter.q + 1;
     
+    alu.alufn = 6b0;
+    alu.a = 0;
+    alu.b = 0;
+    
+    register.reset = 0;
+    score_out = score.q;
     debug = car2.currentPosition[3:2]&register.lane4val;
+    
+    scoredisplay.color = Color.CYAN;
+    scoredisplay.score = score.q[7:0];
+    
+    highscoredisplay.color = Color.PURPLE;
+    highscoredisplay.score = high_score.q[7:0];
+    
+    levelUp = register.levelUp;
+    level = register.level;
     case(gamestates.q){
+        gamestates.START:
+          // hard code the arrow
+          // row1 = {24b0,24b0,24b0,Color.GREEN};
+          // row2 = {24b0,24b0,Color.GREEN,Color.GREEN};
+          // row3 = {24b0,Color.GREEN,Color.GREEN,Color.GREEN};
+          // row4 = {24b0,24b0,Color.GREEN,Color.GREEN};
+          // row5 = {24b0,24b0,24b0,Color.GREEN};
+          // rowcar = {24b0,24b0,24b0,24b0};
+          // row1 = {24b0,Color.GREEN,Color.GREEN,24b0};
+          // row2 = {24b0,Color.GREEN,Color.GREEN,24b0};
+          // row3 = {24b0,Color.GREEN,Color.GREEN,24b0};
+          // row4 = {24b0,Color.GREEN,Color.GREEN,24b0};
+          // row5 = {Color.GREEN,Color.GREEN,Color.GREEN,Color.GREEN};
+          // rowcar = {24b0,Color.GREEN,Color.GREEN,24b0};
+          row1 = {24b0,Color.GREEN,Color.RED,24b0};
+          row2 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
+          row3 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
+          row4 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
+          row5 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
+          rowcar = {24b0,Color.GREEN,Color.RED,24b0};
+          currentState=5b00011;
+          if (bigbtn){
+             register.reset = 1;
+             score.d = 0;
+             gamestates.d = gamestates.READY1;
+          }
+      gamestates.READY1:
+          row1 = ColorRow.GREEN;
+          row2 = ColorRow.EMPTY;
+          row3 = ColorRow.EMPTY;
+          row4 = ColorRow.EMPTY;
+          row5 = ColorRow.EMPTY;
+          rowcar = ColorRow.EMPTY;
+          readycounter.d = readycounter.q + 1;
+          if (readycounter.q == 25x{b1}){
+            gamestates.d = gamestates.READY2;
+          }
+      gamestates.READY2:
+          row1 = ColorRow.GREEN;
+          row2 = ColorRow.GREEN;
+          row3 = ColorRow.GREEN;
+          row4 = ColorRow.EMPTY;
+          row5 = ColorRow.EMPTY;
+          rowcar = ColorRow.EMPTY;
+          readycounter.d = readycounter.q + 1;
+          if (readycounter.q == 25x{b1}){
+            gamestates.d = gamestates.READY3;
+          }
+      gamestates.READY3:
+          row1 = ColorRow.GREEN;
+          row2 = ColorRow.GREEN;
+          row3 = ColorRow.GREEN;
+          row4 = ColorRow.GREEN;
+          row5 = ColorRow.GREEN;
+          rowcar = ColorRow.GREEN;
+          readycounter.d = readycounter.q + 1;
+          if (readycounter.q == 25x{b1}){
+            gamestates.d = gamestates.LEVELUP;
+          }
         gamestates.IDLE:
-            currentState[0]=5b00001;
-            if(counter.q == 26x{b1}){
+            currentState=5b00001;
+            if ((level == b01) || (level == b10)){
+                if(counter.q == 25x{b1}){
+                    gamestates.d = gamestates.SHIFT;
+                  }
+            }
+            else{
+                if(fast_counter.q == 24x{b1}){
+                    gamestates.d = gamestates.SHIFT;
+                  }
+          }
+            if(counter.q == 25x{b1}){
             gamestates.d = gamestates.SHIFT;
             }
             if(car1left){
@@ -87,12 +186,48 @@ ledrowcars ledrowcars;
             if(car2right){
               gamestates.d = gamestates.CAR2RIGHT;
               }
+            if(levelUp){
+              gamestates.d = gamestates.LEVELUP;
+          }
+            if(bigbtn){
+              gamestates.d = gamestates.SCORE;
+          }
         gamestates.SHIFT:
             currentState = 5b00010;
+            register.shift = 1;
+            gamestates.d = gamestates.IDLE;
             // & is bitwise and
             // && is standard bool logic
             // car1 (right) must avoid red (01)
             // car2 (left) must avoid green (10)
+             if((car1.currentPosition[1:0]&register.lane1val)==b10){
+                gamestates.d = gamestates.POINT1;            
+            }
+            if((car1.currentPosition[3:2]&register.lane2val)==b10){
+                 gamestates.d = gamestates.POINT1;
+            }
+            if((car2.currentPosition[1:0]&register.lane3val)==b01){
+                gamestates.d = gamestates.POINT1;
+             }
+             if((car2.currentPosition[3:2]&register.lane4val)==b01){
+                gamestates.d = gamestates.POINT1;
+             }
+            if (((car1.currentPosition[1:0]&register.lane1val)==b10) && ((car2.currentPosition[1:0]&register.lane3val)==b01)){
+                // lane 1 and 3, point at the same time
+                gamestates.d = gamestates.POINT2;}
+          
+            if (((car1.currentPosition[1:0]&register.lane1val)==b10) && ((car2.currentPosition[3:2]&register.lane4val)==b01)){
+                // lane 1 and 4, point at the same time
+                gamestates.d = gamestates.POINT2;}
+            
+            if (((car1.currentPosition[3:2]&register.lane2val)==b10) && ((car2.currentPosition[1:0]&register.lane3val)==b01)){
+                // lane 2 and 3, point at the same time
+                gamestates.d = gamestates.POINT2;}
+          
+            if (((car1.currentPosition[3:2]&register.lane2val)==b10) && ((car2.currentPosition[3:2]&register.lane4val)==b01)){
+                // lane 2 and 4, point at the same time
+                gamestates.d = gamestates.POINT2;}
+          
             if((car1.currentPosition[1:0]&register.lane1val)==b01){
                 gamestates.d = gamestates.FAIL;            
             }
@@ -104,9 +239,7 @@ ledrowcars ledrowcars;
              }
              if((car2.currentPosition[3:2]&register.lane4val)==b10){
                 gamestates.d = gamestates.FAIL;
-             }    
-           register.shift = 1;
-          gamestates.d = gamestates.IDLE;
+             }       
         gamestates.CAR1LEFT:
           currentState = 5b00100;
           car1.left = 1;
@@ -123,6 +256,7 @@ ledrowcars ledrowcars;
           car2.left = 1;
           gamestates.d = gamestates.IDLE;
         gamestates.FAIL:
+          currentState = 5b00111;
           row1 = {Color.RED,Color.RED,Color.RED,Color.RED};
           row2 = {Color.RED,Color.RED,Color.RED,Color.RED};
           row3 = {Color.RED,Color.RED,Color.RED,Color.RED};
@@ -130,7 +264,111 @@ ledrowcars ledrowcars;
           row5 = {Color.RED,Color.RED,Color.RED,Color.RED};
           rowcar = {Color.RED,Color.RED,Color.RED,Color.RED};
           fail = 1;
-         
+          if (bigbtn){
+            gamestates.d = gamestates.SCORE;
+          }
+        gamestates.SCORE:
+          currentState = 5b01111;
+          row1 = scoredisplay.row1;
+          row2 = scoredisplay.row2;
+          row3 = {24b0,24b0,24b0,24b0}; 
+          row4 = highscoredisplay.row1;
+          row5 = highscoredisplay.row2;
+          rowcar = {24b0,24b0,24b0,24b0}; 
+          // compare if highscore is less than current score
+          alu.alufn = b110101;
+          alu.a = high_score.q;
+          alu.b = score.q;
+          
+          // loop the row 3 and row 5 
+          fast_counter.d = fast_counter.q + 1;
+          if (fast_counter.q == 24x{b1}){
+              loop.d = loop.q+1;
+              if (loop.q == 3){
+              loop.d = 0;
+          }}
+          if (loop.q == 0){
+           row3 = {Color.ORANGE,Color.ORANGE,24b0,24b0}; 
+           rowcar = {Color.ORANGE,Color.ORANGE,24b0,24b0}; 
+          }
+          else if (loop.q == 1){
+           row3 = {24b0,Color.ORANGE,Color.ORANGE,24b0}; 
+           rowcar = {24b0,Color.ORANGE,Color.ORANGE,24b0}; 
+          }
+          else if (loop.q == 2){
+           row3 = {24b0,24b0,Color.ORANGE,Color.ORANGE};
+           rowcar = {24b0,24b0,Color.ORANGE,Color.ORANGE};
+          }
+          else if (loop.q == 3){
+           row3 = {Color.ORANGE,24b0,24b0,Color.ORANGE}; 
+           rowcar = {Color.ORANGE,24b0,24b0,Color.ORANGE}; 
+          }
+          if (alu.c){
+            high_score.d = score.q;
+          }
+               
+          if (bigbtn){
+            gamestates.d = gamestates.START;
+          }
+        gamestates.POINT1:
+          alu.a = score.q;
+          alu.b = 16b1;
+          score.d = alu.c;
+          gamestates.d = gamestates.IDLE;
+        
+      gamestates.POINT2:
+          alu.a = score.q;
+          alu.b = 16b10;
+          score.d = alu.c;
+          gamestates.d = gamestates.IDLE;
+        
+      gamestates.LEVELUP:
+          slow1.d = slow1.q + 1;
+          if (slow1.q == 26x{b1}){
+            gamestates.d = gamestates.IDLE;
+          }
+          if (level==b01){
+            row1 = {24b0, Color.ORANGE, 24b0, 24b0};
+            row2 = {24b0, Color.ORANGE, Color.ORANGE, 24b0};
+            row3 = {24b0, Color.ORANGE, 24b0, 24b0}; 
+            row4 = {24b0, Color.ORANGE, 24b0, 24b0};
+            row5 = {24b0, Color.ORANGE, 24b0, 24b0};
+            rowcar = {24b0, 24b0, 24b0, 24b0}; 
+          }
+          if (level==b10){
+            row1 = {Color.ORANGE, Color.ORANGE, Color.ORANGE, Color.ORANGE};
+            row2 = {Color.ORANGE, 24b0, 24b0, 24b0};
+            row3 = {Color.ORANGE, Color.ORANGE, Color.ORANGE, Color.ORANGE};  
+            row4 = {24b0, 24b0, 24b0, Color.ORANGE};
+            row5 = {Color.ORANGE, Color.ORANGE, Color.ORANGE, Color.ORANGE};  
+            rowcar = {24b0, 24b0, 24b0, 24b0}; 
+          }
+          if (level==b11){
+            row1 = {Color.ORANGE, Color.ORANGE, Color.ORANGE, Color.ORANGE};
+            row2 = {Color.ORANGE, 24b0, 24b0, 24b0};
+            row3 = {Color.ORANGE, Color.ORANGE, Color.ORANGE, Color.ORANGE};  
+            row4 = {Color.ORANGE, 24b0, 24b0, 24b0};
+            row5 = {Color.ORANGE, Color.ORANGE, Color.ORANGE, Color.ORANGE};  
+            rowcar = {24b0, 24b0, 24b0, 24b0}; 
+          }
+          
+          if (level==b100){
+            gamestates.d = gamestates.WIN;
+          }
+          if(bigbtn){
+          slow1.d = 0;
+          gamestates.d= gamestates.SCORE;
+          }
+      gamestates.WIN:
+          row1 = {Color.GREEN,Color.GREEN,Color.GREEN,Color.GREEN};
+          row2 = {Color.GREEN,Color.GREEN,Color.GREEN,Color.GREEN};
+          row3 = {Color.GREEN,Color.GREEN,Color.GREEN,Color.GREEN};
+          row4 = {Color.GREEN,Color.GREEN,Color.GREEN,Color.GREEN};
+          row5 = {Color.GREEN,Color.GREEN,Color.GREEN,Color.GREEN};
+          rowcar = {Color.GREEN,Color.GREEN,Color.GREEN,Color.GREEN};
+          if(bigbtn){
+          gamestates.d= gamestates.SCORE;
+          }
     }
   }
 }

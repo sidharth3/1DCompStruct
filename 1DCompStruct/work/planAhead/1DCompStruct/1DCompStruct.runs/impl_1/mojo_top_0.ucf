@@ -8,41 +8,45 @@
 # Constraints from file : 'custom.ucf'
 ####################################################################################
 
-NET "row1" LOC = P116;
+NET "row1" LOC = P57;
 NET "row1" IOSTANDARD = LVTTL;
 NET "row1" PULLDOWN;
-NET "row2" LOC = P104;
+NET "row2" LOC = P74;
 NET "row2" IOSTANDARD = LVTTL;
 NET "row2" PULLDOWN;
-NET "row3" LOC = P97;
+NET "row3" LOC = P80;
 NET "row3" IOSTANDARD = LVTTL;
 NET "row3" PULLDOWN;
-NET "row4" LOC = P92;
+NET "row4" LOC = P120;
 NET "row4" IOSTANDARD = LVTTL;
 NET "row4" PULLDOWN;
-NET "row5" LOC = P80;
+NET "row5" LOC = P116;
 NET "row5" IOSTANDARD = LVTTL;
 NET "row5" PULLDOWN;
-NET "row6" LOC = P57;
+NET "row6" LOC = P111;
 NET "row6" IOSTANDARD = LVTTL;
 NET "row6" PULLDOWN;
-NET "player1leftBtn" LOC = P132;
+NET "player1leftBtn" LOC = P32;
 NET "player1leftBtn" IOSTANDARD = LVTTL;
 NET "player1leftBtn" PULLDOWN;
-NET "player1rightBtn" LOC = P124;
+NET "player1rightBtn" LOC = P40;
 NET "player1rightBtn" IOSTANDARD = LVTTL;
 NET "player1rightBtn" PULLDOWN;
-NET "player2leftBtn" LOC = P142;
+NET "player2leftBtn" LOC = P123;
 NET "player2leftBtn" IOSTANDARD = LVTTL;
 NET "player2leftBtn" PULLDOWN;
-NET "player2rightBtn" LOC = P138;
+NET "player2rightBtn" LOC = P131;
 NET "player2rightBtn" IOSTANDARD = LVTTL;
 NET "player2rightBtn" PULLDOWN;
+NET "startBtn" LOC = P9;
+NET "startBtn" IOSTANDARD = LVTTL;
+NET "startBtn" PULLDOWN;
 
 ####################################################################################
 # Constraints from file : 'io_shield.ucf'
 ####################################################################################
 
+NET "io_led[0]" LOC = P97;
 NET "io_led[0]" IOSTANDARD = LVTTL;
 NET "io_led[1]" LOC = P98;
 NET "io_led[1]" IOSTANDARD = LVTTL;
@@ -50,6 +54,7 @@ NET "io_led[2]" LOC = P94;
 NET "io_led[2]" IOSTANDARD = LVTTL;
 NET "io_led[3]" LOC = P95;
 NET "io_led[3]" IOSTANDARD = LVTTL;
+NET "io_led[4]" LOC = P92;
 NET "io_led[4]" IOSTANDARD = LVTTL;
 NET "io_led[5]" LOC = P93;
 NET "io_led[5]" IOSTANDARD = LVTTL;
@@ -108,7 +113,6 @@ NET "io_seg[6]" IOSTANDARD = LVTTL;
 NET "io_seg[7]" LOC = P141;
 NET "io_seg[7]" IOSTANDARD = LVTTL;
 
-NET "io_sel[0]" LOC = P9;
 NET "io_sel[0]" IOSTANDARD = LVTTL;
 NET "io_sel[1]" LOC = P10;
 NET "io_sel[1]" IOSTANDARD = LVTTL;
@@ -127,8 +131,10 @@ NET "io_button[1]" PULLDOWN;
 NET "io_button[2]" LOC = P139;
 NET "io_button[2]" IOSTANDARD = LVTTL;
 NET "io_button[2]" PULLDOWN;
+NET "io_button[3]" LOC = P142;
 NET "io_button[3]" IOSTANDARD = LVTTL;
 NET "io_button[3]" PULLDOWN;
+NET "io_button[4]" LOC = P138;
 NET "io_button[4]" IOSTANDARD = LVTTL;
 NET "io_button[4]" PULLDOWN;
 
@@ -143,7 +149,6 @@ NET "io_dip[21]" PULLDOWN;
 NET "io_dip[20]" LOC = P67;
 NET "io_dip[20]" IOSTANDARD = LVTTL;
 NET "io_dip[20]" PULLDOWN;
-NET "io_dip[19]" LOC = P74;
 NET "io_dip[19]" IOSTANDARD = LVTTL;
 NET "io_dip[19]" PULLDOWN;
 NET "io_dip[18]" LOC = P75;
@@ -168,12 +173,12 @@ NET "io_dip[13]" PULLDOWN;
 NET "io_dip[12]" LOC = P102;
 NET "io_dip[12]" IOSTANDARD = LVTTL;
 NET "io_dip[12]" PULLDOWN;
+NET "io_dip[11]" LOC = P104;
 NET "io_dip[11]" IOSTANDARD = LVTTL;
 NET "io_dip[11]" PULLDOWN;
 NET "io_dip[10]" LOC = P105;
 NET "io_dip[10]" IOSTANDARD = LVTTL;
 NET "io_dip[10]" PULLDOWN;
-NET "io_dip[9]" LOC = P111;
 NET "io_dip[9]" IOSTANDARD = LVTTL;
 NET "io_dip[9]" PULLDOWN;
 NET "io_dip[8]" LOC = P112;
@@ -200,7 +205,6 @@ NET "io_dip[2]" PULLDOWN;
 NET "io_dip[1]" LOC = P121;
 NET "io_dip[1]" IOSTANDARD = LVTTL;
 NET "io_dip[1]" PULLDOWN;
-NET "io_dip[0]" LOC = P120;
 NET "io_dip[0]" IOSTANDARD = LVTTL;
 NET "io_dip[0]" PULLDOWN;
 
@@ -225,15 +229,15 @@ NET "led[0]" LOC = P134;
 NET "led[0]" IOSTANDARD = LVTTL;
 NET "led[1]" LOC = P133;
 NET "led[1]" IOSTANDARD = LVTTL;
+NET "led[2]" LOC = P132;
 NET "led[2]" IOSTANDARD = LVTTL;
-NET "led[3]" LOC = P131;
 NET "led[3]" IOSTANDARD = LVTTL;
 NET "led[4]" LOC = P127;
 NET "led[4]" IOSTANDARD = LVTTL;
 NET "led[5]" LOC = P126;
 NET "led[5]" IOSTANDARD = LVTTL;
+NET "led[6]" LOC = P124;
 NET "led[6]" IOSTANDARD = LVTTL;
-NET "led[7]" LOC = P123;
 NET "led[7]" IOSTANDARD = LVTTL;
 
 NET "spi_mosi" LOC = P44;

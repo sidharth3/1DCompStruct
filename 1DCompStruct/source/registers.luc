@@ -2,9 +2,10 @@ module registers ( //module which contains all the contents of the 4 registers, 
     input clk,  // clock
     input rst,  // reset
     input shift,
+    input reset,
     output l1[8],
     output l2[8],
-   output lane1val[2],
+    output lane1val[2],
     output lane2val[2],
     output lane3val[2],
     output lane4val[2],
@@ -13,7 +14,9 @@ module registers ( //module which contains all the contents of the 4 registers, 
     output row3[4][24],
     output row4[4][24],
     output row5[4][24],
-    output out[8]
+    output out[8],
+    output level[3],
+    output levelUp[1]
   ) {
   alu alu1;
   alu alu2;
@@ -37,8 +40,8 @@ module registers ( //module which contains all the contents of the 4 registers, 
    dff lane2[10];
    dff lane3[10];
    dff lane4[10];
+   dff levelReg[3];
    smallgc ctr;
-   fsm levels = {LEVEL1,LEVEL2,LEVEL3,IDLE};  
       }
    }
   always {
@@ -88,10 +91,14 @@ module registers ( //module which contains all the contents of the 4 registers, 
     lane2val = lane2.q[9:8];
     lane3val = lane3.q[9:8];
     lane4val = lane4.q[9:8];
-    if(rst){
-      levels.d = levels.LEVEL1;
+    if(reset){
+      levelReg.d = b01;
+      addr.d = 0;
+      lane1.d = 10b0;
+      lane2.d = 10b0;
+      lane3.d = 10b0;
+      lane4.d = 10b0;
       }
-
 // case (levels.q){
 //     levels.LEVEL1:
 //       map.level = b01;
@@ -119,9 +126,19 @@ module registers ( //module which contains all the contents of the 4 registers, 
 //       //io_led[1] = 8x{b1};
 //     }
       
-      map.level = b01;
+      map.level = levelReg.q;
+      if (levelReg.q == b0){
+      levelReg.d = b01;
+    }
+      level = levelReg.q;
+      levelUp = 0;
       out = map.next_row;
       map.address = addr.q;
+      if(map.next_row == 8b11111111){
+        levelReg.d = levelReg.q+1;
+        addr.d = 0;
+        levelUp = 1;
+      }
       if(shift==1){
         templane1 = lane1.q << 2;
         lane1.d = c{templane1[9:2],map.next_row[1:0]};

@@ -3,7 +3,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> Reading design: mojo_top_0.prj
 
@@ -53,40 +53,46 @@ Netlist Hierarchy                  : rebuilt
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/cmp_34.v" into library work
+Parsing module <cmp_34>.
 Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/bitshifter_33.v" into library work
 Parsing module <bitshifter_33>.
 Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/adder_32.v" into library work
 Parsing module <adder_32>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/smallgc_31.v" into library work
-Parsing module <smallgc_31>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/map_25.v" into library work
-Parsing module <map_25>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow5map_30.v" into library work
-Parsing module <ledrow5map_30>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow4map_29.v" into library work
-Parsing module <ledrow4map_29>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow3map_28.v" into library work
-Parsing module <ledrow3map_28>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow2map_27.v" into library work
-Parsing module <ledrow2map_27>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow1map_26.v" into library work
-Parsing module <ledrow1map_26>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/alu_21.v" into library work
-Parsing module <alu_21>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v" into library work
-Parsing module <registers_19>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/pipeline_13.v" into library work
-Parsing module <pipeline_13>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrowcars_20.v" into library work
-Parsing module <ledrowcars_20>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/car_17.v" into library work
-Parsing module <car_17>.
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/smallgc_41.v" into library work
+Parsing module <smallgc_41>.
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/map_35.v" into library work
+Parsing module <map_35>.
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow5map_40.v" into library work
+Parsing module <ledrow5map_40>.
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow4map_39.v" into library work
+Parsing module <ledrow4map_39>.
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow3map_38.v" into library work
+Parsing module <ledrow3map_38>.
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow2map_37.v" into library work
+Parsing module <ledrow2map_37>.
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow1map_36.v" into library work
+Parsing module <ledrow1map_36>.
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/alu_19.v" into library work
+Parsing module <alu_19>.
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/scoredisplay_30.v" into library work
+Parsing module <scoredisplay_30>.
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v" into library work
+Parsing module <registers_27>.
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/pipeline_20.v" into library work
+Parsing module <pipeline_20>.
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrowcars_29.v" into library work
+Parsing module <ledrowcars_29>.
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/car_25.v" into library work
+Parsing module <car_25>.
 Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
 Parsing module <reset_conditioner_1>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/gamestates_12.v" into library work
-Parsing module <gamestates_12>.
-Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/display_6.v" into library work
-Parsing module <display_6>.
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/gamestates_18.v" into library work
+Parsing module <gamestates_18>.
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/edge_detector_7.v" into library work
+Parsing module <edge_detector_7>.
+Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/display_12.v" into library work
+Parsing module <display_12>.
 Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/button_conditioner_2.v" into library work
 Parsing module <button_conditioner_2>.
 Analyzing Verilog file "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
@@ -102,60 +108,68 @@ Elaborating module <reset_conditioner_1>.
 
 Elaborating module <button_conditioner_2>.
 
-Elaborating module <pipeline_13>.
+Elaborating module <pipeline_20>.
 
-Elaborating module <display_6>.
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 93: Assignment to M_display1_pixel ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 105: Assignment to M_display2_pixel ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 117: Assignment to M_display3_pixel ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 129: Assignment to M_display4_pixel ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 141: Assignment to M_display5_pixel ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 153: Assignment to M_display6_pixel ignored, since the identifier is never used
+Elaborating module <edge_detector_7>.
 
-Elaborating module <gamestates_12>.
+Elaborating module <display_12>.
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 136: Assignment to M_display1_pixel ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 148: Assignment to M_display2_pixel ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 160: Assignment to M_display3_pixel ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 172: Assignment to M_display4_pixel ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 184: Assignment to M_display5_pixel ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 196: Assignment to M_display6_pixel ignored, since the identifier is never used
 
-Elaborating module <car_17>.
+Elaborating module <gamestates_18>.
 
-Elaborating module <registers_19>.
+Elaborating module <car_25>.
 
-Elaborating module <alu_21>.
+Elaborating module <registers_27>.
+
+Elaborating module <alu_19>.
 
 Elaborating module <adder_32>.
 
 Elaborating module <bitshifter_33>.
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v" Line 35: Assignment to M_alu1_c ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v" Line 46: Assignment to M_alu2_c ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v" Line 57: Assignment to M_alu3_c ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v" Line 68: Assignment to M_alu4_c ignored, since the identifier is never used
 
-Elaborating module <map_25>.
+Elaborating module <cmp_34>.
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v" Line 38: Assignment to M_alu1_c ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v" Line 49: Assignment to M_alu2_c ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v" Line 60: Assignment to M_alu3_c ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v" Line 71: Assignment to M_alu4_c ignored, since the identifier is never used
 
-Elaborating module <ledrow1map_26>.
+Elaborating module <map_35>.
 
-Elaborating module <ledrow2map_27>.
+Elaborating module <ledrow1map_36>.
 
-Elaborating module <ledrow3map_28>.
+Elaborating module <ledrow2map_37>.
 
-Elaborating module <ledrow4map_29>.
+Elaborating module <ledrow3map_38>.
 
-Elaborating module <ledrow5map_30>.
+Elaborating module <ledrow4map_39>.
 
-Elaborating module <smallgc_31>.
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v" Line 164: Assignment to M_ctr_out ignored, since the identifier is never used
+Elaborating module <ledrow5map_40>.
 
-Elaborating module <ledrowcars_20>.
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 186: Assignment to M_gamestates_currentState ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 187: Assignment to M_gamestates_ll1 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 188: Assignment to M_gamestates_ll2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 189: Assignment to M_gamestates_out ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 190: Assignment to M_gamestates_fail ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 191: Assignment to M_gamestates_car1Pos ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 192: Assignment to M_gamestates_car2Pos ignored, since the identifier is never used
-WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v" line 31. All outputs of instance <alu1> of block <alu_21> are unconnected in block <registers_19>. Underlying logic will be removed.
-WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v" line 42. All outputs of instance <alu2> of block <alu_21> are unconnected in block <registers_19>. Underlying logic will be removed.
-WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v" line 53. All outputs of instance <alu3> of block <alu_21> are unconnected in block <registers_19>. Underlying logic will be removed.
-WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v" line 64. All outputs of instance <alu4> of block <alu_21> are unconnected in block <registers_19>. Underlying logic will be removed.
-WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v" line 160. All outputs of instance <ctr> of block <smallgc_31> are unconnected in block <registers_19>. Underlying logic will be removed.
+Elaborating module <smallgc_41>.
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v" Line 168: Assignment to M_ctr_out ignored, since the identifier is never used
+
+Elaborating module <ledrowcars_29>.
+
+Elaborating module <scoredisplay_30>.
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/gamestates_18.v" Line 491: Assignment to M_faster_counter_q ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 233: Assignment to M_gamestates_ll1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 234: Assignment to M_gamestates_ll2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 235: Assignment to M_gamestates_out ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 237: Assignment to M_gamestates_car1Pos ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 238: Assignment to M_gamestates_car2Pos ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 252: Assignment to M_alu_c ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 307: Result of 16-bit expression is truncated to fit in 8-bit target.
+WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v" line 34. All outputs of instance <alu1> of block <alu_19> are unconnected in block <registers_27>. Underlying logic will be removed.
+WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v" line 45. All outputs of instance <alu2> of block <alu_19> are unconnected in block <registers_27>. Underlying logic will be removed.
+WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v" line 56. All outputs of instance <alu3> of block <alu_19> are unconnected in block <registers_27>. Underlying logic will be removed.
+WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v" line 67. All outputs of instance <alu4> of block <alu_19> are unconnected in block <registers_27>. Underlying logic will be removed.
+WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v" line 164. All outputs of instance <ctr> of block <smallgc_41> are unconnected in block <registers_27>. Underlying logic will be removed.
+WARNING:Xst:2972 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 248. All outputs of instance <alu> of block <alu_19> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -171,25 +185,25 @@ WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved an
 WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 88: Output port <pixel> of the instance <display1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 100: Output port <pixel> of the instance <display2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 112: Output port <pixel> of the instance <display3> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 124: Output port <pixel> of the instance <display4> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 136: Output port <pixel> of the instance <display5> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 148: Output port <pixel> of the instance <display6> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 174: Output port <currentState> of the instance <gamestates> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 174: Output port <ll1> of the instance <gamestates> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 174: Output port <ll2> of the instance <gamestates> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 174: Output port <out> of the instance <gamestates> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 174: Output port <car1Pos> of the instance <gamestates> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 174: Output port <car2Pos> of the instance <gamestates> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 174: Output port <fail> of the instance <gamestates> is unconnected or connected to loadless signal.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 197
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 197
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 197
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 197
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 197
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 197
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 131: Output port <pixel> of the instance <display1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 143: Output port <pixel> of the instance <display2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 155: Output port <pixel> of the instance <display3> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 167: Output port <pixel> of the instance <display4> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 179: Output port <pixel> of the instance <display5> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 191: Output port <pixel> of the instance <display6> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 219: Output port <ll1> of the instance <gamestates> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 219: Output port <ll2> of the instance <gamestates> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 219: Output port <out> of the instance <gamestates> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 219: Output port <car1Pos> of the instance <gamestates> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 219: Output port <car2Pos> of the instance <gamestates> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 219: Output port <debug> of the instance <gamestates> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/mojo_top_0.v" line 248: Output port <c> of the instance <alu> is unconnected or connected to loadless signal.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 255
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 255
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 255
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 255
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 255
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 255
     Summary:
 	inferred   6 Tristate(s).
 Unit <mojo_top_0> synthesized.
@@ -210,30 +224,37 @@ Synthesizing Unit <button_conditioner_2>.
 	inferred  20 D-type flip-flop(s).
 Unit <button_conditioner_2> synthesized.
 
-Synthesizing Unit <pipeline_13>.
-    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/pipeline_13.v".
+Synthesizing Unit <pipeline_20>.
+    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/pipeline_20.v".
     Found 2-bit register for signal <M_pipe_q>.
     Summary:
 	inferred   2 D-type flip-flop(s).
-Unit <pipeline_13> synthesized.
+Unit <pipeline_20> synthesized.
 
-Synthesizing Unit <display_6>.
-    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/display_6.v".
+Synthesizing Unit <edge_detector_7>.
+    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/edge_detector_7.v".
+    Found 1-bit register for signal <M_last_q>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <edge_detector_7> synthesized.
+
+Synthesizing Unit <display_12>.
+    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/display_12.v".
     Found 5-bit register for signal <M_bit_ctr_q>.
     Found 6-bit register for signal <M_ctr_q>.
     Found 12-bit register for signal <M_rst_ctr_q>.
     Found 1-bit register for signal <M_state_q>.
     Found 4-bit register for signal <M_pixel_ctr_q>.
     Found 9-bit adder for signal <n0058> created at line 42.
-    Found 6-bit adder for signal <M_ctr_q[5]_GND_5_o_add_6_OUT> created at line 52.
-    Found 5-bit adder for signal <M_bit_ctr_q[4]_GND_5_o_add_8_OUT> created at line 55.
-    Found 4-bit adder for signal <M_pixel_ctr_q[3]_GND_5_o_add_10_OUT> created at line 58.
-    Found 12-bit adder for signal <M_rst_ctr_q[11]_GND_5_o_add_20_OUT> created at line 73.
+    Found 6-bit adder for signal <M_ctr_q[5]_GND_6_o_add_6_OUT> created at line 52.
+    Found 5-bit adder for signal <M_bit_ctr_q[4]_GND_6_o_add_8_OUT> created at line 55.
+    Found 4-bit adder for signal <M_pixel_ctr_q[3]_GND_6_o_add_10_OUT> created at line 58.
+    Found 12-bit adder for signal <M_rst_ctr_q[11]_GND_6_o_add_20_OUT> created at line 73.
     Found 4x5-bit multiplier for signal <n0079> created at line 42.
     Found 191-bit shifter logical right for signal <n0056> created at line 42
     Found 47-bit shifter logical right for signal <n0059> created at line 47
-    Found 6-bit comparator greater for signal <M_ctr_q[5]_PWR_5_o_LessThan_5_o> created at line 48
-    Found 6-bit comparator greater for signal <M_ctr_q[5]_GND_5_o_LessThan_6_o> created at line 50
+    Found 6-bit comparator greater for signal <M_ctr_q[5]_PWR_6_o_LessThan_5_o> created at line 48
+    Found 6-bit comparator greater for signal <M_ctr_q[5]_GND_6_o_LessThan_6_o> created at line 50
     Summary:
 	inferred   1 Multiplier(s).
 	inferred   5 Adder/Subtractor(s).
@@ -241,104 +262,131 @@ Synthesizing Unit <display_6>.
 	inferred   2 Comparator(s).
 	inferred   4 Multiplexer(s).
 	inferred   2 Combinational logic shifter(s).
-Unit <display_6> synthesized.
+Unit <display_12> synthesized.
 
-Synthesizing Unit <gamestates_12>.
-    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/gamestates_12.v".
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/gamestates_12.v" line 82: Output port <lane1val> of the instance <register> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/gamestates_12.v" line 82: Output port <lane2val> of the instance <register> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/gamestates_12.v" line 82: Output port <lane3val> of the instance <register> is unconnected or connected to loadless signal.
-    Found 3-bit register for signal <M_gamestates_q>.
-    Found 26-bit register for signal <M_counter_q>.
+Synthesizing Unit <gamestates_18>.
+    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/gamestates_18.v".
+    Found 5-bit register for signal <M_gamestates_q>.
+    Found 25-bit register for signal <M_counter_q>.
+    Found 24-bit register for signal <M_fast_counter_q>.
+    Found 25-bit register for signal <M_readycounter_q>.
+    Found 5-bit register for signal <M_loop_q>.
+    Found 26-bit register for signal <M_slow1_q>.
+    Found 16-bit register for signal <M_score_q>.
+    Found 16-bit register for signal <M_high_score_q>.
     Found finite state machine <FSM_0> for signal <M_gamestates_q>.
     -----------------------------------------------------------------------
-    | States             | 6                                              |
-    | Transitions        | 11                                             |
-    | Inputs             | 5                                              |
-    | Outputs            | 7                                              |
+    | States             | 16                                             |
+    | Transitions        | 47                                             |
+    | Inputs             | 21                                             |
+    | Outputs            | 16                                             |
     | Clock              | clk (rising_edge)                              |
-    | Power Up State     | 000                                            |
+    | Power Up State     | 00000                                          |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 26-bit adder for signal <M_counter_d> created at line 140.
+    Found 25-bit adder for signal <M_counter_d> created at line 212.
+    Found 24-bit adder for signal <M_fast_counter_q[23]_GND_8_o_add_1_OUT> created at line 213.
+    Found 25-bit adder for signal <M_readycounter_q[24]_GND_8_o_add_5_OUT> created at line 249.
+    Found 5-bit adder for signal <M_loop_q[4]_GND_8_o_add_76_OUT> created at line 397.
+    Found 26-bit adder for signal <M_slow1_q[25]_GND_8_o_add_95_OUT> created at line 441.
+    Found 4x96-bit Read Only RAM for signal <_n0334>
 WARNING:Xst:737 - Found 1-bit latch for signal <currentState<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <currentState<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  26 D-type flip-flop(s).
+	inferred   1 RAM(s).
+	inferred   5 Adder/Subtractor(s).
+	inferred 137 D-type flip-flop(s).
 	inferred   2 Latch(s).
-	inferred  10 Multiplexer(s).
+	inferred  14 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
-Unit <gamestates_12> synthesized.
+Unit <gamestates_18> synthesized.
 
-Synthesizing Unit <car_17>.
-    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/car_17.v".
+Synthesizing Unit <car_25>.
+    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/car_25.v".
     Found 4-bit register for signal <M_carposition_q>.
     Summary:
 	inferred   4 D-type flip-flop(s).
-	inferred   3 Multiplexer(s).
-Unit <car_17> synthesized.
+	inferred   2 Multiplexer(s).
+Unit <car_25> synthesized.
 
-Synthesizing Unit <registers_19>.
-    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v".
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v" line 31: Output port <c> of the instance <alu1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v" line 42: Output port <c> of the instance <alu2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v" line 53: Output port <c> of the instance <alu3> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v" line 64: Output port <c> of the instance <alu4> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_19.v" line 160: Output port <out> of the instance <ctr> is unconnected or connected to loadless signal.
+Synthesizing Unit <registers_27>.
+    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v".
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v" line 34: Output port <c> of the instance <alu1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v" line 45: Output port <c> of the instance <alu2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v" line 56: Output port <c> of the instance <alu3> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v" line 67: Output port <c> of the instance <alu4> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/registers_27.v" line 164: Output port <out> of the instance <ctr> is unconnected or connected to loadless signal.
     Found 10-bit register for signal <M_lane1_q>.
     Found 10-bit register for signal <M_lane2_q>.
     Found 10-bit register for signal <M_lane3_q>.
     Found 10-bit register for signal <M_lane4_q>.
+    Found 3-bit register for signal <M_levelReg_q>.
     Found 5-bit register for signal <M_addr_q>.
-    Found 5-bit adder for signal <M_addr_q[4]_GND_9_o_add_2_OUT> created at line 241.
+    Found 3-bit adder for signal <M_levelReg_q[2]_GND_10_o_add_9_OUT> created at line 241.
+    Found 5-bit adder for signal <M_addr_q[4]_GND_10_o_add_13_OUT> created at line 254.
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  45 D-type flip-flop(s).
-Unit <registers_19> synthesized.
+	inferred   2 Adder/Subtractor(s).
+	inferred  48 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <registers_27> synthesized.
+
+Synthesizing Unit <alu_19>.
+    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/alu_19.v".
+    Found 16-bit 4-to-1 multiplexer for signal <c> created at line 60.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <alu_19> synthesized.
 
 Synthesizing Unit <adder_32>.
     Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/adder_32.v".
 WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 17-bit subtractor for signal <GND_12_o_GND_12_o_sub_2_OUT> created at line 25.
+    Found 17-bit subtractor for signal <GND_12_o_a[15]_sub_6_OUT> created at line 31.
+    Found 17-bit adder for signal <n0021> created at line 22.
+    Found 16x16-bit multiplier for signal <n0014> created at line 28.
+    Found 16x16-bit multiplier for signal <n0016> created at line 31.
+    Found 17-bit 4-to-1 multiplexer for signal <result> created at line 20.
     Summary:
-	no macro.
+	inferred   2 Multiplier(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   5 Multiplexer(s).
 Unit <adder_32> synthesized.
 
 Synthesizing Unit <div_16u_16u>.
     Related source file is "".
     Found 32-bit adder for signal <n0956> created at line 0.
-    Found 32-bit adder for signal <GND_13_o_b[15]_add_1_OUT> created at line 0.
+    Found 32-bit adder for signal <GND_14_o_b[15]_add_1_OUT> created at line 0.
     Found 31-bit adder for signal <n0960> created at line 0.
-    Found 31-bit adder for signal <GND_13_o_b[15]_add_3_OUT> created at line 0.
+    Found 31-bit adder for signal <GND_14_o_b[15]_add_3_OUT> created at line 0.
     Found 30-bit adder for signal <n0964> created at line 0.
-    Found 30-bit adder for signal <GND_13_o_b[15]_add_5_OUT> created at line 0.
+    Found 30-bit adder for signal <GND_14_o_b[15]_add_5_OUT> created at line 0.
     Found 29-bit adder for signal <n0968> created at line 0.
-    Found 29-bit adder for signal <GND_13_o_b[15]_add_7_OUT> created at line 0.
+    Found 29-bit adder for signal <GND_14_o_b[15]_add_7_OUT> created at line 0.
     Found 28-bit adder for signal <n0972> created at line 0.
-    Found 28-bit adder for signal <GND_13_o_b[15]_add_9_OUT> created at line 0.
+    Found 28-bit adder for signal <GND_14_o_b[15]_add_9_OUT> created at line 0.
     Found 27-bit adder for signal <n0976> created at line 0.
-    Found 27-bit adder for signal <GND_13_o_b[15]_add_11_OUT> created at line 0.
+    Found 27-bit adder for signal <GND_14_o_b[15]_add_11_OUT> created at line 0.
     Found 26-bit adder for signal <n0980> created at line 0.
-    Found 26-bit adder for signal <GND_13_o_b[15]_add_13_OUT> created at line 0.
+    Found 26-bit adder for signal <GND_14_o_b[15]_add_13_OUT> created at line 0.
     Found 25-bit adder for signal <n0984> created at line 0.
-    Found 25-bit adder for signal <GND_13_o_b[15]_add_15_OUT> created at line 0.
+    Found 25-bit adder for signal <GND_14_o_b[15]_add_15_OUT> created at line 0.
     Found 24-bit adder for signal <n0988> created at line 0.
-    Found 24-bit adder for signal <GND_13_o_b[15]_add_17_OUT> created at line 0.
+    Found 24-bit adder for signal <GND_14_o_b[15]_add_17_OUT> created at line 0.
     Found 23-bit adder for signal <n0992> created at line 0.
-    Found 23-bit adder for signal <GND_13_o_b[15]_add_19_OUT> created at line 0.
+    Found 23-bit adder for signal <GND_14_o_b[15]_add_19_OUT> created at line 0.
     Found 22-bit adder for signal <n0996> created at line 0.
-    Found 22-bit adder for signal <GND_13_o_b[15]_add_21_OUT> created at line 0.
+    Found 22-bit adder for signal <GND_14_o_b[15]_add_21_OUT> created at line 0.
     Found 21-bit adder for signal <n1000> created at line 0.
-    Found 21-bit adder for signal <GND_13_o_b[15]_add_23_OUT> created at line 0.
+    Found 21-bit adder for signal <GND_14_o_b[15]_add_23_OUT> created at line 0.
     Found 20-bit adder for signal <n1004> created at line 0.
-    Found 20-bit adder for signal <GND_13_o_b[15]_add_25_OUT> created at line 0.
+    Found 20-bit adder for signal <GND_14_o_b[15]_add_25_OUT> created at line 0.
     Found 19-bit adder for signal <n1008> created at line 0.
-    Found 19-bit adder for signal <GND_13_o_b[15]_add_27_OUT> created at line 0.
+    Found 19-bit adder for signal <GND_14_o_b[15]_add_27_OUT> created at line 0.
     Found 18-bit adder for signal <n1012> created at line 0.
-    Found 18-bit adder for signal <GND_13_o_b[15]_add_29_OUT> created at line 0.
+    Found 18-bit adder for signal <GND_14_o_b[15]_add_29_OUT> created at line 0.
     Found 17-bit adder for signal <n1016> created at line 0.
-    Found 17-bit adder for signal <GND_13_o_b[15]_add_31_OUT> created at line 0.
+    Found 17-bit adder for signal <GND_14_o_b[15]_add_31_OUT> created at line 0.
     Found 32-bit comparator lessequal for signal <BUS_0001> created at line 0
     Found 31-bit comparator lessequal for signal <BUS_0002> created at line 0
     Found 30-bit comparator lessequal for signal <BUS_0003> created at line 0
@@ -366,21 +414,43 @@ Synthesizing Unit <bitshifter_33>.
     Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/bitshifter_33.v".
 WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <b<15:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 16-bit shifter logical left for signal <a[15]_b[3]_shift_left_0_OUT> created at line 20
+    Found 16-bit shifter logical right for signal <a[15]_b[3]_shift_right_1_OUT> created at line 23
+    Found 16-bit shifter arithmetic right for signal <a[15]_b[3]_shift_right_2_OUT> created at line 26
+    Found 16-bit 4-to-1 multiplexer for signal <c> created at line 18.
     Summary:
-	no macro.
+	inferred   1 Multiplexer(s).
+	inferred   3 Combinational logic shifter(s).
 Unit <bitshifter_33> synthesized.
 
-Synthesizing Unit <map_25>.
-    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/map_25.v".
-    Found 8-bit adder for signal <address[4]_GND_15_o_add_4_OUT> created at line 31.
-    Found 351-bit shifter logical right for signal <n0008> created at line 25
+Synthesizing Unit <cmp_34>.
+    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/cmp_34.v".
+WARNING:Xst:647 - Input <alufn<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <alufn<5:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit 4-to-1 multiplexer for signal <comp> created at line 20.
+    Found 16-bit comparator equal for signal <a[15]_b[15]_equal_1_o> created at line 22
+    Found 16-bit comparator greater for signal <a[15]_b[15]_LessThan_2_o> created at line 25
+    Found 16-bit comparator lessequal for signal <n0002> created at line 28
+    Summary:
+	inferred   3 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <cmp_34> synthesized.
+
+Synthesizing Unit <map_35>.
+    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/map_35.v".
+    Found 8-bit adder for signal <address[4]_GND_17_o_add_0_OUT> created at line 25.
+    Found 447-bit shifter logical right for signal <n0014> created at line 25
+    Found 431-bit shifter logical right for signal <n0015> created at line 28
+    Found 431-bit shifter logical right for signal <n0016> created at line 31
+    Found 8-bit 4-to-1 multiplexer for signal <_n0026> created at line 10.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred   1 Combinational logic shifter(s).
-Unit <map_25> synthesized.
+	inferred   2 Multiplexer(s).
+	inferred   3 Combinational logic shifter(s).
+Unit <map_35> synthesized.
 
-Synthesizing Unit <ledrow1map_26>.
-    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow1map_26.v".
+Synthesizing Unit <ledrow1map_36>.
+    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow1map_36.v".
 WARNING:Xst:647 - Input <lane1<9:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <lane2<9:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <lane3<9:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -391,10 +461,10 @@ WARNING:Xst:647 - Input <lane4<9:2>> is never used. This port will be preserved 
     Found 4x24-bit Read Only RAM for signal <color_cell3>
     Summary:
 	inferred   4 RAM(s).
-Unit <ledrow1map_26> synthesized.
+Unit <ledrow1map_36> synthesized.
 
-Synthesizing Unit <ledrow2map_27>.
-    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow2map_27.v".
+Synthesizing Unit <ledrow2map_37>.
+    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow2map_37.v".
 WARNING:Xst:647 - Input <lane1<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <lane1<9:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <lane2<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -409,10 +479,10 @@ WARNING:Xst:647 - Input <lane4<9:4>> is never used. This port will be preserved 
     Found 4x24-bit Read Only RAM for signal <color_cell3>
     Summary:
 	inferred   4 RAM(s).
-Unit <ledrow2map_27> synthesized.
+Unit <ledrow2map_37> synthesized.
 
-Synthesizing Unit <ledrow3map_28>.
-    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow3map_28.v".
+Synthesizing Unit <ledrow3map_38>.
+    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow3map_38.v".
 WARNING:Xst:647 - Input <lane1<3:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <lane1<9:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <lane2<3:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -427,10 +497,10 @@ WARNING:Xst:647 - Input <lane4<9:6>> is never used. This port will be preserved 
     Found 4x24-bit Read Only RAM for signal <color_cell3>
     Summary:
 	inferred   4 RAM(s).
-Unit <ledrow3map_28> synthesized.
+Unit <ledrow3map_38> synthesized.
 
-Synthesizing Unit <ledrow4map_29>.
-    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow4map_29.v".
+Synthesizing Unit <ledrow4map_39>.
+    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow4map_39.v".
 WARNING:Xst:647 - Input <lane1<5:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <lane1<9:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <lane2<5:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -445,10 +515,10 @@ WARNING:Xst:647 - Input <lane4<9:8>> is never used. This port will be preserved 
     Found 4x24-bit Read Only RAM for signal <color_cell3>
     Summary:
 	inferred   4 RAM(s).
-Unit <ledrow4map_29> synthesized.
+Unit <ledrow4map_39> synthesized.
 
-Synthesizing Unit <ledrow5map_30>.
-    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow5map_30.v".
+Synthesizing Unit <ledrow5map_40>.
+    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrow5map_40.v".
 WARNING:Xst:647 - Input <lane1<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <lane2<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <lane3<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -459,59 +529,119 @@ WARNING:Xst:647 - Input <lane4<7:0>> is never used. This port will be preserved 
     Found 4x24-bit Read Only RAM for signal <color_cell3>
     Summary:
 	inferred   4 RAM(s).
-Unit <ledrow5map_30> synthesized.
+Unit <ledrow5map_40> synthesized.
 
-Synthesizing Unit <ledrowcars_20>.
-    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrowcars_20.v".
+Synthesizing Unit <ledrowcars_29>.
+    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/ledrowcars_29.v".
     Summary:
 	inferred   2 Multiplexer(s).
-Unit <ledrowcars_20> synthesized.
+Unit <ledrowcars_29> synthesized.
+
+Synthesizing Unit <scoredisplay_30>.
+    Related source file is "D:/Mario's files/SUTD/ISTD/Computational Structure/1D/newone/1DCompStruct/1DCompStruct/work/planAhead/1DCompStruct/1DCompStruct.srcs/sources_1/imports/verilog/scoredisplay_30.v".
+    Summary:
+	inferred   8 Multiplexer(s).
+Unit <scoredisplay_30> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 20
+# RAMs                                                 : 21
  4x24-bit single-port Read Only RAM                    : 20
-# Multipliers                                          : 6
+ 4x96-bit single-port Read Only RAM                    : 1
+# Multipliers                                          : 8
+ 16x16-bit multiplier                                  : 2
  5x4-bit multiplier                                    : 6
-# Adders/Subtractors                                   : 37
+# Adders/Subtractors                                   : 76
  12-bit adder                                          : 6
- 20-bit adder                                          : 4
- 26-bit adder                                          : 1
+ 17-bit adder                                          : 2
+ 17-bit addsub                                         : 1
+ 18-bit adder                                          : 2
+ 19-bit adder                                          : 2
+ 20-bit adder                                          : 7
+ 21-bit adder                                          : 2
+ 22-bit adder                                          : 2
+ 23-bit adder                                          : 2
+ 24-bit adder                                          : 3
+ 25-bit adder                                          : 4
+ 26-bit adder                                          : 3
+ 27-bit adder                                          : 2
+ 28-bit adder                                          : 2
+ 29-bit adder                                          : 2
+ 3-bit adder                                           : 1
+ 30-bit adder                                          : 2
+ 31-bit adder                                          : 2
+ 32-bit adder                                          : 2
  4-bit adder                                           : 6
- 5-bit adder                                           : 7
+ 5-bit adder                                           : 8
  6-bit adder                                           : 6
  8-bit adder                                           : 1
  9-bit adder                                           : 6
-# Registers                                            : 47
- 1-bit register                                        : 6
+# Registers                                            : 61
+ 1-bit register                                        : 11
  10-bit register                                       : 4
  12-bit register                                       : 6
- 2-bit register                                        : 4
- 20-bit register                                       : 4
+ 16-bit register                                       : 2
+ 2-bit register                                        : 5
+ 20-bit register                                       : 5
+ 24-bit register                                       : 1
+ 25-bit register                                       : 2
  26-bit register                                       : 1
+ 3-bit register                                        : 1
  4-bit register                                        : 9
- 5-bit register                                        : 7
+ 5-bit register                                        : 8
  6-bit register                                        : 6
 # Latches                                              : 2
  1-bit latch                                           : 2
-# Comparators                                          : 12
+# Comparators                                          : 32
+ 16-bit comparator equal                               : 1
+ 16-bit comparator greater                             : 1
+ 16-bit comparator lessequal                           : 2
+ 17-bit comparator lessequal                           : 1
+ 18-bit comparator lessequal                           : 1
+ 19-bit comparator lessequal                           : 1
+ 20-bit comparator lessequal                           : 1
+ 21-bit comparator lessequal                           : 1
+ 22-bit comparator lessequal                           : 1
+ 23-bit comparator lessequal                           : 1
+ 24-bit comparator lessequal                           : 1
+ 25-bit comparator lessequal                           : 1
+ 26-bit comparator lessequal                           : 1
+ 27-bit comparator lessequal                           : 1
+ 28-bit comparator lessequal                           : 1
+ 29-bit comparator lessequal                           : 1
+ 30-bit comparator lessequal                           : 1
+ 31-bit comparator lessequal                           : 1
+ 32-bit comparator lessequal                           : 1
  6-bit comparator greater                              : 12
-# Multiplexers                                         : 42
- 1-bit 2-to-1 multiplexer                              : 22
- 24-bit 2-to-1 multiplexer                             : 2
- 4-bit 2-to-1 multiplexer                              : 12
- 96-bit 2-to-1 multiplexer                             : 6
-# Logic shifters                                       : 13
+# Multiplexers                                         : 313
+ 1-bit 2-to-1 multiplexer                              : 264
+ 1-bit 4-to-1 multiplexer                              : 1
+ 16-bit 2-to-1 multiplexer                             : 2
+ 16-bit 4-to-1 multiplexer                             : 2
+ 17-bit 2-to-1 multiplexer                             : 4
+ 24-bit 2-to-1 multiplexer                             : 18
+ 3-bit 2-to-1 multiplexer                              : 1
+ 4-bit 2-to-1 multiplexer                              : 10
+ 5-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 4-to-1 multiplexer                              : 1
+ 96-bit 2-to-1 multiplexer                             : 8
+# Logic shifters                                       : 18
+ 16-bit shifter arithmetic right                       : 1
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
  191-bit shifter logical right                         : 6
- 351-bit shifter logical right                         : 1
+ 431-bit shifter logical right                         : 2
+ 447-bit shifter logical right                         : 1
  47-bit shifter logical right                          : 6
 # Tristates                                            : 6
  1-bit tristate buffer                                 : 6
 # FSMs                                                 : 1
 
 =========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
 
 =========================================================================
 *                       Advanced HDL Synthesis                          *
@@ -522,19 +652,33 @@ Synthesizing (advanced) Unit <button_conditioner_2>.
 The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
 Unit <button_conditioner_2> synthesized (advanced).
 
-Synthesizing (advanced) Unit <display_6>.
+Synthesizing (advanced) Unit <display_12>.
 The following registers are absorbed into counter <M_pixel_ctr_q>: 1 register on signal <M_pixel_ctr_q>.
 The following registers are absorbed into counter <M_bit_ctr_q>: 1 register on signal <M_bit_ctr_q>.
 The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
 The following registers are absorbed into counter <M_rst_ctr_q>: 1 register on signal <M_rst_ctr_q>.
-	Multiplier <Mmult_n0079> in block <display_6> and adder/subtractor <Madd_n0058_Madd> in block <display_6> are combined into a MAC<Maddsub_n0079>.
-Unit <display_6> synthesized (advanced).
+	Multiplier <Mmult_n0079> in block <display_12> and adder/subtractor <Madd_n0058_Madd> in block <display_12> are combined into a MAC<Maddsub_n0079>.
+Unit <display_12> synthesized (advanced).
 
-Synthesizing (advanced) Unit <gamestates_12>.
+Synthesizing (advanced) Unit <gamestates_18>.
 The following registers are absorbed into counter <M_counter_q>: 1 register on signal <M_counter_q>.
-Unit <gamestates_12> synthesized (advanced).
+The following registers are absorbed into counter <M_readycounter_q>: 1 register on signal <M_readycounter_q>.
+The following registers are absorbed into counter <M_loop_q>: 1 register on signal <M_loop_q>.
+The following registers are absorbed into counter <M_slow1_q>: 1 register on signal <M_slow1_q>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0334> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 96-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_loop_q<1:0>> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <gamestates_18> synthesized (advanced).
 
-Synthesizing (advanced) Unit <ledrow1map_26>.
+Synthesizing (advanced) Unit <ledrow1map_36>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_color_cell0> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
@@ -579,9 +723,9 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_color_cell3> will be implemented on 
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to signal <color_cell3>   |          |
     -----------------------------------------------------------------------
-Unit <ledrow1map_26> synthesized (advanced).
+Unit <ledrow1map_36> synthesized (advanced).
 
-Synthesizing (advanced) Unit <ledrow2map_27>.
+Synthesizing (advanced) Unit <ledrow2map_37>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_color_cell0> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
@@ -626,9 +770,9 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_color_cell3> will be implemented on 
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to signal <color_cell3>   |          |
     -----------------------------------------------------------------------
-Unit <ledrow2map_27> synthesized (advanced).
+Unit <ledrow2map_37> synthesized (advanced).
 
-Synthesizing (advanced) Unit <ledrow3map_28>.
+Synthesizing (advanced) Unit <ledrow3map_38>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_color_cell0> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
@@ -673,9 +817,9 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_color_cell3> will be implemented on 
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to signal <color_cell3>   |          |
     -----------------------------------------------------------------------
-Unit <ledrow3map_28> synthesized (advanced).
+Unit <ledrow3map_38> synthesized (advanced).
 
-Synthesizing (advanced) Unit <ledrow4map_29>.
+Synthesizing (advanced) Unit <ledrow4map_39>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_color_cell0> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
@@ -720,9 +864,9 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_color_cell3> will be implemented on 
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to signal <color_cell3>   |          |
     -----------------------------------------------------------------------
-Unit <ledrow4map_29> synthesized (advanced).
+Unit <ledrow4map_39> synthesized (advanced).
 
-Synthesizing (advanced) Unit <ledrow5map_30>.
+Synthesizing (advanced) Unit <ledrow5map_40>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_color_cell0> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
@@ -767,41 +911,79 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_color_cell3> will be implemented on 
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to signal <color_cell3>   |          |
     -----------------------------------------------------------------------
-Unit <ledrow5map_30> synthesized (advanced).
+Unit <ledrow5map_40> synthesized (advanced).
 
-Synthesizing (advanced) Unit <registers_19>.
+Synthesizing (advanced) Unit <registers_27>.
+The following registers are absorbed into counter <M_levelReg_q>: 1 register on signal <M_levelReg_q>.
 The following registers are absorbed into counter <M_addr_q>: 1 register on signal <M_addr_q>.
-Unit <registers_19> synthesized (advanced).
+Unit <registers_27> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 20
+# RAMs                                                 : 21
  4x24-bit single-port distributed Read Only RAM        : 20
+ 4x96-bit single-port distributed Read Only RAM        : 1
 # MACs                                                 : 6
  5x4-to-7-bit MAC                                      : 6
-# Adders/Subtractors                                   : 1
+# Multipliers                                          : 2
+ 16x16-bit multiplier                                  : 2
+# Adders/Subtractors                                   : 19
+ 16-bit adder carry in                                 : 16
+ 17-bit addsub                                         : 1
+ 24-bit adder                                          : 1
  8-bit adder                                           : 1
-# Counters                                             : 30
+# Counters                                             : 35
  12-bit up counter                                     : 6
- 20-bit up counter                                     : 4
+ 20-bit up counter                                     : 5
+ 25-bit up counter                                     : 2
  26-bit up counter                                     : 1
+ 3-bit up counter                                      : 1
  4-bit up counter                                      : 6
- 5-bit up counter                                      : 7
+ 5-bit up counter                                      : 8
  6-bit up counter                                      : 6
-# Registers                                            : 66
- Flip-Flops                                            : 66
-# Comparators                                          : 12
+# Registers                                            : 129
+ Flip-Flops                                            : 129
+# Comparators                                          : 32
+ 16-bit comparator equal                               : 1
+ 16-bit comparator greater                             : 1
+ 16-bit comparator lessequal                           : 2
+ 17-bit comparator lessequal                           : 1
+ 18-bit comparator lessequal                           : 1
+ 19-bit comparator lessequal                           : 1
+ 20-bit comparator lessequal                           : 1
+ 21-bit comparator lessequal                           : 1
+ 22-bit comparator lessequal                           : 1
+ 23-bit comparator lessequal                           : 1
+ 24-bit comparator lessequal                           : 1
+ 25-bit comparator lessequal                           : 1
+ 26-bit comparator lessequal                           : 1
+ 27-bit comparator lessequal                           : 1
+ 28-bit comparator lessequal                           : 1
+ 29-bit comparator lessequal                           : 1
+ 30-bit comparator lessequal                           : 1
+ 31-bit comparator lessequal                           : 1
+ 32-bit comparator lessequal                           : 1
  6-bit comparator greater                              : 12
-# Multiplexers                                         : 36
- 1-bit 2-to-1 multiplexer                              : 22
- 24-bit 2-to-1 multiplexer                             : 2
- 4-bit 2-to-1 multiplexer                              : 6
- 96-bit 2-to-1 multiplexer                             : 6
-# Logic shifters                                       : 13
+# Multiplexers                                         : 305
+ 1-bit 2-to-1 multiplexer                              : 264
+ 1-bit 4-to-1 multiplexer                              : 1
+ 16-bit 2-to-1 multiplexer                             : 2
+ 16-bit 4-to-1 multiplexer                             : 2
+ 17-bit 2-to-1 multiplexer                             : 4
+ 24-bit 2-to-1 multiplexer                             : 18
+ 4-bit 2-to-1 multiplexer                              : 4
+ 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 4-to-1 multiplexer                              : 1
+ 96-bit 2-to-1 multiplexer                             : 8
+# Logic shifters                                       : 18
+ 16-bit shifter arithmetic right                       : 1
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
  191-bit shifter logical right                         : 6
- 351-bit shifter logical right                         : 1
+ 431-bit shifter logical right                         : 2
+ 447-bit shifter logical right                         : 1
  47-bit shifter logical right                          : 6
 # FSMs                                                 : 1
 
@@ -811,29 +993,47 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <gamestates/FSM_0> on signal <M_gamestates_q[1:3]> with user encoding.
--------------------
+Optimizing FSM <gamestates/FSM_0> on signal <M_gamestates_q[1:16]> with one-hot encoding.
+---------------------------
  State | Encoding
--------------------
- 000   | 000
- 001   | 001
- 010   | 010
- 011   | 011
- 100   | 100
- 101   | 101
--------------------
+---------------------------
+ 00000 | 0000000000000001
+ 01100 | 0000000000000010
+ 01101 | 0000000000000100
+ 01110 | 0000000000001000
+ 00001 | 0000000000010000
+ 00010 | 0000000000100000
+ 00011 | 0000000001000000
+ 00100 | 0000000010000000
+ 00110 | 0000000100000000
+ 00101 | 0000001000000000
+ 00111 | 0000010000000000
+ 01010 | 0000100000000000
+ 01000 | 0001000000000000
+ 01001 | 0010000000000000
+ 01011 | 0100000000000000
+ 10010 | 1000000000000000
+---------------------------
+WARNING:Xst:2973 - All outputs of instance <a[15]_b[15]_div_3> of block <div_16u_16u> are unconnected in block <adder_32>. Underlying logic will be removed.
+WARNING:Xst:2677 - Node <Mmult_n0014> of sequential type is unconnected in block <adder_32>.
+WARNING:Xst:2677 - Node <Mmult_n0016> of sequential type is unconnected in block <adder_32>.
+
+Optimizing unit <adder_32> ...
 
 Optimizing unit <mojo_top_0> ...
 
-Optimizing unit <display_6> ...
+Optimizing unit <display_12> ...
 
-Optimizing unit <gamestates_12> ...
+Optimizing unit <gamestates_18> ...
 
-Optimizing unit <car_17> ...
+Optimizing unit <car_25> ...
 
-Optimizing unit <registers_19> ...
-WARNING:Xst:2677 - Node <gamestates/currentState_3> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <gamestates/currentState_4> of sequential type is unconnected in block <mojo_top_0>.
+Optimizing unit <registers_27> ...
+
+Optimizing unit <div_16u_16u> ...
+WARNING:Xst:1293 - FF/Latch <gamestates/M_loop_q_4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <gamestates/M_loop_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <gamestates/M_loop_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <display6/M_bit_ctr_q_0> in Unit <mojo_top_0> is equivalent to the following 5 FFs/Latches, which will be removed : <display5/M_bit_ctr_q_0> <display4/M_bit_ctr_q_0> <display3/M_bit_ctr_q_0> <display2/M_bit_ctr_q_0> <display1/M_bit_ctr_q_0> 
 INFO:Xst:2261 - The FF/Latch <display6/M_bit_ctr_q_1> in Unit <mojo_top_0> is equivalent to the following 5 FFs/Latches, which will be removed : <display5/M_bit_ctr_q_1> <display4/M_bit_ctr_q_1> <display3/M_bit_ctr_q_1> <display2/M_bit_ctr_q_1> <display1/M_bit_ctr_q_1> 
 INFO:Xst:2261 - The FF/Latch <display6/M_bit_ctr_q_2> in Unit <mojo_top_0> is equivalent to the following 5 FFs/Latches, which will be removed : <display5/M_bit_ctr_q_2> <display4/M_bit_ctr_q_2> <display3/M_bit_ctr_q_2> <display2/M_bit_ctr_q_2> <display1/M_bit_ctr_q_2> 
@@ -864,15 +1064,43 @@ INFO:Xst:2261 - The FF/Latch <display6/M_rst_ctr_q_6> in Unit <mojo_top_0> is eq
 INFO:Xst:2261 - The FF/Latch <display6/M_rst_ctr_q_7> in Unit <mojo_top_0> is equivalent to the following 5 FFs/Latches, which will be removed : <display5/M_rst_ctr_q_7> <display4/M_rst_ctr_q_7> <display3/M_rst_ctr_q_7> <display2/M_rst_ctr_q_7> <display1/M_rst_ctr_q_7> 
 INFO:Xst:2261 - The FF/Latch <display6/M_rst_ctr_q_8> in Unit <mojo_top_0> is equivalent to the following 5 FFs/Latches, which will be removed : <display5/M_rst_ctr_q_8> <display4/M_rst_ctr_q_8> <display3/M_rst_ctr_q_8> <display2/M_rst_ctr_q_8> <display1/M_rst_ctr_q_8> 
 INFO:Xst:2261 - The FF/Latch <display6/M_rst_ctr_q_9> in Unit <mojo_top_0> is equivalent to the following 5 FFs/Latches, which will be removed : <display5/M_rst_ctr_q_9> <display4/M_rst_ctr_q_9> <display3/M_rst_ctr_q_9> <display2/M_rst_ctr_q_9> <display1/M_rst_ctr_q_9> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_10> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_11> 
 INFO:Xst:2261 - The FF/Latch <gamestates/car1/M_carposition_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/car1/M_carposition_q_0> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_12> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_13> 
 INFO:Xst:2261 - The FF/Latch <gamestates/car1/M_carposition_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/car1/M_carposition_q_2> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_14> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_20> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_20> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_15> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_21> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_21> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_16> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_22> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_22> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_17> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_23> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_23> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_18> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_18> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_19> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_19> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_0> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_1> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_2> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_3> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_4> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_5> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_6> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_7> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_8> 
+INFO:Xst:2261 - The FF/Latch <gamestates/M_counter_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <gamestates/M_fast_counter_q_9> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 10.
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 19.
 FlipFlop display6/M_ctr_q_2 has been replicated 1 time(s)
 FlipFlop display6/M_ctr_q_3 has been replicated 1 time(s)
-FlipFlop gamestates/M_gamestates_q_FSM_FFd2 has been replicated 1 time(s)
+FlipFlop gamestates/M_gamestates_q_FSM_FFd3 has been replicated 1 time(s)
+FlipFlop gamestates/M_gamestates_q_FSM_FFd4 has been replicated 1 time(s)
+FlipFlop gamestates/M_gamestates_q_FSM_FFd5 has been replicated 2 time(s)
+FlipFlop gamestates/register/M_addr_q_1 has been replicated 1 time(s)
+FlipFlop gamestates/register/M_levelReg_q_2 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -881,6 +1109,7 @@ Processing Unit <mojo_top_0> :
 	Found 2-bit shift register for signal <player1right_cond/sync/M_pipe_q_1>.
 	Found 2-bit shift register for signal <player2left_cond/sync/M_pipe_q_1>.
 	Found 2-bit shift register for signal <player2right_cond/sync/M_pipe_q_1>.
+	Found 2-bit shift register for signal <bigbtn_cond/sync/M_pipe_q_1>.
 INFO:Xst:741 - HDL ADVISOR - A 4-bit shift register was found for signal <reset_cond/M_stage_q_3> and currently occupies 4 logic cells (2 slices). Removing the set/reset logic would take advantage of SRL32 (and derived) primitives and reduce this to 1 logic cells (1 slices). Evaluate if the set/reset can be removed for this simple shift register. The majority of simple pipeline structures do not need to be set/reset operationally.
 Unit <mojo_top_0> processed.
 
@@ -888,10 +1117,10 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 193
- Flip-Flops                                            : 193
-# Shift Registers                                      : 4
- 2-bit shift register                                  : 4
+# Registers                                            : 323
+ Flip-Flops                                            : 323
+# Shift Registers                                      : 5
+ 2-bit shift register                                  : 5
 
 =========================================================================
 
@@ -914,31 +1143,32 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 666
-#      GND                         : 17
-#      INV                         : 13
-#      LUT1                        : 112
-#      LUT2                        : 24
-#      LUT3                        : 19
-#      LUT4                        : 7
-#      LUT5                        : 35
-#      LUT6                        : 166
-#      MUXCY                       : 124
-#      MUXF7                       : 2
-#      VCC                         : 11
-#      XORCY                       : 136
-# FlipFlops/Latches                : 197
-#      FD                          : 17
-#      FDE                         : 4
-#      FDR                         : 31
-#      FDRE                        : 141
+# BELS                             : 1328
+#      GND                         : 20
+#      INV                         : 20
+#      LUT1                        : 179
+#      LUT2                        : 86
+#      LUT3                        : 56
+#      LUT4                        : 77
+#      LUT5                        : 135
+#      LUT6                        : 290
+#      MUXCY                       : 216
+#      MUXF7                       : 14
+#      VCC                         : 13
+#      XORCY                       : 222
+# FlipFlops/Latches                : 330
+#      FD                          : 62
+#      FDE                         : 5
+#      FDR                         : 63
+#      FDRE                        : 194
 #      FDS                         : 4
-# Shift Registers                  : 4
-#      SRLC16E                     : 4
+#      LD                          : 2
+# Shift Registers                  : 5
+#      SRLC16E                     : 5
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 61
-#      IBUF                        : 5
+# IO Buffers                       : 62
+#      IBUF                        : 6
 #      OBUF                        : 50
 #      OBUFT                       : 6
 
@@ -949,22 +1179,23 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             197  out of  11440     1%  
- Number of Slice LUTs:                  380  out of   5720     6%  
-    Number used as Logic:               376  out of   5720     6%  
-    Number used as Memory:                4  out of   1440     0%  
-       Number used as SRL:                4
+ Number of Slice Registers:             328  out of  11440     2%  
+ Number of Slice LUTs:                  848  out of   5720    14%  
+    Number used as Logic:               843  out of   5720    14%  
+    Number used as Memory:                5  out of   1440     0%  
+       Number used as SRL:                5
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    417
-   Number with an unused Flip Flop:     220  out of    417    52%  
-   Number with an unused LUT:            37  out of    417     8%  
-   Number of fully used LUT-FF pairs:   160  out of    417    38%  
-   Number of unique control sets:        19
+ Number of LUT Flip Flop pairs used:    907
+   Number with an unused Flip Flop:     579  out of    907    63%  
+   Number with an unused LUT:            59  out of    907     6%  
+   Number of fully used LUT-FF pairs:   269  out of    907    29%  
+   Number of unique control sets:        36
 
 IO Utilization: 
- Number of IOs:                          97
- Number of bonded IOBs:                  62  out of    102    60%  
+ Number of IOs:                          98
+ Number of bonded IOBs:                  63  out of    102    61%  
+    IOB Flip Flops/Latches:               2
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -987,11 +1218,16 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 201   |
------------------------------------+------------------------+-------+
+-----------------------------------------------------+-----------------------------------+-------+
+Clock Signal                                         | Clock buffer(FF name)             | Load  |
+-----------------------------------------------------+-----------------------------------+-------+
+clk                                                  | BUFGP                             | 333   |
+gamestates/_n0332(gamestates/M_gamestates_q__n0332:O)| NONE(*)(gamestates/currentState_4)| 2     |
+-----------------------------------------------------+-----------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -1001,9 +1237,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 4.909ns (Maximum Frequency: 203.707MHz)
+   Minimum period: 6.023ns (Maximum Frequency: 166.030MHz)
    Minimum input arrival time before clock: 3.526ns
-   Maximum output required time after clock: 15.174ns
+   Maximum output required time after clock: 19.413ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -1012,31 +1248,36 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 4.909ns (frequency: 203.707MHz)
-  Total number of paths / destination ports: 4358 / 509
+  Clock period: 6.023ns (frequency: 166.030MHz)
+  Total number of paths / destination ports: 15648 / 778
 -------------------------------------------------------------------------
-Delay:               4.909ns (Levels of Logic = 3)
-  Source:            display6/M_ctr_q_4 (FF)
-  Destination:       display6/M_ctr_q_1 (FF)
+Delay:               6.023ns (Levels of Logic = 6)
+  Source:            bigbtn_cond/M_ctr_q_9 (FF)
+  Destination:       gamestates/register/M_lane4_q_9 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: display6/M_ctr_q_4 to display6/M_ctr_q_1
+  Data Path: bigbtn_cond/M_ctr_q_9 to gamestates/register/M_lane4_q_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              16   0.525   1.410  M_ctr_q_4 (M_ctr_q_4)
-     LUT6:I3->O           15   0.235   1.155  Mcount_M_bit_ctr_q_val41 (Mcount_M_bit_ctr_q_val_bdd4)
-     LUT3:I2->O            2   0.254   1.002  Mcount_M_ctr_q_val11 (Mcount_M_ctr_q_val)
-     LUT4:I0->O            1   0.254   0.000  M_ctr_q_1_rstpot (M_ctr_q_1_rstpot)
-     FD:D                      0.074          M_ctr_q_1
+     FDRE:C->Q             2   0.525   1.181  M_ctr_q_9 (M_ctr_q_9)
+     LUT6:I0->O            6   0.254   1.104  out3 (out2)
+     end scope: 'bigbtn_cond:out2'
+     begin scope: 'L_edge:out2'
+     LUT6:I3->O            2   0.235   0.726  out1_1 (L_edge/out1)
+     end scope: 'L_edge:L_edge/out1'
+     begin scope: 'gamestates:out1'
+     begin scope: 'gamestates/register:out1'
+     LUT4:I3->O           20   0.254   1.285  Reset_OR_DriverANDClockEnable401 (Reset_OR_DriverANDClockEnable)
+     FDRE:R                    0.459          M_lane3_q_0
     ----------------------------------------
-    Total                      4.909ns (1.342ns logic, 3.567ns route)
-                                       (27.3% logic, 72.7% route)
+    Total                      6.023ns (1.727ns logic, 4.296ns route)
+                                       (28.7% logic, 71.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 8 / 8
+  Total number of paths / destination ports: 9 / 9
 -------------------------------------------------------------------------
 Offset:              3.526ns (Levels of Logic = 3)
   Source:            rst_n (PAD)
@@ -1057,36 +1298,57 @@ Offset:              3.526ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 4337 / 9
+  Total number of paths / destination ports: 17180 / 26
 -------------------------------------------------------------------------
-Offset:              15.174ns (Levels of Logic = 14)
-  Source:            display6/M_pixel_ctr_q_0 (FF)
-  Destination:       row5 (PAD)
+Offset:              19.413ns (Levels of Logic = 15)
+  Source:            gamestates/M_gamestates_q_FSM_FFd4 (FF)
+  Destination:       row4 (PAD)
   Source Clock:      clk rising
 
-  Data Path: display6/M_pixel_ctr_q_0 to row5
+  Data Path: gamestates/M_gamestates_q_FSM_FFd4 to row4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            57   0.525   1.875  M_pixel_ctr_q_0 (M_pixel_ctr_q_0)
-     end scope: 'display6:M_pixel_ctr_q_0'
-     begin scope: 'display5:M_pixel_ctr_q_0'
-     LUT2:I1->O            1   0.254   0.000  Maddsub_n0079_Madd1_lut<3> (Maddsub_n0079_Madd1_lut<3>)
-     MUXCY:S->O            1   0.215   0.000  Maddsub_n0079_Madd1_cy<3> (Maddsub_n0079_Madd1_cy<3>)
-     MUXCY:CI->O           0   0.023   0.000  Maddsub_n0079_Madd1_cy<4> (Maddsub_n0079_Madd1_cy<4>)
-     XORCY:CI->O           9   0.206   1.431  Maddsub_n0079_Madd1_xor<5> (Maddsub_n0079_6)
-     LUT6:I0->O            3   0.254   1.196  led101 (led_bdd15)
-     LUT6:I1->O            2   0.254   1.181  led31 (led3)
-     LUT6:I0->O            1   0.254   0.000  led34_G (N55)
-     MUXF7:I1->O           2   0.175   1.156  led34 (led_bdd4)
+     FD:C->Q              36   0.525   1.815  M_gamestates_q_FSM_FFd4 (M_gamestates_q_FSM_FFd4)
+     LUT3:I0->O            1   0.235   0.682  M_gamestates_q__n0376_SW0 (N99)
+     LUT6:I5->O           12   0.254   1.069  M_gamestates_q__n0376 (_n0376)
+     LUT5:I4->O           44   0.254   2.176  row4<82>11 (row4<82>1)
+     end scope: 'gamestates:row4<82>1'
+     begin scope: 'display4:row4<82>1'
+     LUT6:I0->O            2   0.254   0.954  led6 (led_bdd17)
+     LUT6:I3->O            2   0.235   0.726  led56 (led_bdd14)
+     LUT3:I2->O            1   0.254   0.790  led31 (led3)
+     LUT6:I4->O            2   0.250   1.181  led33 (led31)
+     LUT6:I0->O            1   0.254   0.000  led36_G (N149)
+     MUXF7:I1->O           2   0.175   1.156  led36 (led_bdd4)
      LUT6:I1->O            1   0.254   1.137  led4 (led4)
-     LUT6:I0->O            1   0.254   0.682  led6 (led6)
-     LUT6:I5->O            1   0.254   0.681  led7 (row5_OBUF)
-     end scope: 'display5:led'
-     OBUF:I->O                 2.912          row5_OBUF (row5)
+     LUT6:I0->O            1   0.254   0.682  led7 (led6)
+     LUT6:I5->O            1   0.254   0.681  led9 (row4_OBUF)
+     end scope: 'display4:led'
+     OBUF:I->O                 2.912          row4_OBUF (row4)
     ----------------------------------------
-    Total                     15.174ns (5.834ns logic, 9.339ns route)
-                                       (38.5% logic, 61.5% route)
+    Total                     19.413ns (6.364ns logic, 13.049ns route)
+                                       (32.8% logic, 67.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'gamestates/_n0332'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              4.174ns (Levels of Logic = 2)
+  Source:            gamestates/currentState_4 (LATCH)
+  Destination:       io_led<20> (PAD)
+  Source Clock:      gamestates/_n0332 falling
+
+  Data Path: gamestates/currentState_4 to io_led<20>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.581   0.681  currentState_4 (currentState_4)
+     end scope: 'gamestates:currentState<4>'
+     OBUF:I->O                 2.912          io_led_20_OBUF (io_led<20>)
+    ----------------------------------------
+    Total                      4.174ns (3.493ns logic, 0.681ns route)
+                                       (83.7% logic, 16.3% route)
 
 =========================================================================
 
@@ -1098,20 +1360,28 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.909|         |         |         |
+clk            |    6.023|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock gamestates/_n0332
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |         |         |    3.177|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 16.00 secs
-Total CPU time to Xst completion: 16.09 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 14.37 secs
  
 --> 
 
-Total memory usage is 4525412 kilobytes
+Total memory usage is 4552804 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   70 (   0 filtered)
-Number of infos    :   74 (   0 filtered)
+Number of warnings :   78 (   0 filtered)
+Number of infos    :   98 (   0 filtered)
 

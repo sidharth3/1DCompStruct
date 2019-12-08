@@ -1,3 +1,20 @@
+global Color {
+    // BRG 
+    const RED = c{8x{b0},8x{b1},8x{b0}};
+    const GREEN = c{8x{b0},8x{b0},8x{b1}};
+    const BLUE = c{8x{b1},8x{b0},8x{b0}};
+    const YELLOW = c{8x{b0},8x{b1},8x{b1}};
+    const PURPLE = c{8b10111101,8b10100100,8b0};
+    const CYAN = c{8x{b1},8b0,8x{b1}};
+    const WHITE = 24x{b1};
+    const ORANGE = c{8b0,8x{b1},8b1111000};
+}
+
+global ColorRow{
+    const EMPTY = {24b0,24b0,24b0,24b0};
+    const GREEN = {c{8x{b0},8x{b0},8x{b1}},c{8x{b0},8x{b0},8x{b1}},c{8x{b0},8x{b0},8x{b1}},c{8x{b0},8x{b0},8x{b1}}};
+}
+
 module mojo_top (
     input clk,              // 50MHz clock
     input rst_n,            // reset button (active low)
@@ -21,24 +38,50 @@ module mojo_top (
     output row3,
     output row4,
     output row5,
-    input player2left,
-    input player2right,
-    input player1left,
-    input player1right
+    output row6,
+    input player2leftBtn,
+    input player2rightBtn,
+    input player1leftBtn,
+    input player1rightBtn,
+    input startBtn
+    //yo mario. i have set the correct pins for the buttons, but go to custom.ucf to change the pin numbers for the matrix row. couldnt test it coz ground wire game off
+    
   ) {
  
   sig rst;                  // reset signal
-
+  sig player1left;
+  sig player1right;
+  sig player2left;
+  sig player2right;
+  
+// alu alu;
   .clk(clk) {
     reset_conditioner reset_cond;
-    //button_conditioner button_cond;
-    //edge_detector edge_detector (#RISE(1), #FALL(0));
+    button_conditioner player1left_cond;
+    button_conditioner player1right_cond;
+    button_conditioner player2left_cond;
+    button_conditioner player2right_cond;
+    button_conditioner bigbtn_cond;
+    edge_detector edge (#RISE(1), #FALL(0));
+    edge_detector edge1left (#RISE(1), #FALL(0));
+    edge_detector edge1right (#RISE(1), #FALL(0));
+    edge_detector edge2left (#RISE(1), #FALL(0));
+    edge_detector edge2right (#RISE(1), #FALL(0));
    
     .rst(rst){
-      display display;
-      gamestates gamestates;
+      display display1;
+      display display2;
+      display display3;
+      display display4;
+      display display5;
+      display display6;
+      gamestates gamestates;      
+      
       }
   } 
+ alu alu;
+bin_to_dec bin_to_dec(#DIGITS(2),#LEADING_ZEROS(1));
+sig result[2][4];
   always {
     reset_cond.in = ~rst_n; // input raw inverted reset signal
     rst = reset_cond.out;   // conditioned reset
@@ -48,20 +91,69 @@ module mojo_top (
     avr_rx = bz;            // not using serial port
     io_led = 3x{{8h00}};    // turn LEDs off
     io_seg = 8hff;          // turn segments off
-    io_sel = 4hf;           // select no digits
-    display.update = 1;
+    io_sel = 4hf;           // select no 
+        
+    
+    player1left_cond.in = player1leftBtn;
+    edge1left.in = player1left_cond.out;
+    player1left = edge1left.out;
+    
+    player1right_cond.in = player1rightBtn;
+    edge1right.in = player1right_cond.out;
+    player1right = edge1right.out;
+    
+    player2left_cond.in = player2leftBtn;
+    edge2left.in = player2left_cond.out;
+    player2left = edge2left.out;
+    
+    player2right_cond.in = player2rightBtn;
+    edge2right.in = player2right_cond.out;
+    player2right = edge2right.out;
+    
+    // io_led[0] = c{gamestates.car2Pos,gamestates.car1Pos};
+    // io_led[1] = c{player2left,player2right,player1left,player1right};
+    
+    
     gamestates.car1left = player1left;
-    gamestates.car2left = player2left;
     gamestates.car1right = player1right;
+    gamestates.car2left = player2left;
     gamestates.car2right = player2right;
-    display.color = gamestates.row1;
-    row1 = display.led;
-    display.color = gamestates.row1;
-    row2 = display.led;
-    display.color = gamestates.row1;
-    row3 = display.led;
-    display.color = gamestates.row1;
-    row4 = display.led;
-    display.color = gamestates.row1;
-    row5 = display.led;
+    
+    bigbtn_cond.in = startBtn;
+    edge.in = bigbtn_cond.out;
+    gamestates.bigbtn = edge.out;
+    // alu.alufn = 6b100000;
+    // alu.a = c{14b0, 2x{b1}};
+    // alu.b = 4b0010;
+    // io_led[0] = alu.c[7:0];
+    display1.update = 1;
+    display2.update = 1;
+    display3.update = 1;
+    display4.update = 1;
+    display5.update = 1;
+    display6.update = 1;
+
+    // when it is not fail
+    display1.color = gamestates.row1;
+    row1 = display1.led;
+    display2.color = gamestates.row2;
+    row2 = display2.led;
+    display3.color = gamestates.row3;
+    row3 = display3.led;
+    display4.color = gamestates.row4;
+    row4 = display4.led;
+    display5.color = gamestates.row5;
+    row5 = display5.led;
+    display6.color = gamestates.rowcar;
+    row6 = display6.led;
+    io_led[2] = gamestates.debug;
+    alu.alufn = 6b0;
+    alu.a = 16b0;
+    alu.b = 16b1;
+    io_led[2] = gamestates.currentState;
+    io_led[1] = gamestates.score_out;
+    
+    bin_to_dec.value = 8b0;
+    result = bin_to_dec.digits;
+    io_led[0] = c{result[1],result[0]};
 }}

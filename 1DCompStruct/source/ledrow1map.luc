@@ -14,7 +14,7 @@ module ledrow1map (//module that takes in the contents of the vertical registers
   sig color_cell0[24];
   sig color_cell1[24];
   sig color_cell2[24];
-  sig color_cell3[24];   
+  sig color_cell3[24];
   always {
     color_cell0 = 24b0;
     color_cell1 = 24b0;
@@ -30,35 +30,35 @@ module ledrow1map (//module that takes in the contents of the vertical registers
       color_cell0 = 24b0;
       }
     if (temp_r0== 2b01){
-      color_cell0 = c{8x{b1}, 16b0};
+      color_cell0 = Color.RED;
       } //assuming rgb pattern
     if (temp_r0 == 2b10){
-      color_cell0  = c{16b0, 8x{b1}};
+      color_cell0  = Color.GREEN;
       }
     
         //pixel 2 row1
     if (temp_r1== 2b00){
       color_cell1 = 24b0;}
     if(temp_r1 == 2b01){
-      color_cell1 = c{8x{b1}, 16b0};}
+      color_cell1 = Color.RED;}
     if (temp_r1== 2b10){
-      color_cell1 = c{16b0, 8x{b1}};}
+      color_cell1 = Color.GREEN;}
       
     //pixel 3 row 1
    if (temp_r2== 2b00){
       color_cell2 = 24b0;}
     if(temp_r2 == 2b01){
-      color_cell2 = c{8x{b1}, 16b0};}
+      color_cell2 = Color.RED;}
     if (temp_r2== 2b10){
-      color_cell2 = c{16b0, 8x{b1}};}
+      color_cell2 = Color.GREEN;}
    
     //pixel 4 row 1
      if (temp_r3== 2b00){
       color_cell3 = 24b0;}
     if(temp_r3 == 2b01){
-      color_cell3 = c{8x{b1}, 16b0};}
+      color_cell3 = Color.RED;}
     if (temp_r3== 2b10){
-      color_cell3 = c{16b0, 8x{b1}};}
+      color_cell3 = Color.GREEN;}
       
     color_row1 = { color_cell0, color_cell1, color_cell2, color_cell3};
 

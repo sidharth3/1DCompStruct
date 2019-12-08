@@ -1,0 +1,38 @@
+module ledrowcars (
+    // input clk,  // clock
+    // input rst,  // reset
+    input car1[4],
+    input car2[4],
+    output colorrowcar[4][24]
+  ) {
+  
+  sig color_cell0[24];
+  sig color_cell1[24];
+  sig color_cell2[24];
+  sig color_cell3[24];  
+
+  always {
+    color_cell0 = 24b0;
+    color_cell1 = 24b0;
+    color_cell2 = 24b0;
+    color_cell3 = 24b0;
+    // adjust so that it correspond to the logic
+    if(car1 == 4b0011){
+      color_cell0 = Color.WHITE;
+      color_cell1 = 24b0;
+      }
+    if(car1 == 4b1100){
+      color_cell0 = 24b0;
+      color_cell1 = Color.WHITE;
+      }
+    if(car2== 4b0011){
+      color_cell2=Color.YELLOW;
+      color_cell3=24b0;
+      }
+    if(car2== 4b1100){
+      color_cell2=24b0;
+      color_cell3= Color.YELLOW;
+      }
+    colorrowcar = {color_cell0, color_cell1, color_cell2, color_cell3};
+  }
+}

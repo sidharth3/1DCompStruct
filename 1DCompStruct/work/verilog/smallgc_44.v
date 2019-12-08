@@ -6,19 +6,19 @@
 
 /*
    Parameters:
-     SIZE = 24
+     SIZE = 25
 */
-module smallgc_2 (
+module smallgc_44 (
     input reset,
     input clk,
     input rst,
     output reg [4:0] out
   );
   
-  localparam SIZE = 5'h18;
+  localparam SIZE = 5'h19;
   
   
-  reg [23:0] M_counter_d, M_counter_q = 1'h0;
+  reg [24:0] M_counter_d, M_counter_q = 1'h0;
   
   reg [4:0] M_slow_d, M_slow_q = 1'h0;
   
@@ -28,7 +28,7 @@ module smallgc_2 (
     
     M_counter_d = M_counter_q + 1'h1;
     out = M_slow_q;
-    if (M_counter_q == 24'hffffff) begin
+    if (M_counter_q == 25'h1ffffff) begin
       M_slow_d = M_slow_q + 1'h1;
     end
     if (reset) begin

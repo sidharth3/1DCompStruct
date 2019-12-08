@@ -2,6 +2,10 @@ module registers ( //module which contains all the contents of the 4 registers, 
     input clk,  // clock
     input rst,  // reset
     input shift,
+    input reset,
+    input set[1],
+    output l1[8],
+    output l2[8],
     output lane1val[2],
     output lane2val[2],
     output lane3val[2],
@@ -10,7 +14,10 @@ module registers ( //module which contains all the contents of the 4 registers, 
     output row2[4][24],
     output row3[4][24],
     output row4[4][24],
-    output row5[4][24]
+    output row5[4][24],
+    output out[8],
+    output level[3],
+    output levelUp[1]
   ) {
   alu alu;
   map map;
@@ -19,21 +26,26 @@ module registers ( //module which contains all the contents of the 4 registers, 
   ledrow3map ledrow3map;
   ledrow4map ledrow4map;
   ledrow5map ledrow5map;
-  //sig templane1[2];
-  //sig templane2[2];
-  //sig templane3[2];
-  //sig templane4[2];
+ 
+  sig templane1[10];
+  sig templane2[10];
+  sig templane3[10];
+  sig templane4[10];
   .clk(clk){
-   fsm levels = {LEVEL1,LEVEL2,LEVEL3,IDLE};  
  .rst(rst){
+   dff addr[6];
+   dff lane1[10];
+   dff lane2[10];
+   dff lane3[10];
+   dff lane4[10];
+   dff levelReg[3];
+   dff loop[5];
    smallgc ctr;
       }
-   dff lane1[10](#INIT(0000000000));
-   dff lane2[10](#INIT(0000000000));
-   dff lane3[10](#INIT(0000000000));
-   dff lane4[10](#INIT(0000000000));
    }
   always {
+    l1 = lane3.q[7:0];
+    l2= lane4.q[7:0];
     ledrow1map.lane1 = lane1.q;
     ledrow1map.lane2 = lane2.q;
     ledrow1map.lane3 = lane3.q;
@@ -69,55 +81,99 @@ module registers ( //module which contains all the contents of the 4 registers, 
     lane2val = lane2.q[9:8];
     lane3val = lane3.q[9:8];
     lane4val = lane4.q[9:8];
-    if(rst){
-      levels.d = levels.LEVEL1;
+    
+    if(reset){
+      levelReg.d = b01;
+      loop.d = 0;
+      addr.d = 0;
+      lane1.d = 10b0;
+      lane2.d = 10b0;
+      lane3.d = 10b0;
+      lane4.d = 10b0;
       }
-    case (levels.q){
-      levels.LEVEL1:
-        map.level = b01;
-        //io_led[1] = b01;
-        if (map.next_row == 8x{b1}){
-        ctr.reset = 1;
-        levels.d = levels.LEVEL2;      
+// case (levels.q){
+//     levels.LEVEL1:
+//       map.level = b01;
+//       //io_led[1] = b01;
+//       if (map.next_row == 8x{b1}){
+//       ctr.reset = 1;
+//       levels.d = levels.LEVEL2;      
+//       }
+//     levels.LEVEL2:
+//       map.level = b10;
+//       //io_led[1] = b10;
+//       if (map.next_row == 8x{b1}){
+//       ctr.reset = 1;
+//       levels.d = levels.LEVEL3;      
+//      }
+//     levels.LEVEL3:
+//       map.level = b11;
+//       //io_led[1] = b11;
+//       if (map.next_row == 8x{b1}){
+//       ctr.reset = 1;
+//       levels.d = levels.IDLE;      
+//      }
+//     default:
+//       map.level = b00;
+//       //io_led[1] = 8x{b1};
+//     }
+      map.set = set;
+      map.level = levelReg.q;
+      if (levelReg.q == b0){
+      levelReg.d = b01;
+    }
+      level = levelReg.q;
+      levelUp = 0;
+      out = map.next_row;
+      map.address = addr.q;
+      if(map.next_row == 8b11111111){
+        levelReg.d = levelReg.q+1;
+        addr.d = 0;
+        levelUp = 1;
+      }
+      if(shift==1){
+        // alu shift
+        
+        loop.d = loop.q + 1;
+        alu.alufn = b100000;
+        alu.b = b10;
+        
+        if (loop.q == 0){
+          alu.a = lane1.q;
+          templane1 = alu.c;
+          lane1.d = c{templane1[9:2],map.next_row[1:0]};
         }
-      levels.LEVEL2:
-        map.level = b10;
-        //io_led[1] = b10;
-        if (map.next_row == 8x{b1}){
-        ctr.reset = 1;
-        levels.d = levels.LEVEL3;      
-       }
-      levels.LEVEL3:
-        map.level = b11;
-        //io_led[1] = b11;
-        if (map.next_row == 8x{b1}){
-        ctr.reset = 1;
-        levels.d = levels.IDLE;      
-       }
-      default:
-        map.level = b00;
-        //io_led[1] = 8x{b1};
-      }
-   
-      if(shift){
-        map.address = ctr.out;
-        alu.alufn = 6b100000;
-        alu.a = lane1.q;
-        alu.b = 2;
-        lane1.d = alu.c[9:0];
-        lane1.d[1:0] = map.next_row[1:0];
-        alu.a = lane2.q;
-        alu.b = 2;
-        lane2.d = alu.c[9:0];
-        lane2.d[1:0] = map.next_row[3:2];
-        alu.a = lane3.q;
-        alu.b = 2;
-        lane3.d = alu.c[9:0];
-        lane3.d = map.next_row[5:4];
-        alu.a = lane4.q;
-        alu.b = 2;
-        lane4.d = alu.c[9:0]; 
-        lane4.d = map.next_row[7:6];  
+        else if (loop.q == 1){
+          alu.a = lane2.q;
+          templane2 = alu.c;
+          lane2.d = c{templane2[9:2],map.next_row[3:2]};
+        }
+        else if (loop.q == 2){
+          alu.a = lane3.q;
+          templane3 = alu.c;
+          lane3.d = c{templane3[9:2],map.next_row[5:4]};
+        }
+        else if (loop.q == 3){
+          alu.a = lane4.q;
+          templane4 = alu.c;
+          lane4.d = c{templane4[9:2],map.next_row[7:6]};
+          // go the next address  
+          addr.d = addr.q + 1;
+          
+          // reset the loop
+          loop.d = 0;
+        }
+        // templane1 = lane1.q << 2;
+        // lane1.d = c{templane1[9:2],map.next_row[1:0]};
+        // templane2 = lane2.q << 2;
+        // lane2.d = c{templane2[9:2],map.next_row[3:2]};
+        // templane3 = lane3.q << 2;
+        // lane3.d = c{templane3[9:2],map.next_row[5:4]};
+        // templane4 = lane4.q << 2;
+        // lane4.d = c{templane4[9:2],map.next_row[7:6]}; 
+      
+        // go the next address  
+        // addr.d = addr.q + 1;
         }
       }
   }

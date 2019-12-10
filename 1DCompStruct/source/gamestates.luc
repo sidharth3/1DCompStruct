@@ -102,12 +102,6 @@ bin_to_dec bin_to_dec_highscore(#DIGITS(2),#LEADING_ZEROS(1));
     score_out = score.q;
     debug = car2.currentPosition[3:2]&register.lane4val;
     
-    // scoredisplay.color = Color.CYAN;
-    // scoredisplay.score = score.q[7:0];     
-    
-    // highscoredisplay.color = Color.PURPLE;
-    // highscoredisplay.score = high_score.q[7:0];
-    
     bin_to_dec_score.value = score.q[6:0]; 
     bin_to_dec_highscore.value = high_score.q[6:0];
     
@@ -128,28 +122,6 @@ bin_to_dec bin_to_dec_highscore(#DIGITS(2),#LEADING_ZEROS(1));
     readycounter.d = 0;
     case(gamestates.q){
         gamestates.START:
-          // hard code the arrow
-          // row1 = {24b0,24b0,24b0,Color.GREEN};
-          // row2 = {24b0,24b0,Color.GREEN,Color.GREEN};
-          // row3 = {24b0,Color.GREEN,Color.GREEN,Color.GREEN};
-          // row4 = {24b0,24b0,Color.GREEN,Color.GREEN};
-          // row5 = {24b0,24b0,24b0,Color.GREEN};
-          // rowcar = {24b0,24b0,24b0,24b0};
-          // row1 = {24b0,Color.GREEN,Color.GREEN,24b0};
-          // row2 = {24b0,Color.GREEN,Color.GREEN,24b0};
-          // row3 = {24b0,Color.GREEN,Color.GREEN,24b0};
-          // row4 = {24b0,Color.GREEN,Color.GREEN,24b0};
-          // row5 = {Color.GREEN,Color.GREEN,Color.GREEN,Color.GREEN};
-          // rowcar = {24b0,Color.GREEN,Color.GREEN,24b0};
-          row1 = {24b0,Color.GREEN,Color.RED,24b0};
-          row2 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
-          row3 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
-          row4 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
-          row5 = {Color.GREEN,Color.GREEN,Color.RED,Color.RED};
-          rowcar = {24b0,Color.GREEN,Color.RED,24b0};
-          
-          // animation for the start state
-          
           // counter and loop
           slow1.d = slow1.q + 1;
           if (slow1.q == 25x{b1}){
@@ -158,6 +130,7 @@ bin_to_dec bin_to_dec_highscore(#DIGITS(2),#LEADING_ZEROS(1));
               loop.d = 0;
             }
           }
+          // animation
           case (loop.q){
           2:
             row1 = {24b0,Color.GREEN,Color.RED,24b0};
@@ -237,16 +210,18 @@ bin_to_dec bin_to_dec_highscore(#DIGITS(2),#LEADING_ZEROS(1));
             gamestates.d = gamestates.LEVELUP;
           }
         gamestates.IDLE:
+            // states that can take in user button input
+            // periodically goes to CHECK and SHIFT state
             currentState=5b00001;
             if ((level == b01) || (level == b10)){
                 if(counter.q == 25x{b1}){
-                    // gamestates.d = gamestates.SHIFT;
+
                     gamestates.d = gamestates.CHECK;
                   }
             }
+            // double the speed for level higher than 3
             else{
                 if(fast_counter.q == 24x{b1}){
-                    // gamestates.d = gamestates.SHIFT;
                     gamestates.d = gamestates.CHECK;
                   }
             }
@@ -317,6 +292,7 @@ bin_to_dec bin_to_dec_highscore(#DIGITS(2),#LEADING_ZEROS(1));
                 gamestates.d = gamestates.FAIL;
            }
         gamestates.SHIFT:
+            // runs in 4 clock cycle since there are 4 lanes to left shift
             currentState = 5b00010;
             // increment loop
             loop.d = loop.q + 1;

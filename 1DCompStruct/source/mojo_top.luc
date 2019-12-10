@@ -79,9 +79,7 @@ module mojo_top (
       
       }
   } 
- alu alu;
-bin_to_dec bin_to_dec(#DIGITS(2),#LEADING_ZEROS(1));
-sig result[2][4];
+
   always {
     reset_cond.in = ~rst_n; // input raw inverted reset signal
     rst = reset_cond.out;   // conditioned reset
@@ -93,7 +91,7 @@ sig result[2][4];
     io_seg = 8hff;          // turn segments off
     io_sel = 4hf;           // select no 
         
-    
+    // set up the button input
     player1left_cond.in = player1leftBtn;
     edge1left.in = player1left_cond.out;
     player1left = edge1left.out;
@@ -110,10 +108,6 @@ sig result[2][4];
     edge2right.in = player2right_cond.out;
     player2right = edge2right.out;
     
-    // io_led[0] = c{gamestates.car2Pos,gamestates.car1Pos};
-    // io_led[1] = c{player2left,player2right,player1left,player1right};
-    
-    
     gamestates.car1left = player1left;
     gamestates.car1right = player1right;
     gamestates.car2left = player2left;
@@ -122,10 +116,8 @@ sig result[2][4];
     bigbtn_cond.in = startBtn;
     edge.in = bigbtn_cond.out;
     gamestates.bigbtn = edge.out;
-    // alu.alufn = 6b100000;
-    // alu.a = c{14b0, 2x{b1}};
-    // alu.b = 4b0010;
-    // io_led[0] = alu.c[7:0];
+    
+    // set up the display
     display1.update = 1;
     display2.update = 1;
     display3.update = 1;
@@ -133,7 +125,7 @@ sig result[2][4];
     display5.update = 1;
     display6.update = 1;
 
-    // when it is not fail
+    // displaying the color to the led matrix
     display1.color = gamestates.row1;
     row1 = display1.led;
     display2.color = gamestates.row2;
@@ -146,14 +138,5 @@ sig result[2][4];
     row5 = display5.led;
     display6.color = gamestates.rowcar;
     row6 = display6.led;
-    io_led[2] = gamestates.debug;
-    alu.alufn = 6b0;
-    alu.a = 16b0;
-    alu.b = 16b1;
-    io_led[2] = gamestates.currentState;
-    io_led[1] = gamestates.score_out;
-    
-    bin_to_dec.value = 8b0;
-    result = bin_to_dec.digits;
-    io_led[0] = c{result[1],result[0]};
+
 }}

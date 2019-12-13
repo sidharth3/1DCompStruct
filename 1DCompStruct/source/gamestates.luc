@@ -25,8 +25,7 @@ module gamestates (//module which contains the game states - oscillates between 
     output score_out[16]
   ) {
 .clk(clk) {
-  fsm gamestates = {START,IDLE,SHIFT,CAR1LEFT,CAR1RIGHT, CAR2LEFT, CAR2RIGHT,FAIL,POINT1,POINT2,SCORE,LEVELUP, CHECK,
-    READY1,READY2,READY3,LEVEL1,LEVEL2,LEVEL3,WIN};
+  fsm gamestates = {START,IDLE,SHIFT,CAR1LEFT,CAR1RIGHT, CAR2LEFT, CAR2RIGHT,FAIL,POINT1,POINT2,SCORE,LEVELUP, CHECK, READY, WIN};
     .rst(rst) {
       car car1;
       car car2;
@@ -174,40 +173,45 @@ bin_to_dec bin_to_dec_highscore(#DIGITS(2),#LEADING_ZEROS(1));
              register.reset = 1;
              loop.d = 0;
              score.d = 0;
-             gamestates.d = gamestates.READY1;
+             gamestates.d = gamestates.READY;
           }
-      gamestates.READY1:
-          row1 = ColorRow.GREEN;
-          row2 = ColorRow.EMPTY;
-          row3 = ColorRow.EMPTY;
-          row4 = ColorRow.EMPTY;
-          row5 = ColorRow.EMPTY;
-          rowcar = ColorRow.EMPTY;
-          readycounter.d = readycounter.q + 1;
-          if (readycounter.q == 25x{b1}){
-            gamestates.d = gamestates.READY2;
+      gamestates.READY:
+          if (loop.q == 0){
+            row1 = ColorRow.GREEN;
+            row2 = ColorRow.EMPTY;
+            row3 = ColorRow.EMPTY;
+            row4 = ColorRow.EMPTY;
+            row5 = ColorRow.EMPTY;
+            rowcar = ColorRow.EMPTY;
+            readycounter.d = readycounter.q + 1;
+            if (readycounter.q == 25x{b1}){
+              loop.d = loop.q + 1;
+            }
           }
-      gamestates.READY2:
-          row1 = ColorRow.GREEN;
-          row2 = ColorRow.GREEN;
-          row3 = ColorRow.GREEN;
-          row4 = ColorRow.EMPTY;
-          row5 = ColorRow.EMPTY;
-          rowcar = ColorRow.EMPTY;
-          readycounter.d = readycounter.q + 1;
-          if (readycounter.q == 25x{b1}){
-            gamestates.d = gamestates.READY3;
+          if (loop.q == 1){
+            row1 = ColorRow.GREEN;
+            row2 = ColorRow.GREEN;
+            row3 = ColorRow.GREEN;
+            row4 = ColorRow.EMPTY;
+            row5 = ColorRow.EMPTY;
+            rowcar = ColorRow.EMPTY;
+            readycounter.d = readycounter.q + 1;
+            if (readycounter.q == 25x{b1}){
+              loop.d = loop.q + 1;
+            }
           }
-      gamestates.READY3:
-          row1 = ColorRow.GREEN;
-          row2 = ColorRow.GREEN;
-          row3 = ColorRow.GREEN;
-          row4 = ColorRow.GREEN;
-          row5 = ColorRow.GREEN;
-          rowcar = ColorRow.GREEN;
-          readycounter.d = readycounter.q + 1;
+          if (loop.q == 2){
+            row1 = ColorRow.GREEN;
+            row2 = ColorRow.GREEN;
+            row3 = ColorRow.GREEN;
+            row4 = ColorRow.GREEN;
+            row5 = ColorRow.GREEN;
+            rowcar = ColorRow.GREEN;
+            readycounter.d = readycounter.q + 1;
           if (readycounter.q == 25x{b1}){
-            gamestates.d = gamestates.LEVELUP;
+              loop.d = 0;
+              gamestates.d = gamestates.LEVELUP;
+            }
           }
         gamestates.IDLE:
             // states that can take in user button input
@@ -345,6 +349,9 @@ bin_to_dec bin_to_dec_highscore(#DIGITS(2),#LEADING_ZEROS(1));
           alu.a = high_score.q;
           alu.b = score.q;
           
+          if (alu.c){
+            high_score.d = score.q;
+          }
           // loop the row 3 and row 5 
           fast_counter.d = fast_counter.q + 1;
           if (fast_counter.q == 24x{b1}){
@@ -367,9 +374,6 @@ bin_to_dec bin_to_dec_highscore(#DIGITS(2),#LEADING_ZEROS(1));
           else if (loop.q == 3){
            row3 = {Color.ORANGE,24b0,24b0,Color.ORANGE}; 
            rowcar = {Color.ORANGE,24b0,24b0,Color.ORANGE}; 
-          }
-          if (alu.c){
-            high_score.d = score.q;
           }
                
           if (bigbtn){
